@@ -30,6 +30,7 @@ Graphics::Graphics(){
     joueur = new GraphicJoueur(jeu);
     terrain= new GraphicTerrain(jeu);
     obstacle = new GraphicObstacle(jeu);
+    objet = new GraphicObjet(jeu);
     saut=false;
 
 
@@ -57,6 +58,7 @@ void Graphics::afficherGraphics() {
     terrain->afficherTerrain(jeu);
     joueur->afficherJoueur(jeu);
     obstacle->afficherObstacle(jeu);
+    objet->afficherObjet(jeu);
 }
 
 void Graphics::loop() {

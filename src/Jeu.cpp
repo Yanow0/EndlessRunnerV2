@@ -10,6 +10,7 @@ Jeu::Jeu() {
    terrain = Terrain();
    joueur = Joueur();
    obstacle = Obstacle();
+   objet = Objet();
 }
 
 Jeu::~Jeu(){
@@ -19,6 +20,7 @@ Jeu::~Jeu(){
 Terrain& Jeu::getTerrain() {return terrain;}
 Joueur& Jeu::getJoueur() {return joueur;}
 Obstacle& Jeu::getObstacle() {return obstacle;}
+Objet& Jeu::getObjet() {return objet;}
 
 
 bool Jeu::contactGauche() {
