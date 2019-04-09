@@ -13,6 +13,7 @@ GraphicTerrain::GraphicTerrain(Jeu jeu) {
         cout << "Error: cannot load background" <<endl;
     }
     texture = SDL_CreateTextureFromSurface(jeu.renderer,background);
+
 }
 
 GraphicTerrain::~GraphicTerrain(){}
@@ -20,7 +21,7 @@ GraphicTerrain::~GraphicTerrain(){}
 void GraphicTerrain::afficherTerrain(Jeu jeu) {
 
     SDL_RenderCopy(jeu.renderer, texture, NULL, NULL);
-   // SDL_SetRenderDrawColor(fenetre.renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
-   // SDL_RenderDrawLine(fenetre.renderer, 0, (terrain.getDimY()*20-terrain.getPlateforme()), terrain.getDimX()*20, (terrain.getDimY()*20-terrain.getPlateforme()));
+   // SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+  //  SDL_RenderDrawLine(jeu.renderer, 0, (terrain.getDimY()*20-terrain.getPlateforme()), terrain.getDimX()*20, (terrain.getDimY()*20-terrain.getPlateforme()));
 }
 

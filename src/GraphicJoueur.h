@@ -13,13 +13,17 @@ public:
     Joueur joueur;
     SDL_Rect imageJoueur;
 
+    SDL_Surface *sSprite;
+    SDL_Texture *tSprite;
+    SDL_Rect jSpriteClips[ 6 ];
+
     //Constructeur de Jeu
     GraphicJoueur(Jeu jeu);
 
     //Destructeur de Jeu
     ~GraphicJoueur();
 
-    void afficherJoueur(Jeu jeu);
+    void afficherJoueur(Jeu jeu, int frame);
 };
 
 

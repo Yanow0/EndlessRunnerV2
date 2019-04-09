@@ -15,19 +15,19 @@ public:
     ~Pos2D();
 
     //Initialize a Pos2D object with the x and y values given
-    Pos2D(int x, int y);
+    Pos2D(float x, float y);
 
-    int getX();
+    float getX();
 
-    int getY();
+    float getY();
 
-    void setX(int x);
+    void setX(float x);
 
-    void setY(int y);
+    void setY(float y);
 
 private:
-    int x;
-    int y;
+    float x;
+    float y;
 };
 
 

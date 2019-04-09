@@ -14,15 +14,15 @@ Pos2D::~Pos2D() {
     this->y = 1;
 }
 
-Pos2D::Pos2D(int x, int y) {
+Pos2D::Pos2D(float x, float y) {
     this->x = x;
     this->y = y;
 }
 
-int Pos2D::getX() { return this->x;}
+float Pos2D::getX() { return this->x;}
 
-int Pos2D::getY() {return this->y;}
+float Pos2D::getY() {return this->y;}
 
-void Pos2D::setX(int x) {this->x = x;}
+void Pos2D::setX(float x) {this->x = x;}
 
-void Pos2D::setY(int y) {this->y = y;}
+void Pos2D::setY(float y) {this->y = y;}

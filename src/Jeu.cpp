@@ -54,13 +54,17 @@ void Jeu::actionClavier(const char &touche) {
 				joueur.sauter(terrain);
 				break;
 		case 'b' :
-				joueur.descendre(terrain);
+				//joueur.descendre(terrain);
 				break;
 	}
 }
 
-void Jeu::actionAutomatique(bool saut) {
+bool Jeu::collisionSol(){
+    return joueur.pos->getY() + joueur.taille->getHauteur() >= terrain.getPlateforme();
+}
+
+
+void Jeu::actionAutomatique() {
     obstacle.deplacementAuto();
-    if (!saut) joueur.retomber(terrain);
 }
 

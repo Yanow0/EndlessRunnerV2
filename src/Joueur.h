@@ -14,15 +14,17 @@ class Joueur {
     public:
         Forme2D* taille;
         Pos2D* pos;
-        int vitesseSaut;
-        int gravite;
+        float vitesseSaut;
+        float gravite;
 
-    //Constructeur Terrain
+
+
+    //Constructeur Joueur
     Joueur();
 
-    //Destructeur Terrain
+    //Destructeur Joueur
     ~Joueur();
-
+    bool collisionSol(const Terrain &t);
     void sauter(const Terrain &t);
     void descendre(const Terrain &t);
     void retomber(const Terrain &t);

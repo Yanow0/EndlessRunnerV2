@@ -13,7 +13,7 @@ Graphics::Graphics(){
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         cout << "Erreur lors de l'initialisation de la SDL : " << SDL_GetError() << endl;SDL_Quit();exit(1);
     }
-    if (IMG_Init(IMG_INIT_JPG) ==0) {
+    if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) <=0) {
         cout << "Erreur lors de l'initialisation de la SDL_Image : " << SDL_GetError() << endl;IMG_Quit();exit(1);
     }
     // Creation de la fenetre
@@ -30,7 +30,7 @@ Graphics::Graphics(){
     joueur = new GraphicJoueur(jeu);
     terrain= new GraphicTerrain(jeu);
     obstacle = new GraphicObstacle(jeu);
-    saut=false;
+    frame=0;
 
 
 }
@@ -44,18 +44,16 @@ Graphics::~Graphics(){
 }
 
 void Graphics::doJeu (){
-    jeu.actionAutomatique(saut);
-    if (saut){
-        jeu.actionClavier('h');
-        saut=false;
-    }
+    jeu.actionAutomatique();
+    if (saut) jeu.actionClavier('h');
+    if (jeu.collisionSol()) saut = false;
 }
 
 void Graphics::afficherGraphics() {
     SDL_SetRenderDrawColor(jeu.renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(jeu.renderer);
     terrain->afficherTerrain(jeu);
-    joueur->afficherJoueur(jeu);
+    joueur->afficherJoueur(jeu, frame);
     obstacle->afficherObstacle(jeu);
 }
 
@@ -69,7 +67,7 @@ void Graphics::loop() {
 
             if (event.type == SDL_QUIT) {
                 jeu.done = SDL_TRUE;
-            } else if (event.type == SDL_KEYDOWN) {
+            } else if (event.type == SDL_KEYDOWN && event.key.repeat == 0) {
                 switch (event.key.keysym.scancode) {
 
                     case SDL_SCANCODE_LEFT:
@@ -93,9 +91,14 @@ void Graphics::loop() {
 
 
         }
+
         doJeu();
         afficherGraphics();
         SDL_RenderPresent(jeu.renderer);
+        frame++;
+        if (frame/6 >= 6 ){
+            frame=0;
+        }
 
     }
 }
