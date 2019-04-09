@@ -8,8 +8,8 @@ class GraphicObjet{
 public:
     Objet objet;
     SDL_Rect imageObjet;
-    //SDL_Surface *background;
-    //SDL_Texture *texture;
+    SDL_Surface *sSprite;
+    SDL_Texture *tSprite;
 
     //Constructeur de Jeu
     GraphicObjet(Jeu jeu);
