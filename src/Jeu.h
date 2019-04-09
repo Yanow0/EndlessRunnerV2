@@ -5,6 +5,7 @@
 #include "Terrain.h"
 #include "Joueur.h"
 #include "Obstacle.h"
+#include "Objet.h"
 #include <SDL2/SDL.h>
 
 #ifndef ENDLESSRUNNER_JEU_H
@@ -17,6 +18,7 @@ class Jeu {
         Joueur joueur;
         Obstacle obstacle;
         Terrain terrain;
+        Objet objet;
 
     public:
         SDL_Window* window;
@@ -34,6 +36,7 @@ class Jeu {
         Terrain& getTerrain();
         Joueur& getJoueur();
         Obstacle& getObstacle();
+        Objet& getObjet();
 
         bool contactGauche();
         bool contactDroite();

@@ -9,6 +9,7 @@
 #include "GraphicJoueur.h"
 #include "GraphicTerrain.h"
 #include "GraphicObstacle.h"
+#include "GraphicObjet.h"
 #include <SDL2/SDL.h>
 
 class Graphics {
@@ -16,6 +17,7 @@ public:
     GraphicJoueur* joueur;
     GraphicTerrain* terrain;
     GraphicObstacle* obstacle;
+    GraphicObjet* objet;
     Jeu jeu;
    // Fenetre fenetre;
     bool saut;
