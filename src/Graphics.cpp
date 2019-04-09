@@ -46,7 +46,7 @@ Graphics::~Graphics(){
 }
 
 void Graphics::doJeu (){
-    jeu.actionAutomatique();
+    jeu.actionAutomatique(saut);
     if (saut) jeu.actionClavier('h');
     if (jeu.collisionSol()) saut = false;
 }

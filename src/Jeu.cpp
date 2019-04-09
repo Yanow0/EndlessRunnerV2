@@ -66,7 +66,8 @@ bool Jeu::collisionSol(){
 }
 
 
-void Jeu::actionAutomatique() {
+void Jeu::actionAutomatique(bool saut) {
     obstacle.deplacementAuto();
+    if (!saut) joueur.retomber(terrain);
 }
 

@@ -46,7 +46,7 @@ class Jeu {
         bool collision();
 
         void actionClavier(const char &touche);
-        void actionAutomatique();
+        void actionAutomatique(bool saut);
         bool collisionSol();
 
 };

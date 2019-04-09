@@ -38,7 +38,7 @@ void Joueur::sauter(const Terrain &t) {
 
 }
 
-/*
+
 void Joueur::descendre(const Terrain &t) {
    // if (t.positionValide(pos->getX(),pos->getY()+d)) {
         pos->setY(pos->getY()+gravite);
@@ -50,4 +50,4 @@ void Joueur::retomber(const Terrain &t) {
         descendre(t);
     }
 }
-*/
+
