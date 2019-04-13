@@ -16,7 +16,7 @@ Joueur::Joueur() {
     taille = new Forme2D(2,1);
     pos = new Pos2D(8,6);
     vitesseSaut=1;
-    gravite=0.1f;
+    gravite=0.2f;
 //    taille = new Forme2D(100,50);
 //    pos = new Pos2D(320,370);
 }
@@ -49,5 +49,16 @@ void Joueur::retomber(const Terrain &t) {
     if ( this->pos->getY() + this->taille->getHauteur() < t.getPlateforme() ) {
         descendre(t);
     }
+}
+
+void Joueur::baisser(const Terrain &t) {
+    taille->setHauteur(1);
+    pos->setY(pos->getY()+ 1);
+}
+
+
+void Joueur::relever(const Terrain &t) {
+    taille->setHauteur(2);
+    pos->setY(pos->getY()-1);
 }
 

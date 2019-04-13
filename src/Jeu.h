@@ -25,7 +25,7 @@ class Jeu {
         SDL_Renderer* renderer;
         int window_width;
         int window_height;
-        SDL_bool done;
+        bool exit;
 
         //Constructeur de Jeu
         Jeu();

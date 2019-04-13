@@ -58,6 +58,12 @@ void Jeu::actionClavier(const char &touche) {
 		case 'b' :
 				//joueur.descendre(terrain);
 				break;
+        case 'c' :
+                joueur.baisser(terrain);
+                break;
+        case 'r' :
+            joueur.relever(terrain);
+            break;
 	}
 }
 

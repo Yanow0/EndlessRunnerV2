@@ -21,7 +21,10 @@ public:
     Jeu jeu;
    // Fenetre fenetre;
     bool saut;
+    bool baisser;
+    bool relever;
     int frame;
+    bool debout;
 
     //Constructeur de Graphics
     Graphics();

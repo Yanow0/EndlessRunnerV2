@@ -24,7 +24,7 @@ Graphics::Graphics(){
 
     jeu.renderer = SDL_CreateRenderer(jeu.window,-1,SDL_RENDERER_PRESENTVSYNC);
 
-    jeu.done = SDL_FALSE;
+    jeu.exit = false;
 
 
     joueur = new GraphicJoueur(jeu);
@@ -33,6 +33,9 @@ Graphics::Graphics(){
     frame=0;
     objet = new GraphicObjet(jeu);
     saut=false;
+    baisser =false;
+    relever=false;
+    debout=true;
 
 
 }
@@ -47,8 +50,21 @@ Graphics::~Graphics(){
 
 void Graphics::doJeu (){
     jeu.actionAutomatique(saut);
-    if (saut) jeu.actionClavier('h');
+    if (saut && debout) {
+            jeu.actionClavier('h');
+    }
     if (jeu.collisionSol()) saut = false;
+    if (baisser && !saut) {
+            jeu.actionClavier('c');
+            baisser=false;
+            }
+    if (baisser && saut){
+        debout=true;
+    }
+    if (relever && !saut) {
+            jeu.actionClavier('r');
+            relever=false;
+    }
 }
 
 void Graphics::afficherGraphics() {
@@ -62,14 +78,14 @@ void Graphics::afficherGraphics() {
 
 void Graphics::loop() {
 
-    while (!jeu.done) {
+    while (!jeu.exit) {
         SDL_Event event;
 
         while (SDL_PollEvent(&event)) {
 
 
             if (event.type == SDL_QUIT) {
-                jeu.done = SDL_TRUE;
+                jeu.exit = true;
             } else if (event.type == SDL_KEYDOWN && event.key.repeat == 0) {
                 switch (event.key.keysym.scancode) {
 
@@ -84,6 +100,34 @@ void Graphics::loop() {
                         break;
 
                     case SDL_SCANCODE_DOWN:
+                        baisser=true;
+                        debout=false;
+                        break;
+
+                    case SDL_SCANCODE_ESCAPE:
+                        jeu.exit=true;
+                        break;
+
+                    default:
+
+                        break;
+                }   // End switch
+
+            } else if (event.type == SDL_KEYUP && event.key.repeat == 0) {
+                switch (event.key.keysym.scancode) {
+
+                    case SDL_SCANCODE_LEFT:
+                        break;
+
+                    case SDL_SCANCODE_RIGHT:
+                        break;
+
+                    case SDL_SCANCODE_UP:
+                        break;
+
+                    case SDL_SCANCODE_DOWN:
+                        relever=true;
+                        debout=true;
                         break;
 
                     default:
@@ -91,7 +135,6 @@ void Graphics::loop() {
                         break;
                 }   // End switch
             }
-
 
         }
 
@@ -104,4 +147,5 @@ void Graphics::loop() {
         }
 
     }
+
 }
