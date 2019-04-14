@@ -13,10 +13,10 @@ using namespace std;
 
 
 Joueur::Joueur() {
-    taille = new Forme2D(2,1);
+    taille = new Forme2D(2,2);
     pos = new Pos2D(8,6);
-    vitesseSaut=1;
-    gravite=0.05f;
+    vitesseSaut=0.5;
+    gravite=0.025f;
 //    taille = new Forme2D(100,50);
 //    pos = new Pos2D(320,370);
 }
@@ -31,7 +31,7 @@ void Joueur::sauter(const Terrain &t) {
         pos->setY(pos->getY()-vitesseSaut);
         vitesseSaut-=gravite;
         if(pos->getY() + taille->getHauteur() >= t.getPlateforme()) {
-            vitesseSaut=1;
+            vitesseSaut=0.5;
         }
         cout<<"sauter"<<endl;
   //  }
@@ -40,7 +40,7 @@ void Joueur::sauter(const Terrain &t) {
 
 void Joueur::doubleSauter(const Terrain &t) {
   //  if (t.positionValide(pos->getX(),pos->getY()-d)) {
-        vitesseSaut=1;
+        vitesseSaut=0.5;
         cout<<"double Sauter"<<endl;
   //  }
 

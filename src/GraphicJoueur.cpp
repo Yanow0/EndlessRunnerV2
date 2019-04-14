@@ -8,11 +8,14 @@ using namespace std;
 
 GraphicJoueur::GraphicJoueur(Jeu jeu) {
     joueur=jeu.getJoueur();
-    sSprite = IMG_Load("joueur2.png");
+    sSprite = IMG_Load("lucario.png");
     if (!sSprite) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();
     }
+    //sSprite = SDL_DisplayFormat( sSprite );
+    colorkey = SDL_MapRGB( sSprite->format, 190, 150, 50 );
+    SDL_SetColorKey( sSprite, SDL_RLEACCEL, colorkey );
 
     tSprite = SDL_CreateTextureFromSurface(jeu.renderer,sSprite);
      if (tSprite==NULL) {
@@ -20,35 +23,35 @@ GraphicJoueur::GraphicJoueur(Jeu jeu) {
     }
 
    // SPRITE QUI COURT
-        jSpriteClips[ 0 ].x =  10;
-		jSpriteClips[ 0 ].y =  193;
-		jSpriteClips[ 0 ].w =  80;
-		jSpriteClips[ 0 ].h =  65;
+        jSpriteClips[ 0 ].x =  240;
+		jSpriteClips[ 0 ].y =  80;
+		jSpriteClips[ 0 ].w =  48;
+		jSpriteClips[ 0 ].h =  48;
 
-		jSpriteClips[ 1 ].x =  90;
-		jSpriteClips[ 1 ].y = 193;
-		jSpriteClips[ 1 ].w =  80;
-		jSpriteClips[ 1 ].h =  65;
+		jSpriteClips[ 1 ].x =  288;
+		jSpriteClips[ 1 ].y = 80;
+		jSpriteClips[ 1 ].w =  48;
+		jSpriteClips[ 1 ].h =  48;
 
-		jSpriteClips[ 2 ].x = 170;
-		jSpriteClips[ 2 ].y = 193;
-		jSpriteClips[ 2 ].w =  80;
-		jSpriteClips[ 2 ].h =  65;
+		jSpriteClips[ 2 ].x = 336;
+		jSpriteClips[ 2 ].y = 80;
+		jSpriteClips[ 2 ].w =  48;
+		jSpriteClips[ 2 ].h =  48;
 
-		jSpriteClips[ 3 ].x =  250;
-		jSpriteClips[ 3 ].y =  193;
-		jSpriteClips[ 3 ].w =  80;
-		jSpriteClips[ 3 ].h =  65;
+		jSpriteClips[ 3 ].x =  384;
+		jSpriteClips[ 3 ].y =  80;
+		jSpriteClips[ 3 ].w =  48;
+		jSpriteClips[ 3 ].h =  48;
 
-		jSpriteClips[ 4 ].x = 330;
-		jSpriteClips[ 4 ].y =  193;
-		jSpriteClips[ 4 ].w =  80;
-		jSpriteClips[ 4 ].h =  65;
+		jSpriteClips[ 4 ].x = 432;
+		jSpriteClips[ 4 ].y =  80;
+		jSpriteClips[ 4 ].w =  48;
+		jSpriteClips[ 4 ].h =  48;
 
-		jSpriteClips[ 5 ].x =  410;
-		jSpriteClips[ 5 ].y =   193;
-		jSpriteClips[ 5 ].w =  80;
-		jSpriteClips[ 5 ].h =  65;
+		jSpriteClips[ 5 ].x =  480;
+		jSpriteClips[ 5 ].y =  80;
+		jSpriteClips[ 5 ].w =  48;
+		jSpriteClips[ 5 ].h =  48;
 
 }
 
