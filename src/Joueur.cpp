@@ -16,7 +16,7 @@ Joueur::Joueur() {
     taille = new Forme2D(2,1);
     pos = new Pos2D(8,6);
     vitesseSaut=1;
-    gravite=0.2f;
+    gravite=0.05f;
 //    taille = new Forme2D(100,50);
 //    pos = new Pos2D(320,370);
 }
@@ -30,7 +30,7 @@ void Joueur::sauter(const Terrain &t) {
   //  if (t.positionValide(pos->getX(),pos->getY()-d)) {
         pos->setY(pos->getY()-vitesseSaut);
         vitesseSaut-=gravite;
-        if(this->pos->getY() + this->taille->getHauteur() >= t.getPlateforme()) {
+        if(pos->getY() + taille->getHauteur() >= t.getPlateforme()) {
             vitesseSaut=1;
         }
         cout<<"sauter"<<endl;
@@ -38,6 +38,13 @@ void Joueur::sauter(const Terrain &t) {
 
 }
 
+void Joueur::doubleSauter(const Terrain &t) {
+  //  if (t.positionValide(pos->getX(),pos->getY()-d)) {
+        vitesseSaut=1;
+        cout<<"double Sauter"<<endl;
+  //  }
+
+}
 
 void Joueur::descendre(const Terrain &t) {
    // if (t.positionValide(pos->getX(),pos->getY()+d)) {
@@ -54,11 +61,13 @@ void Joueur::retomber(const Terrain &t) {
 void Joueur::baisser(const Terrain &t) {
     taille->setHauteur(1);
     pos->setY(pos->getY()+ 1);
+     cout<<"baisser"<<endl;
 }
 
 
 void Joueur::relever(const Terrain &t) {
     taille->setHauteur(2);
     pos->setY(pos->getY()-1);
+    cout<<"relever"<<endl;
 }
 

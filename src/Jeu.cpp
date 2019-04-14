@@ -64,11 +64,19 @@ void Jeu::actionClavier(const char &touche) {
         case 'r' :
             joueur.relever(terrain);
             break;
+        case 'x' :
+				joueur.doubleSauter(terrain);
+				break;
 	}
 }
 
 bool Jeu::collisionSol(){
-    return joueur.pos->getY() + joueur.taille->getHauteur() >= terrain.getPlateforme();
+    if (joueur.pos->getY() + joueur.taille->getHauteur() >= terrain.getPlateforme()){
+            joueur.pos->setY(terrain.getPlateforme() -  joueur.taille->getHauteur());
+            return true;
+    } else return false;
+
+    cout << "sol" << endl;
 }
 
 

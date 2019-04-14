@@ -25,6 +25,7 @@ public:
     bool relever;
     int frame;
     bool debout;
+    bool doublesaut;
 
     //Constructeur de Graphics
     Graphics();

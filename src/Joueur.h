@@ -24,6 +24,7 @@ class Joueur {
 
     //Destructeur Joueur
     ~Joueur();
+    void doubleSauter(const Terrain &t);
     bool collisionSol(const Terrain &t);
     void baisser(const Terrain &t);
     void relever(const Terrain &t);

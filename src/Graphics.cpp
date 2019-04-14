@@ -27,15 +27,16 @@ Graphics::Graphics(){
     jeu.exit = false;
 
 
-    joueur = new GraphicJoueur(jeu);
-    terrain= new GraphicTerrain(jeu);
-    obstacle = new GraphicObstacle(jeu);
+    joueur=new GraphicJoueur(jeu);
+    terrain=new GraphicTerrain(jeu);
+    obstacle=new GraphicObstacle(jeu);
     frame=0;
-    objet = new GraphicObjet(jeu);
+    objet=new GraphicObjet(jeu);
     saut=false;
-    baisser =false;
+    baisser=false;
     relever=false;
     debout=true;
+    doublesaut=false;
 
 
 }
@@ -50,17 +51,18 @@ Graphics::~Graphics(){
 
 void Graphics::doJeu (){
     jeu.actionAutomatique(saut);
-    if (saut && debout) {
-            jeu.actionClavier('h');
+
+    if (doublesaut && debout) {
+            jeu.actionClavier('x');
+             doublesaut=false;
     }
+    if (saut && debout) jeu.actionClavier('h');
     if (jeu.collisionSol()) saut = false;
     if (baisser && !saut) {
             jeu.actionClavier('c');
             baisser=false;
             }
-    if (baisser && saut){
-        debout=true;
-    }
+    if (baisser && saut) debout=true;
     if (relever && !saut) {
             jeu.actionClavier('r');
             relever=false;
@@ -96,7 +98,11 @@ void Graphics::loop() {
                         break;
 
                     case SDL_SCANCODE_UP:
-                        saut=true;
+                        if (!saut) {
+                                saut=true;
+                        }  else {
+                                doublesaut=true;
+                        }
                         break;
 
                     case SDL_SCANCODE_DOWN:
