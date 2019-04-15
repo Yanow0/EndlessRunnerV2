@@ -16,6 +16,7 @@ class Joueur {
         Pos2D* pos;
         float vitesseSaut;
         float gravite;
+        int* action;
 
 
 
@@ -24,6 +25,7 @@ class Joueur {
 
     //Destructeur Joueur
     ~Joueur();
+    int& getAction();
     void doubleSauter(const Terrain &t);
     bool collisionSol(const Terrain &t);
     void baisser(const Terrain &t);

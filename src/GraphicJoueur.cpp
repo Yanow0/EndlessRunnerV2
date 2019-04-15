@@ -13,9 +13,6 @@ GraphicJoueur::GraphicJoueur(Jeu jeu) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();
     }
-    //sSprite = SDL_DisplayFormat( sSprite );
-    colorkey = SDL_MapRGB( sSprite->format, 190, 150, 50 );
-    SDL_SetColorKey( sSprite, SDL_RLEACCEL, colorkey );
 
     tSprite = SDL_CreateTextureFromSurface(jeu.renderer,sSprite);
      if (tSprite==NULL) {
@@ -23,35 +20,134 @@ GraphicJoueur::GraphicJoueur(Jeu jeu) {
     }
 
    // SPRITE QUI COURT
-        jSpriteClips[ 0 ].x =  240;
-		jSpriteClips[ 0 ].y =  80;
+        jSpriteClips[ 0 ].x =  48;
+		jSpriteClips[ 0 ].y =  16;
 		jSpriteClips[ 0 ].w =  48;
 		jSpriteClips[ 0 ].h =  48;
 
-		jSpriteClips[ 1 ].x =  288;
-		jSpriteClips[ 1 ].y = 80;
+		jSpriteClips[ 1 ].x =  48;
+		jSpriteClips[ 1 ].y = 16;
 		jSpriteClips[ 1 ].w =  48;
 		jSpriteClips[ 1 ].h =  48;
 
-		jSpriteClips[ 2 ].x = 336;
-		jSpriteClips[ 2 ].y = 80;
+		jSpriteClips[ 2 ].x = 96;
+		jSpriteClips[ 2 ].y = 16;
 		jSpriteClips[ 2 ].w =  48;
 		jSpriteClips[ 2 ].h =  48;
 
-		jSpriteClips[ 3 ].x =  384;
-		jSpriteClips[ 3 ].y =  80;
+		jSpriteClips[ 3 ].x =  96;
+		jSpriteClips[ 3 ].y =  16;
 		jSpriteClips[ 3 ].w =  48;
 		jSpriteClips[ 3 ].h =  48;
 
-		jSpriteClips[ 4 ].x = 432;
-		jSpriteClips[ 4 ].y =  80;
+		jSpriteClips[ 4 ].x = 144;
+		jSpriteClips[ 4 ].y =  16;
 		jSpriteClips[ 4 ].w =  48;
 		jSpriteClips[ 4 ].h =  48;
 
-		jSpriteClips[ 5 ].x =  480;
-		jSpriteClips[ 5 ].y =  80;
+		jSpriteClips[ 5 ].x =  144;
+		jSpriteClips[ 5 ].y =  16;
 		jSpriteClips[ 5 ].w =  48;
 		jSpriteClips[ 5 ].h =  48;
+
+
+
+
+// SPRITE BAISSÉ //
+		jSpriteClips[ 6 ].x =  98;
+		jSpriteClips[ 6 ].y =  100;
+		jSpriteClips[ 6 ].w =  48;
+		jSpriteClips[ 6 ].h =  28;
+
+		jSpriteClips[ 7 ].x =  98;
+		jSpriteClips[ 7 ].y = 100;
+		jSpriteClips[ 7 ].w =  48;
+		jSpriteClips[ 7 ].h =  28;
+
+		jSpriteClips[ 8 ].x = 98;
+		jSpriteClips[ 8 ].y = 100;
+		jSpriteClips[ 8 ].w =  48;
+		jSpriteClips[ 8 ].h =  28;
+
+		jSpriteClips[ 9 ].x =  98;
+		jSpriteClips[ 9 ].y =  100;
+		jSpriteClips[ 9 ].w =  48;
+		jSpriteClips[ 9 ].h =  28;
+
+		jSpriteClips[ 10 ].x = 98;
+		jSpriteClips[ 10 ].y =  100;
+		jSpriteClips[ 10 ].w =  48;
+		jSpriteClips[ 10 ].h =  28;
+
+		jSpriteClips[ 11 ].x =  98;
+		jSpriteClips[ 11 ].y =  100;
+		jSpriteClips[ 11 ].w =  48;
+		jSpriteClips[ 11 ].h =  28;
+
+
+/* SPRITE SAUTER */
+		jSpriteClips[ 12 ].x =  48;
+		jSpriteClips[ 12 ].y =  272;
+		jSpriteClips[ 12 ].w =  48;
+		jSpriteClips[ 12 ].h =  48;
+
+		jSpriteClips[ 13 ].x =  48;
+		jSpriteClips[ 13 ].y = 272;
+		jSpriteClips[ 13 ].w =  48;
+		jSpriteClips[ 13 ].h =  48;
+
+		jSpriteClips[ 14 ].x = 48;
+		jSpriteClips[ 14 ].y = 272;
+		jSpriteClips[ 14 ].w =  48;
+		jSpriteClips[ 14 ].h =  48;
+
+		jSpriteClips[ 15 ].x =  48;
+		jSpriteClips[ 15 ].y =  272;
+		jSpriteClips[ 15 ].w =  48;
+		jSpriteClips[ 15 ].h =  48;
+
+		jSpriteClips[ 16 ].x = 48;
+		jSpriteClips[ 16 ].y =  272;
+		jSpriteClips[ 16 ].w =  48;
+		jSpriteClips[ 16 ].h =  48;
+
+		jSpriteClips[ 17 ].x =  48;
+		jSpriteClips[ 17 ].y =  272;
+		jSpriteClips[ 17 ].w =  48;
+		jSpriteClips[ 17 ].h =  48;
+
+
+/* SPRITE TOMBER */
+		jSpriteClips[ 18 ].x =  96;
+		jSpriteClips[ 18 ].y =  272;
+		jSpriteClips[ 18 ].w =  48;
+		jSpriteClips[ 18 ].h =  48;
+
+		jSpriteClips[ 19 ].x =  96;
+		jSpriteClips[ 19 ].y = 272;
+		jSpriteClips[ 19 ].w =  48;
+		jSpriteClips[ 19 ].h =  48;
+
+		jSpriteClips[ 20 ].x = 96;
+		jSpriteClips[ 20 ].y = 272;
+		jSpriteClips[ 20 ].w =  48;
+		jSpriteClips[ 20 ].h =  48;
+
+		jSpriteClips[ 21 ].x =  96;
+		jSpriteClips[ 21 ].y =  272;
+		jSpriteClips[ 21 ].w =  48;
+		jSpriteClips[ 21 ].h =  48;
+
+		jSpriteClips[ 22 ].x = 96;
+		jSpriteClips[ 22 ].y =  272;
+		jSpriteClips[ 22 ].w =  48;
+		jSpriteClips[ 22 ].h =  48;
+
+		jSpriteClips[ 23 ].x =  96;
+		jSpriteClips[ 23 ].y =  272;
+		jSpriteClips[ 23 ].w =  48;
+		jSpriteClips[ 23 ].h =  48;
+
 
 }
 
@@ -67,5 +163,8 @@ void GraphicJoueur::afficherJoueur(Jeu jeu, int frame) {
     //SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
     //SDL_RenderDrawRect(jeu.renderer, &imageJoueur);
 
-    SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[frame/6], &imageJoueur);
+    //SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[frame/6], &imageJoueur);
+    SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[frame/6+joueur.getAction()*6], &imageJoueur);
+    cout << joueur.getAction()<< endl;
+
 }

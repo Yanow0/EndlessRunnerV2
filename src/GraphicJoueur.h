@@ -15,7 +15,7 @@ public:
 
     SDL_Surface *sSprite;
     SDL_Texture *tSprite;
-    SDL_Rect jSpriteClips[ 6 ];
+    SDL_Rect jSpriteClips[ 24 ];
     Uint32 colorkey;
 
     //Constructeur de Jeu
