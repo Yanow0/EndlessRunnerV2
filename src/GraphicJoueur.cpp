@@ -165,6 +165,5 @@ void GraphicJoueur::afficherJoueur(Jeu jeu, int frame) {
 
     //SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[frame/6], &imageJoueur);
     SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[frame/6+joueur.getAction()*6], &imageJoueur);
-    cout << joueur.getAction()<< endl;
 
 }
