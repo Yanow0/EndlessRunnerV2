@@ -26,6 +26,7 @@ Obstacle& ListeObstacles::getObstacle(const int &i) {
 
 void ListeObstacles::ajouterObstacle(Obstacle o) {
     obstacles.push_back(o);
+//    cout << "AJOUT" << endl;
 }
 
 void ListeObstacles::supprimerEnTete() {
@@ -43,11 +44,17 @@ bool ListeObstacles::positionValide(Obstacle o) {
 }
 
 void ListeObstacles::creation() {
-    Obstacle o;
-    do {
-        o = Obstacle();
-    } while (!positionValide(o));
-    ajouterObstacle(o);
+//    Obstacle o;
+//    do {
+//        o = Obstacle();
+//    } while (!positionValide(o));
+//    ajouterObstacle(o);
+
+    Obstacle o = Obstacle();
+    cout << "CREATION" << endl;
+    if (positionValide(o))
+        ajouterObstacle(o);
+
 //    cout << "largeur " << o.taille->getLargeur() << endl;
 
 //    Obstacle o = Obstacle();
@@ -55,8 +62,11 @@ void ListeObstacles::creation() {
 }
 
 void ListeObstacles::deplacementAuto() {
-    for (int i=0; i<nbObstacles(); i++)
+    creation();
+    for (int i=0; i<nbObstacles(); i++) {
         obstacles[i].deplacementAuto();
+//        cout << "deplacement " << i << endl;
+    }
 //    while (obstacles.front().pos->getX()+obstacles.front().taille->getLargeur() == 0)
 //        supprimerEnTete();
 }

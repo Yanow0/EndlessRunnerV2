@@ -13,7 +13,7 @@ using namespace std;
 void afficherTxt(WinTxt & win, Jeu & jeu) {
 	Terrain& ter = jeu.getTerrain();
 	Joueur& joueur = jeu.getJoueur();
-	Obstacle& obstacle = jeu.getObstacle();
+//	Obstacle& obstacle = jeu.getObstacle();
 
 	win.clear();
 
@@ -26,17 +26,17 @@ void afficherTxt(WinTxt & win, Jeu & jeu) {
         for (int j=0; j<joueur.taille->getHauteur(); ++j)
             win.print(joueur.pos->getX()+i,joueur.pos->getY()+j,'O');
 
-    // affichage des obstacles
-    for (int i=0; i<obstacle.taille->getLargeur(); ++i)
-        for (int j=0; j<obstacle.taille->getHauteur(); ++j)
-            win.print(obstacle.pos->getX()+i,obstacle.pos->getY()+j,'x');
+//    // affichage des obstacles
+//    for (int i=0; i<obstacle.taille->getLargeur(); ++i)
+//        for (int j=0; j<obstacle.taille->getHauteur(); ++j)
+//            win.print(obstacle.pos->getX()+i,obstacle.pos->getY()+j,'x');
 
     for(int x=0;x<ter.getDimX();++x)
         win.print(x,0,ter.getXY(x,0));
 
 	win.draw();
 
-    cout << "collision = " << jeu.collision() << endl;
+//    cout << "collision = " << jeu.collision() << endl;
 }
 
 void boucleTxt (Jeu & jeu) {
