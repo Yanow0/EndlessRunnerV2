@@ -15,6 +15,9 @@ using namespace std;
 Joueur::Joueur() {
     taille = new Forme2D(2,2);
     pos = new Pos2D(8,6);
+    setVie(3);
+    fantome = false;
+    doubleSaut = false;
     vitesseSaut=0.5;
     gravite=0.025f;
     setAction(0);
@@ -34,6 +37,29 @@ void Joueur::setAction(int x){
     *action = x;
 };
 
+int& Joueur::getVie(){
+    return vie;
+}
+
+void Joueur::setVie(int x){
+    vie = x;
+}
+
+void Joueur::vieUp(){
+    vie++;
+}
+
+bool& Joueur::getDoubleSaut(){
+    return doubleSaut;
+}
+
+void Joueur::activerDoubleSaut(){
+    doubleSaut = true;
+}
+
+void Joueur::desactiverDoubleSaut(){
+    doubleSaut = false;
+}
 
 void Joueur::sauter(const Terrain &t) {
   //  if (t.positionValide(pos->getX(),pos->getY()-d)) {

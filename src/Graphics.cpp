@@ -37,8 +37,6 @@ Graphics::Graphics(){
     relever=false;
     debout=true;
     doublesaut=false;
-
-
 }
 
 //Destructeur de Graphics
@@ -52,9 +50,10 @@ Graphics::~Graphics(){
 void Graphics::doJeu (){
     jeu.actionAutomatique(saut);
 
-    if (doublesaut && debout) {
-            jeu.actionClavier('x');
-             doublesaut=false;
+    if (jeu.getJoueur().getDoubleSaut() && doublesaut && debout) {
+        jeu.actionClavier('x');
+        doublesaut=false;
+        jeu.getJoueur().desactiverDoubleSaut();
     }
     if (saut && debout) jeu.actionClavier('h');
     if (jeu.collisionSol()) saut = false;

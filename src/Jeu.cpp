@@ -43,8 +43,9 @@ bool Jeu::contactInferieur() {
             && joueur.pos->getY() + joueur.taille->getHauteur() >= obstacle.pos->getY());
 }
 
-
+//Si le joueur possède l'objet "fantome" alors pas de collisition
 bool Jeu::collision() {
+    if(joueur.fantome) return false;
     return (contactGauche() && (contactSuperieur() || contactInferieur()))
         || (contactDroite() && (contactSuperieur() || contactInferieur()));
 }
