@@ -51,10 +51,10 @@ Graphics::~Graphics(){
 void Graphics::doJeu (){
     jeu.actionAutomatique(saut);
 
-    if (jeu.getJoueur().getDoubleSaut() && doublesaut && debout) {
+    if (jeu.getJoueur()->getDoubleSaut() && doublesaut && debout) {
         jeu.actionClavier('x');
         doublesaut=false;
-        jeu.getJoueur().desactiverDoubleSaut();
+        jeu.getJoueur()->desactiverDoubleSaut();
     }
     if (saut && debout) jeu.actionClavier('h');
     if (jeu.collisionSol()) saut = false;
