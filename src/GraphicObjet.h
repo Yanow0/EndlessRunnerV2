@@ -12,7 +12,7 @@ public:
     SDL_Texture *tSprite;
 
     //Constructeur de Jeu
-    GraphicObjet(Jeu jeu);
+    GraphicObjet(Jeu& jeu);
 
     //Destructeur de Jeu
     ~GraphicObjet();

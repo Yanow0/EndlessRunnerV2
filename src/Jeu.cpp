@@ -6,21 +6,16 @@
 #include "Jeu.h"
 using namespace std;
 
-Jeu::Jeu() {
-   terrain = Terrain();
-   joueur = Joueur();
-//   obstacle = Obstacle();
-   obstacles = ListeObstacles();
-   objet = Objet();
+Jeu::Jeu(): terrain(), joueur(), obstacles(), objet() {
 }
 
 Jeu::~Jeu(){
 
 }
 
-Terrain& Jeu::getTerrain() {return terrain;}
-Joueur& Jeu::getJoueur() {return joueur;}
-ListeObstacles& Jeu::getObstacle() {return obstacles;}
+Terrain* Jeu::getTerrain() {return &terrain;}
+Joueur* Jeu::getJoueur() {return &joueur;}
+ListeObstacles* Jeu::getObstacle() {return &obstacles;}
 //Obstacle& Jeu::getObstacle() {return obstacle;}
 Objet& Jeu::getObjet() {return objet;}
 

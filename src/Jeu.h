@@ -35,9 +35,9 @@ class Jeu {
         //Destructeur de Jeu
         ~Jeu();
 
-        Terrain& getTerrain();
-        Joueur& getJoueur();
-        ListeObstacles& getObstacle();
+        Terrain* getTerrain();
+        Joueur* getJoueur();
+        ListeObstacles* getObstacle();
 //        Obstacle& getObstacle();
         Objet& getObjet();
 

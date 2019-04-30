@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-GraphicObjet::GraphicObjet(Jeu jeu) {
+GraphicObjet::GraphicObjet(Jeu& jeu) {
     objet=jeu.getObjet();
 
     sSprite = IMG_Load("32-done.gif");
