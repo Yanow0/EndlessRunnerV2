@@ -5,6 +5,7 @@
 #include "Terrain.h"
 #include "Joueur.h"
 #include "Obstacle.h"
+#include "ListeObstacles.h"
 #include "Objet.h"
 #include <SDL2/SDL.h>
 
@@ -16,7 +17,8 @@ class Jeu {
 
     private:
         Joueur joueur;
-        Obstacle obstacle;
+        ListeObstacles obstacles;
+//        Obstacle obstacle;
         Terrain terrain;
         Objet objet;
 
@@ -35,7 +37,8 @@ class Jeu {
 
         Terrain& getTerrain();
         Joueur& getJoueur();
-        Obstacle& getObstacle();
+        ListeObstacles& getObstacle();
+//        Obstacle& getObstacle();
         Objet& getObjet();
 
         bool contactGauche();

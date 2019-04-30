@@ -4,12 +4,14 @@
 
 #include "Fenetre.h"
 #include "Jeu.h"
-
+#include <vector>
 
 class GraphicObstacle {
 public:
-    Obstacle obstacle;
-    SDL_Rect imageObstacle;
+//    Obstacle obstacle;
+    ListeObstacles obstacle;
+    vector<SDL_Rect> imageObstacle;
+//    SDL_Rect imageObstacle;
 
     //Constructeur de Jeu
     GraphicObstacle(Jeu jeu);
