@@ -19,7 +19,6 @@ ListeObstacles* Jeu::getObstacle() {return &obstacles;}
 //Obstacle& Jeu::getObstacle() {return obstacle;}
 Objet& Jeu::getObjet() {return objet;}
 
-
 //bool Jeu::contactGauche() {
 //    return (obstacle.pos->getX() <= joueur.pos->getX()
 //            && obstacle.pos->getX() + obstacle.taille->getLargeur() >= joueur.pos->getX());
