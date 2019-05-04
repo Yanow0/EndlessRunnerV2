@@ -18,7 +18,7 @@ public:
 
     int nbObstacles();
     bool listeVide();
-    Obstacle& getObstacle(const int &i);
+    Obstacle* getObstacle(const int &i);
     void ajouterObstacle(Obstacle o);
     void supprimerEnTete();
 

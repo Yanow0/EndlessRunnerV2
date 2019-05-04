@@ -18,7 +18,6 @@ class Jeu {
     private:
         Joueur joueur;
         ListeObstacles obstacles;
-//        Obstacle obstacle;
         Terrain terrain;
         Objet objet;
 
@@ -38,15 +37,14 @@ class Jeu {
         Terrain* getTerrain();
         Joueur* getJoueur();
         ListeObstacles* getObstacle();
-//        Obstacle& getObstacle();
-        Objet& getObjet();
+        Objet* getObjet();
 
-        bool contactGauche();
-        bool contactDroite();
-        bool contactSuperieur();
-        bool contactInferieur();
+        bool contactGauche(Obstacle *o);
+        bool contactDroite(Obstacle *o);
+        bool contactSuperieur(Obstacle *o);
+        bool contactInferieur(Obstacle *o);
 
-        bool collision();
+        bool collision(bool saut);
 
         void actionClavier(const char &touche);
         void actionAutomatique(bool saut);

@@ -7,7 +7,7 @@
 
 class GraphicObjet{
 public:
-    Objet objet;
+    Objet* objet;
     SDL_Rect imageObjet;
     SDL_Surface *sSprite;
     SDL_Texture *tSprite;

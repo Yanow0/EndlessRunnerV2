@@ -9,7 +9,7 @@ ListeObstacles::ListeObstacles() {
 }
 
 ListeObstacles::~ListeObstacles() {
-//    vider();
+    vider();
 }
 
 int ListeObstacles::nbObstacles() {
@@ -20,13 +20,12 @@ bool ListeObstacles::listeVide() {
     return obstacles.empty();
 }
 
-Obstacle& ListeObstacles::getObstacle(const int &i) {
-    return obstacles[i];
+Obstacle* ListeObstacles::getObstacle(const int &i) {
+    return &obstacles[i];
 }
 
 void ListeObstacles::ajouterObstacle(Obstacle o) {
     obstacles.push_back(o);
-//    cout << "AJOUT" << endl;
 }
 
 void ListeObstacles::supprimerEnTete() {
@@ -62,7 +61,7 @@ void ListeObstacles::deplacementAuto() {
     for (int i=0; i<nbObstacles(); i++) {
         obstacles[i].deplacementAuto();
     }
-    while (obstacles.front().pos->getX()+obstacles.front().taille->getLargeur() == 0)
+    while (obstacles.front().pos->getX()+obstacles.front().taille->getLargeur() <= 0)
         supprimerEnTete();
 }
 
