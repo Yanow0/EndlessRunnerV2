@@ -105,7 +105,7 @@ bool Jeu::collisionSol(){
 }
 
 
-void Jeu::actionAutomatique(bool saut) {
+void Jeu::actionAutomatique(bool &saut) {
     obstacles.deplacementAuto();
 
     if (!saut) joueur.retomber(terrain);
@@ -114,14 +114,15 @@ void Jeu::actionAutomatique(bool saut) {
         joueur.vieDown();
         cout << "vie = " << joueur.getVie() << endl;
 
+        saut = false;
         joueur = Joueur(joueur.getVie());
         obstacles.vider();
 //        objet = Objet();
 
         #ifdef _WIN32
-        Sleep(100);
+        Sleep(500);
 		#else
-		usleep(100000);
+		usleep(500000);
         #endif // WIN32
     }
 }
