@@ -21,6 +21,8 @@ public:
     void fantome(Joueur &j);
     void doubleSaut(Joueur &j);
     void arme(Joueur &j);
+
+    void deplacementAuto();
 };
 
 

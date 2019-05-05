@@ -45,10 +45,10 @@ GraphicObjet::~GraphicObjet(){}
 
 void GraphicObjet::afficherObjet(Jeu jeu) {
 
-    imageObjet.x= objet->pos->getX()*20;
-    imageObjet.y= objet->pos->getY()*20;
-    imageObjet.w= objet->taille->getLargeur()*41;
-    imageObjet.h= objet->taille->getHauteur()*46;
+    imageObjet.x= objet->pos->getX()*40;
+    imageObjet.y= objet->pos->getY()*40;
+    imageObjet.w= objet->taille->getLargeur()*40;
+    imageObjet.h= objet->taille->getHauteur()*40;
     //SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
     //SDL_RenderDrawRect(jeu.renderer, &imageObjet);
 
