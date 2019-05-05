@@ -14,8 +14,19 @@ using namespace std;
 
 Joueur::Joueur() {
     taille = new Forme2D(2,2);
-    pos = new Pos2D(8,4);
+    pos = new Pos2D(8,7);
     setVie(3);
+    fantome = false;
+    doubleSaut = false;
+    vitesseSaut=0.5;
+    gravite=0.025f;
+    setAction(0);
+}
+
+Joueur::Joueur(const int &v) {
+    taille = new Forme2D(2,2);
+    pos = new Pos2D(8,7);
+    setVie(v);
     fantome = false;
     doubleSaut = false;
     vitesseSaut=0.5;
@@ -45,6 +56,10 @@ void Joueur::setVie(int x){
 
 void Joueur::vieUp(){
     vie++;
+}
+
+void Joueur::vieDown(){
+    if (vie >= 1) vie--;
 }
 
 bool& Joueur::getDoubleSaut(){

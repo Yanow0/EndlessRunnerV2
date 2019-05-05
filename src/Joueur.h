@@ -25,6 +25,7 @@ class Joueur {
 
     //Constructeur Joueur
     Joueur();
+    Joueur(const int &v);   // v: nouveau nombre de vies
 
     //Destructeur Joueur
     ~Joueur();
@@ -33,6 +34,7 @@ class Joueur {
     int& getVie();
     void setVie(int x);
     void vieUp();
+    void vieDown();
     bool& getDoubleSaut();
     void activerDoubleSaut();
     void desactiverDoubleSaut();

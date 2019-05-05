@@ -34,15 +34,10 @@ void ListeObstacles::supprimerEnTete() {
 
 bool ListeObstacles::positionValide(Obstacle o) {
     return (listeVide()
-            || (o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 4));
-
-//    return (listeVide()
-//            || (o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 4
-//                && (o.pos->getY() > obstacles.back().pos->getY() + obstacles.back().taille->getHauteur() + 4
-//                    || obstacles.back().pos->getY() > o.pos->getY() + o.taille->getHauteur() + 4))
-//            || (o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 4
-//                && (o.pos->getY() > obstacles.back().pos->getY() + obstacles.back().taille->getHauteur() + 4
-//                    || obstacles.back().pos->getY() > o.pos->getY() + o.taille->getHauteur() + 4)));
+            || (o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 6)
+            || ((o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 2)
+                && ((o.pos->getY() > obstacles.back().pos->getY() + obstacles.back().taille->getHauteur() + 4)
+                    || (obstacles.back().pos->getY() > o.pos->getY() + o.taille->getHauteur() + 4))));
 }
 
 void ListeObstacles::creation() {
@@ -53,10 +48,8 @@ void ListeObstacles::creation() {
 }
 
 void ListeObstacles::deplacementAuto() {
-    int token = rand()%4 + 1;
-    if (token == 2) {
-        creation();
-    }
+
+    creation();
 
     for (int i=0; i<nbObstacles(); i++) {
         obstacles[i].deplacementAuto();

@@ -17,7 +17,7 @@ Obstacle::~Obstacle(){
 
 
 void Obstacle::deplacementAuto() {
-    float delta = 0.1; // deplacement à chaque pas de temps
+    float delta = 0.2; // deplacement à chaque pas de temps
     if (pos->getX()>=delta)
         pos->setX(pos->getX()-delta);
     else if (taille->getLargeur()>0) {
