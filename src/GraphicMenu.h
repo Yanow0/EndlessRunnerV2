@@ -17,6 +17,10 @@ class GraphicMenu
         SDL_Texture *tPauseMenu;
         SDL_Surface *sEndGameMenu;
         SDL_Texture *tEndGameMenu;
+        SDL_Surface *sControls;
+        SDL_Texture *tControls;
+        SDL_Surface *sCredits;
+        SDL_Texture *tCredits;
         SDL_Surface *sArrow;
         SDL_Texture *tArrow;
         SDL_Rect arrow;
@@ -24,6 +28,7 @@ class GraphicMenu
         bool menuState;
         int currentMenu;
         void handleMenu(Jeu& jeu);
+        void afficherFleches(Jeu& jeu);
         void afficherMenu(Jeu& jeu);
 
         int pos;
