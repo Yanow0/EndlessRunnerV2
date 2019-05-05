@@ -11,6 +11,9 @@ public:
 //    Obstacle obstacle;
     ListeObstacles* obstacle;
     vector<SDL_Rect> imageObstacle;
+    SDL_Surface *sBullet;
+    SDL_Texture *tBullet;
+    SDL_Rect jSpriteClips[ 12 ];
 //    SDL_Rect imageObstacle;
 
     //Constructeur de Jeu
@@ -19,7 +22,7 @@ public:
     //Destructeur de Jeu
     ~GraphicObstacle();
 
-    void afficherObstacle(Jeu jeu);
+    void afficherObstacle(Jeu& jeu, int frame);
 };
 
 

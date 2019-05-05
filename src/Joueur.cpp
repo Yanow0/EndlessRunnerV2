@@ -14,7 +14,7 @@ using namespace std;
 
 Joueur::Joueur() {
     taille = new Forme2D(2,2);
-    pos = new Pos2D(8,4);
+    pos = new Pos2D(8,7);
     setVie(3);
     fantome = false;
     doubleSaut = false;
