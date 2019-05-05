@@ -32,6 +32,7 @@ Graphics::Graphics(): jeu(){
     terrain=new GraphicTerrain(jeu);
     obstacle=new GraphicObstacle(jeu);
     frame=0;
+    frameObstacle=0;
     objet=new GraphicObjet(jeu);
     saut=false;
     baisser=false;
@@ -80,7 +81,7 @@ void Graphics::afficherGraphics() {
     }else{
         terrain->afficherTerrain(jeu);
         joueur->afficherJoueur(jeu, frame);
-        obstacle->afficherObstacle(jeu);
+        obstacle->afficherObstacle(jeu, frameObstacle);
         objet->afficherObjet(jeu);
     }
 }
@@ -184,8 +185,13 @@ void Graphics::loop() {
     afficherGraphics();
     SDL_RenderPresent(jeu.renderer);
     frame++;
+    frameObstacle++;
+    if (frameObstacle/12 >= 12 ){
+        frameObstacle=0;
+    }
     if (frame/6 >= 6 ){
         frame=0;
     }
+
     }
 }

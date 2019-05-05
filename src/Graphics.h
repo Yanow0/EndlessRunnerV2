@@ -26,6 +26,7 @@ public:
     bool baisser;
     bool relever;
     int frame;
+    int frameObstacle;
     bool debout;
     bool doublesaut;
 

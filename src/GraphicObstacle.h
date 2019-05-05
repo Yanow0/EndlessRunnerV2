@@ -10,8 +10,10 @@ class GraphicObstacle {
 public:
     ListeObstacles* obstacle;
     vector<SDL_Rect> imageObstacle;
-    SDL_Surface *sSprite;
-    SDL_Texture *tSprite;
+    SDL_Surface *sBullet;
+    SDL_Texture *tBullet;
+    SDL_Rect jSpriteClips[ 12 ];
+//    SDL_Rect imageObstacle;
 
     //Constructeur de Jeu
     GraphicObstacle(Jeu& jeu);
@@ -19,7 +21,7 @@ public:
     //Destructeur de Jeu
     ~GraphicObstacle();
 
-    void afficherObstacle(Jeu jeu);
+    void afficherObstacle(Jeu& jeu, int frame);
 };
 
 
