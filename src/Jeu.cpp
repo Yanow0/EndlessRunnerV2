@@ -41,6 +41,24 @@ bool Jeu::contactInferieur(Obstacle *o) {
 
 
 bool Jeu::collision(bool saut) {
+//    for (int i=0; i<obstacles.nbObstacles(); i++) {
+//        Obstacle *o = obstacles.getObstacle(i);
+//
+//        if ((contactGauche(o) && (contactSuperieur(o)))
+//        || (contactDroite(o) && (contactSuperieur(o)))) {
+//            return true;
+//        }
+//
+//        else if (saut && ((contactGauche(o) && contactInferieur(o))
+//                        || (contactDroite(o) && contactInferieur(o)))) {
+//
+//            joueur.pos->setY(o->pos->getY()-joueur.taille->getHauteur());
+//            return false;
+//        }
+//    }
+//    return false;
+
+
     for (int i=0; i<obstacles.nbObstacles(); i++) {
         Obstacle *o = obstacles.getObstacle(i);
         if ((contactGauche(o) && (contactSuperieur(o) || contactInferieur(o)))

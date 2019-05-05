@@ -8,10 +8,10 @@
 
 class GraphicObstacle {
 public:
-//    Obstacle obstacle;
     ListeObstacles* obstacle;
     vector<SDL_Rect> imageObstacle;
-//    SDL_Rect imageObstacle;
+    SDL_Surface *sSprite;
+    SDL_Texture *tSprite;
 
     //Constructeur de Jeu
     GraphicObstacle(Jeu& jeu);
