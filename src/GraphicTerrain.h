@@ -5,7 +5,6 @@
 #ifndef ENDLESSRUNNERV2_GRAPHICTERRAIN_H
 #define ENDLESSRUNNERV2_GRAPHICTERRAIN_H
 
-#include "Fenetre.h"
 #include "Jeu.h"
 
 class GraphicTerrain {

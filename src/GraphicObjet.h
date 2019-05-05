@@ -2,7 +2,6 @@
 #ifndef GRAPHICOBJET_H_INCLUDED
 #define GRAPHICOBJET_H_INCLUDED
 
-#include "Fenetre.h"
 #include "Jeu.h"
 
 class GraphicObjet{
