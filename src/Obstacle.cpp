@@ -7,7 +7,7 @@
 
 
 Obstacle::Obstacle() {
-    taille = new Forme2D( rand()%2 + 1 , rand()%3 + 1 );
+    taille = new Forme2D( 1 , rand()%2 + 1 );
     pos = new Pos2D(18, rand()%(8-taille->getHauteur()) + 1 );
 }
 
@@ -17,8 +17,11 @@ Obstacle::~Obstacle(){
 
 
 void Obstacle::deplacementAuto() {
-    if (pos->getX()>0)
-        pos->setX(pos->getX()-1);
-    else if (taille->getLargeur()>0)
-        taille->setLargeur(taille->getLargeur()-1);
+    float delta = 0.1; // deplacement à chaque pas de temps
+    if (pos->getX()>=delta)
+        pos->setX(pos->getX()-delta);
+    else if (taille->getLargeur()>0) {
+        taille->setLargeur(taille->getLargeur()-delta+pos->getX());
+        pos->setX(0);
+    }
 }

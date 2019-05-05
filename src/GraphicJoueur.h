@@ -10,7 +10,7 @@
 
 class GraphicJoueur {
 public:
-    Joueur joueur;
+    Joueur* joueur;
     SDL_Rect imageJoueur;
 
     SDL_Surface *sSprite;
@@ -19,7 +19,7 @@ public:
     Uint32 colorkey;
 
     //Constructeur de Jeu
-    GraphicJoueur(Jeu jeu);
+    GraphicJoueur(Jeu& jeu);
 
     //Destructeur de Jeu
     ~GraphicJoueur();

@@ -11,37 +11,37 @@ using namespace std;
 
 
 void afficherTxt(WinTxt & win, Jeu & jeu) {
-	Terrain& ter = jeu.getTerrain();
-	Joueur& joueur = jeu.getJoueur();
-	Obstacle& obstacle = jeu.getObstacle();
+	Terrain* ter = jeu.getTerrain();
+	Joueur* joueur = jeu.getJoueur();
+	ListeObstacles* obstacle = jeu.getObstacle();
 
 	win.clear();
 
-	for(int x=0;x<ter.getDimX();++x)
-		for(int y=1;y<ter.getDimY();++y)
-			win.print(x,y,ter.getXY(x,y));
+	for(int x=0;x<ter->getDimX();++x)
+		for(int y=1;y<ter->getDimY();++y)
+			win.print(x,y,ter->getXY(x,y));
 
     // affichage du joueur
-    for (int i=0; i<joueur.taille->getLargeur(); ++i)
-        for (int j=0; j<joueur.taille->getHauteur(); ++j)
-            win.print(joueur.pos->getX()+i,joueur.pos->getY()+j,'O');
+    for (int i=0; i<joueur->taille->getLargeur(); ++i)
+        for (int j=0; j<joueur->taille->getHauteur(); ++j)
+            win.print(joueur->pos->getX()+i,joueur->pos->getY()+j,'O');
 
-    // affichage des obstacles
-    for (int i=0; i<obstacle.taille->getLargeur(); ++i)
-        for (int j=0; j<obstacle.taille->getHauteur(); ++j)
-            win.print(obstacle.pos->getX()+i,obstacle.pos->getY()+j,'x');
+//    // affichage des obstacles
+//    for (int i=0; i<obstacle.taille->getLargeur(); ++i)
+//        for (int j=0; j<obstacle.taille->getHauteur(); ++j)
+//            win.print(obstacle.pos->getX()+i,obstacle.pos->getY()+j,'x');
 
-    for(int x=0;x<ter.getDimX();++x)
-        win.print(x,0,ter.getXY(x,0));
+    for(int x=0;x<ter->getDimX();++x)
+        win.print(x,0,ter->getXY(x,0));
 
 	win.draw();
 
-    cout << "collision = " << jeu.collision() << endl;
+//    cout << "collision = " << jeu.collision() << endl;
 }
 
 void boucleTxt (Jeu & jeu) {
 	// fenetre de dimension et position (WIDTH,HEIGHT,STARTX,STARTY)
-    WinTxt win (jeu.getTerrain().getDimX(),jeu.getTerrain().getDimY());
+    WinTxt win (jeu.getTerrain()->getDimX(),jeu.getTerrain()->getDimY());
 
 	bool ok = true;
 	int c;
@@ -73,8 +73,8 @@ void boucleTxt (Jeu & jeu) {
 
                     jeu.actionClavier('b');
 
-				} while (jeu.getJoueur().pos->getY() + jeu.getJoueur().taille->getHauteur()
-                        < jeu.getTerrain().getPlateforme()-1 );
+				} while (jeu.getJoueur()->pos->getY() + jeu.getJoueur()->taille->getHauteur()
+                        < jeu.getTerrain()->getPlateforme()-1 );
 				break;
 			case 'q':
 				ok = false;

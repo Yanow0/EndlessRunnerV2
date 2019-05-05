@@ -159,19 +159,22 @@
 
 1553592465 source:c:\users\yanis\documents\projets3\endlessrunnerv2\main.cpp
 
-1556005653 source:c:\users\yanis\documents\projets3\endlessrunnerv2\maingraph.cpp
+1557058335 source:c:\users\yanis\documents\projets3\endlessrunnerv2\maingraph.cpp
 	<stdio.h>
 	<stdlib.h>
+	<cstdlib>
 	<iostream>
+	<time.h>
 	<SDL2/SDL.h>
 	"src/Jeu.h"
 	"src/Graphics.h"
 	<vector>
 
-1556014768 c:\users\yanis\documents\projets3\endlessrunnerv2\src\jeu.h
+1557075769 c:\users\yanis\documents\projets3\endlessrunnerv2\src\jeu.h
 	"Terrain.h"
 	"Joueur.h"
 	"Obstacle.h"
+	"ListeObstacles.h"
 	"Objet.h"
 	<SDL2/SDL.h>
 
@@ -180,7 +183,7 @@
 
 1554803030 c:\users\yanis\documents\projets3\endlessrunnerv2\src\pos2d.h
 
-1555334199 c:\users\yanis\documents\projets3\endlessrunnerv2\src\joueur.h
+1557058335 c:\users\yanis\documents\projets3\endlessrunnerv2\src\joueur.h
 	"Forme2D.h"
 	"Pos2D.h"
 	"Terrain.h"
@@ -203,34 +206,37 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1556609203 c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicjoueur.h
+1557059171 c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicjoueur.h
 	"Jeu.h"
 	<SDL2/SDL_image.h>
 
-1556006147 c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicterrain.h
+1557058335 c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicterrain.h
 	<SDL2/SDL_image.h>
 	"Jeu.h"
 
-1556006168 c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicobstacle.h
+1557058335 c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicobstacle.h
 	<SDL2/SDL_image.h>
 	"Jeu.h"
+	<vector>
 
 1553595392 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\forme2d.cpp
 	"Forme2D.h"
 	<assert.h>
 
-1554559080 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicobstacle.cpp
+1557076088 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicobstacle.cpp
+	<iostream>
 	"GraphicObstacle.h"
 
-1554799771 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicterrain.cpp
+1557068753 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicterrain.cpp
 	"GraphicTerrain.h"
 	<iostream>
 
-1556014822 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\jeu.cpp
+1557075695 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\jeu.cpp
+	<cstdlib>
 	<iostream>
 	"Jeu.h"
 
-1554193936 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\jeutxt.cpp
+1557076577 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\jeutxt.cpp
 	<iostream>
 	<windows.h>
 	<unistd.h>
@@ -239,7 +245,7 @@
 
 1553595392 c:\users\yanis\documents\projets3\endlessrunnerv2\src\wintxt.h
 
-1556015023 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\joueur.cpp
+1557058732 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\joueur.cpp
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
@@ -257,15 +263,17 @@
 1553595392 c:\users\yanis\documents\projets3\endlessrunnerv2\src\jeutxt.h
 	"Jeu.h"
 
-1554806831 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\objet.cpp
+1557061011 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\objet.cpp
 	<cstdlib>
+	<ctime>
 	"Objet.h"
 
-1554806831 c:\users\yanis\documents\projets3\endlessrunnerv2\src\objet.h
+1557060991 c:\users\yanis\documents\projets3\endlessrunnerv2\src\objet.h
 	"Forme2D.h"
 	"Pos2D.h"
+	"Joueur.h"
 
-1553595392 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\obstacle.cpp
+1557058335 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\obstacle.cpp
 	<cstdlib>
 	"Obstacle.h"
 
@@ -292,27 +300,28 @@
 	<termios.h>
 	<unistd.h>
 
-1556620668 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphics.cpp
+1557076139 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphics.cpp
 	"Graphics.h"
 	<iostream>
 	<stdlib.h>
+	<iostream>
 
-1556610635 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicjoueur.cpp
+1557076026 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicjoueur.cpp
 	"GraphicJoueur.h"
 	<iostream>
 
-1556006154 c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicobjet.h
+1557058335 c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicobjet.h
 	<SDL2/SDL_image.h>
 	"Jeu.h"
 
-1554807618 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicobjet.cpp
+1557075953 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicobjet.cpp
 	"GraphicObjet.h"
 	<iostream>
 
 1553538847 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\fenetre.cpp
 	"Fenetre.h"
 
-1556620602 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicmenu.cpp
+1557058221 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\graphicmenu.cpp
 	"GraphicMenu.h"
 	<iostream>
 	<SDL2/SDL_image.h>
@@ -324,4 +333,13 @@
 	"Menu.h"
 
 1556005546 c:\users\yanis\documents\projets3\endlessrunnerv2\src\menu.h
+
+1557058335 c:\users\yanis\documents\projets3\endlessrunnerv2\src\listeobstacles.h
+	<vector>
+	"Obstacle.h"
+
+1557058335 source:c:\users\yanis\documents\projets3\endlessrunnerv2\src\listeobstacles.cpp
+	<iostream>
+	<cstdlib>
+	"ListeObstacles.h"
 

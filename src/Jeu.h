@@ -5,6 +5,7 @@
 #include "Terrain.h"
 #include "Joueur.h"
 #include "Obstacle.h"
+#include "ListeObstacles.h"
 #include "Objet.h"
 #include <SDL2/SDL.h>
 
@@ -16,7 +17,7 @@ class Jeu {
 
     private:
         Joueur joueur;
-        Obstacle obstacle;
+        ListeObstacles obstacles;
         Terrain terrain;
         Objet objet;
 
@@ -35,17 +36,17 @@ class Jeu {
 
         void restart();
 
-        Terrain& getTerrain();
-        Joueur& getJoueur();
-        Obstacle& getObstacle();
-        Objet& getObjet();
+        Terrain* getTerrain();
+        Joueur* getJoueur();
+        ListeObstacles* getObstacle();
+        Objet* getObjet();
 
-        bool contactGauche();
-        bool contactDroite();
-        bool contactSuperieur();
-        bool contactInferieur();
+        bool contactGauche(Obstacle *o);
+        bool contactDroite(Obstacle *o);
+        bool contactSuperieur(Obstacle *o);
+        bool contactInferieur(Obstacle *o);
 
-        bool collision();
+        bool collision(bool saut);
 
         void actionClavier(const char &touche);
         void actionAutomatique(bool saut);

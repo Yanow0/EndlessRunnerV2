@@ -3,20 +3,39 @@
 //
 
 #include <cstdlib>
+#include <ctime>
 #include "Objet.h"
 
 
 Objet::Objet(){
+    srand(time(NULL));
     taille = new Forme2D(1,1);
     pos = new Pos2D(3,2);
+    setTypeObjet((rand() % 4));
 }
 
 Objet::~Objet(){
 }
 
-void Objet::deplacementAuto() {
-    if (pos->getX()>0)
-        pos->setX(pos->getX()-1);
-    else if (taille->getLargeur()>0)
-        taille->setLargeur(taille->getLargeur()-1);
+int& Objet::getTypeObjet() {
+    return *typeObjet;
 }
+
+void Objet::setTypeObjet(int x){
+    *typeObjet = x;
+}
+
+void Objet::vie(Joueur &j){
+    j.vieUp();
+}
+
+void Objet::fantome(Joueur &j){
+    j.fantome = true;
+}
+
+void Objet::doubleSaut(Joueur &j){
+}
+
+void Objet::arme(Joueur &j){
+}
+

@@ -5,11 +5,12 @@
 #include "Graphics.h"
 #include <iostream>
 #include <stdlib.h>
+#include <iostream>
 using namespace std;
 
 
-Graphics::Graphics() {
-    jeu=Jeu();
+Graphics::Graphics(): jeu(){
+
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         cout << "Erreur lors de l'initialisation de la SDL : " << SDL_GetError() << endl;SDL_Quit();exit(1);
     }
@@ -17,7 +18,7 @@ Graphics::Graphics() {
         cout << "Erreur lors de l'initialisation de la SDL_Image : " << IMG_GetError() << endl;IMG_Quit();exit(1);
     }
     // Creation de la fenetre
-    jeu.window = SDL_CreateWindow("EndlessRunner", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, jeu.getTerrain().getDimX()*40, jeu.getTerrain().getDimY()*40, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+    jeu.window = SDL_CreateWindow("EndlessRunner", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, jeu.getTerrain()->getDimX()*40, jeu.getTerrain()->getDimY()*40, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     if (jeu.window == NULL) {
         cout << "Erreur lors de la creation de la fenetre : " << SDL_GetError() << endl; SDL_Quit(); exit(1);
     }
@@ -52,22 +53,22 @@ void Graphics::doJeu (){
     //cout << "in loop: " << jeu.getJoueur().pos->getY()<< endl;
     if (!menu->menuState) {
         jeu.actionAutomatique(saut);
-
-        if (doublesaut && debout) {
-                jeu.actionClavier('x');
-                 doublesaut=false;
-        }
-        if (saut && debout) jeu.actionClavier('h');
-        if (jeu.collisionSol()) saut = false;
-        if (baisser && !saut) {
-                jeu.actionClavier('c');
-                baisser=false;
-                }
-        if (baisser && saut) debout=true;
-        if (relever && !saut) {
-                jeu.actionClavier('r');
-                relever=false;
-        }
+    }
+    if (jeu.getJoueur()->getDoubleSaut() && doublesaut && debout) {
+        jeu.actionClavier('x');
+        doublesaut=false;
+        jeu.getJoueur()->desactiverDoubleSaut();
+    }
+    if (saut && debout) jeu.actionClavier('h');
+    if (jeu.collisionSol()) saut = false;
+    if (baisser && !saut) {
+            jeu.actionClavier('c');
+            baisser=false;
+            }
+    if (baisser && saut) debout=true;
+    if (relever && !saut) {
+            jeu.actionClavier('r');
+            relever=false;
     }
 }
 

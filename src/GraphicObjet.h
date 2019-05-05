@@ -1,3 +1,4 @@
+
 #ifndef GRAPHICOBJET_H_INCLUDED
 #define GRAPHICOBJET_H_INCLUDED
 
@@ -6,13 +7,14 @@
 
 class GraphicObjet{
 public:
-    Objet objet;
+    Objet* objet;
     SDL_Rect imageObjet;
     SDL_Surface *sSprite;
     SDL_Texture *tSprite;
+    SDL_Rect jSpriteClips[ 4 ];
 
     //Constructeur de Jeu
-    GraphicObjet(Jeu jeu);
+    GraphicObjet(Jeu& jeu);
 
     //Destructeur de Jeu
     ~GraphicObjet();
@@ -21,3 +23,4 @@ public:
 };
 
 #endif // GRAPHICOBJET_H_INCLUDED
+

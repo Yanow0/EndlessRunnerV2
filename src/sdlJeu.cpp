@@ -105,8 +105,8 @@ sdlJeu::sdlJeu () : jeu() {
     //*/
 
 	int dimx, dimy;
-	dimx = jeu.getTerrain().getDimX();
-	dimy = jeu.getTerrain().getDimY();
+	dimx = jeu.getTerrain()->getDimX();
+	dimy = jeu.getTerrain()->getDimY();
 	dimx = dimx * TAILLE_SPRITE;
 	dimy = dimy * TAILLE_SPRITE;
 

@@ -14,6 +14,9 @@ class Joueur {
     public:
         Forme2D* taille;
         Pos2D* pos;
+        int vie;
+        bool fantome;
+        bool doubleSaut;
         float vitesseSaut;
         float gravite;
         int* action = new int;
@@ -27,6 +30,12 @@ class Joueur {
     ~Joueur();
     int& getAction();
     void setAction(int x);
+    int& getVie();
+    void setVie(int x);
+    void vieUp();
+    bool& getDoubleSaut();
+    void activerDoubleSaut();
+    void desactiverDoubleSaut();
     void doubleSauter(const Terrain &t);
     bool collisionSol(const Terrain &t);
     void baisser(const Terrain &t);

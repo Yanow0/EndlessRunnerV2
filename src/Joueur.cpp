@@ -14,12 +14,13 @@ using namespace std;
 
 Joueur::Joueur() {
     taille = new Forme2D(2,2);
-    pos = new Pos2D(8,4);
+    pos = new Pos2D(8,7);
+    setVie(3);
+    fantome = false;
+    doubleSaut = false;
     vitesseSaut=0.5;
     gravite=0.025f;
     setAction(0);
-//    taille = new Forme2D(100,50);
-//    pos = new Pos2D(320,370);
 }
 
 Joueur::~Joueur(){
@@ -34,6 +35,29 @@ void Joueur::setAction(int x){
     *action = x;
 };
 
+int& Joueur::getVie(){
+    return vie;
+}
+
+void Joueur::setVie(int x){
+    vie = x;
+}
+
+void Joueur::vieUp(){
+    vie++;
+}
+
+bool& Joueur::getDoubleSaut(){
+    return doubleSaut;
+}
+
+void Joueur::activerDoubleSaut(){
+    doubleSaut = true;
+}
+
+void Joueur::desactiverDoubleSaut(){
+    doubleSaut = false;
+}
 
 void Joueur::sauter(const Terrain &t) {
   //  if (t.positionValide(pos->getX(),pos->getY()-d)) {
@@ -49,7 +73,7 @@ void Joueur::sauter(const Terrain &t) {
             vitesseSaut=0.5;
             setAction(0);
         }
-        cout<<"sauter"<<endl;
+//        cout<<"sauter"<<endl;
   //  }
 
 }
@@ -65,7 +89,7 @@ void Joueur::doubleSauter(const Terrain &t) {
 void Joueur::descendre(const Terrain &t) {
    // if (t.positionValide(pos->getX(),pos->getY()+d)) {
         pos->setY(pos->getY()+gravite);
-        cout<<"descendre"<<endl;
+//        cout<<"descendre"<<endl;
   //  }
 }
 void Joueur::retomber(const Terrain &t) {
