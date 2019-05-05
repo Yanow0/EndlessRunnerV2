@@ -6,58 +6,56 @@
 #include "Jeu.h"
 using namespace std;
 
-Jeu::Jeu() {
-   terrain = Terrain();
-   joueur = Joueur();
-//   obstacle = Obstacle();
-   obstacles = ListeObstacles();
-   objet = Objet();
+Jeu::Jeu(): joueur(), obstacles(), terrain(), objet() {
 }
 
 Jeu::~Jeu(){
 
 }
 
-Terrain& Jeu::getTerrain() {return terrain;}
-Joueur& Jeu::getJoueur() {return joueur;}
-ListeObstacles& Jeu::getObstacle() {return obstacles;}
-//Obstacle& Jeu::getObstacle() {return obstacle;}
-Objet& Jeu::getObjet() {return objet;}
+Terrain* Jeu::getTerrain() {return &terrain;}
+Joueur* Jeu::getJoueur() {return &joueur;}
+ListeObstacles* Jeu::getObstacle() {return &obstacles;}
+Objet* Jeu::getObjet() {return &objet;}
 
-//bool Jeu::contactGauche() {
-//    return (obstacle.pos->getX() <= joueur.pos->getX()
-//            && obstacle.pos->getX() + obstacle.taille->getLargeur() >= joueur.pos->getX());
-//}
-//
-//bool Jeu::contactDroite() {
-//    return (joueur.pos->getX() <= obstacle.pos->getX()
-//            && joueur.pos->getX() + joueur.taille->getLargeur() >= obstacle.pos->getX());
-//}
-//
-//bool Jeu::contactSuperieur() {
-//    return (obstacle.pos->getY() <= joueur.pos->getY()
-//            && obstacle.pos->getY() + obstacle.taille->getHauteur() >= joueur.pos->getY());
-//}
-//
-//bool Jeu::contactInferieur() {
-//    return (joueur.pos->getY() <= obstacle.pos->getY()
-//            && joueur.pos->getY() + joueur.taille->getHauteur() >= obstacle.pos->getY());
-//}
-//
-//
-//bool Jeu::collision() {
-//    return (contactGauche() && (contactSuperieur() || contactInferieur()))
-//        || (contactDroite() && (contactSuperieur() || contactInferieur()));
-//}
+// l'obstacle en contact avec le côté gauche du joueur
+bool Jeu::contactGauche(Obstacle *o) {
+    return (o->pos->getX() <= joueur.pos->getX()
+        && (o->pos->getX() + o->taille->getLargeur() >= joueur.pos->getX()));
+}
+
+bool Jeu::contactDroite(Obstacle *o) {
+    return (joueur.pos->getX() <= o->pos->getX()
+        && (joueur.pos->getX() + joueur.taille->getLargeur() >= o->pos->getX()));
+}
+
+bool Jeu::contactSuperieur(Obstacle *o) {
+    return (o->pos->getY() <= joueur.pos->getY()
+        && (o->pos->getY() + o->taille->getHauteur() >= joueur.pos->getY() + 0.5));
+}
+
+bool Jeu::contactInferieur(Obstacle *o) {
+    return (joueur.pos->getY() <= o->pos->getY()
+        && (joueur.pos->getY() + joueur.taille->getHauteur() >= o->pos->getY()));
+}
+
+
+bool Jeu::collision(bool saut) {
+    for (int i=0; i<obstacles.nbObstacles(); i++) {
+        Obstacle *o = obstacles.getObstacle(i);
+        if ((contactGauche(o) && (contactSuperieur(o) || contactInferieur(o)))
+        || (contactDroite(o) && (contactSuperieur(o) || contactInferieur(o)))) {
+            return true;
+        }
+    }
+    return false;
+}
 
 
 void Jeu::actionClavier(const char &touche) {
 	switch(touche) {
 		case 'h' :
 				joueur.sauter(terrain);
-				break;
-		case 'b' :
-				//joueur.descendre(terrain);
 				break;
         case 'c' :
                 joueur.baisser(terrain);
@@ -74,15 +72,20 @@ void Jeu::actionClavier(const char &touche) {
 bool Jeu::collisionSol(){
     if (joueur.pos->getY() + joueur.taille->getHauteur() >= terrain.getPlateforme()){
             joueur.pos->setY(terrain.getPlateforme() -  joueur.taille->getHauteur());
-            return true;
-    } else return false;
 
-    cout << "sol" << endl;
+        cout << "sol" << endl;
+        return true;
+    }
+    else return false;
+
 }
 
 
 void Jeu::actionAutomatique(bool saut) {
     obstacles.deplacementAuto();
+//    cout << "vie = " << joueur.getVie() << endl;
     if (!saut) joueur.retomber(terrain);
+    if (collision(saut))
+        cout << "collision" << endl;
 }
 

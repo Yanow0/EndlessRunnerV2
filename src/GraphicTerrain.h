@@ -9,11 +9,11 @@
 
 class GraphicTerrain {
 public:
-    Terrain terrain;
+    Terrain* terrain;
     SDL_Surface *background;
     SDL_Texture *texture;
     //Constructeur de Terrain
-    GraphicTerrain(Jeu jeu);
+    GraphicTerrain(Jeu& jeu);
 
     //Destructeur de Terrain
     ~GraphicTerrain();

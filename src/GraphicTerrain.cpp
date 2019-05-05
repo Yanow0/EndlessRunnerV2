@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-GraphicTerrain::GraphicTerrain(Jeu jeu) {
+GraphicTerrain::GraphicTerrain(Jeu& jeu) {
     terrain=jeu.getTerrain();
     background = IMG_Load("background.jpg");
     if (background==NULL) {

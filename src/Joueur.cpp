@@ -14,15 +14,13 @@ using namespace std;
 
 Joueur::Joueur() {
     taille = new Forme2D(2,2);
-    pos = new Pos2D(8,6);
+    pos = new Pos2D(8,7);
     setVie(3);
     fantome = false;
     doubleSaut = false;
     vitesseSaut=0.5;
     gravite=0.025f;
     setAction(0);
-//    taille = new Forme2D(100,50);
-//    pos = new Pos2D(320,370);
 }
 
 Joueur::~Joueur(){
@@ -75,7 +73,7 @@ void Joueur::sauter(const Terrain &t) {
             vitesseSaut=0.5;
             setAction(0);
         }
-        cout<<"sauter"<<endl;
+//        cout<<"sauter"<<endl;
   //  }
 
 }
@@ -91,7 +89,7 @@ void Joueur::doubleSauter(const Terrain &t) {
 void Joueur::descendre(const Terrain &t) {
    // if (t.positionValide(pos->getX(),pos->getY()+d)) {
         pos->setY(pos->getY()+gravite);
-        cout<<"descendre"<<endl;
+//        cout<<"descendre"<<endl;
   //  }
 }
 void Joueur::retomber(const Terrain &t) {
