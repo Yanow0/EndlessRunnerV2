@@ -11,18 +11,18 @@ Objet::Objet(){
     srand(time(NULL));
     taille = new Forme2D(1,1);
     pos = new Pos2D(3,2);
-    setObjet((rand() % 4));
+    setTypeObjet((rand() % 4));
 }
 
 Objet::~Objet(){
 }
 
-int& Objet::getObjet() {
-    return *objet;
+int& Objet::getTypeObjet() {
+    return *typeObjet;
 }
 
-void Objet::setObjet(int x){
-    *objet = x;
+void Objet::setTypeObjet(int x){
+    *typeObjet = x;
 }
 
 void Objet::vie(Joueur &j){

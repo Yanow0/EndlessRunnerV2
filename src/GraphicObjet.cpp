@@ -52,6 +52,6 @@ void GraphicObjet::afficherObjet(Jeu jeu) {
     //SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
     //SDL_RenderDrawRect(jeu.renderer, &imageObjet);
 
-    SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[objet->getObjet()], &imageObjet);
+    SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[objet->getTypeObjet()], &imageObjet);
 }
 

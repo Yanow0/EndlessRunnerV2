@@ -5,7 +5,6 @@ using namespace std;
 
 GraphicObstacle::GraphicObstacle(Jeu& jeu) {
     obstacle=jeu.getObstacle();
-
     sSprite = IMG_Load("stone.png");
     if (!sSprite) {
         cout << "Error: cannot load sprite surface" <<endl;

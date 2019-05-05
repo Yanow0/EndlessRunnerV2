@@ -2,7 +2,7 @@
 #ifndef ENDLESSRUNNERV2_GRAPHICOBSTACLE_H
 #define ENDLESSRUNNERV2_GRAPHICOBSTACLE_H
 
-#include "Fenetre.h"
+#include <SDL2/SDL_image.h>
 #include "Jeu.h"
 #include <vector>
 

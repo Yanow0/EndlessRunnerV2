@@ -18,7 +18,7 @@ Joueur* Jeu::getJoueur() {return &joueur;}
 ListeObstacles* Jeu::getObstacle() {return &obstacles;}
 Objet* Jeu::getObjet() {return &objet;}
 
-// l'obstacle en contact avec le côté gauche du joueur
+// l'obstacle en contact avec le cï¿½tï¿½ gauche du joueur
 bool Jeu::contactGauche(Obstacle *o) {
     return (o->pos->getX() <= joueur.pos->getX()
         && (o->pos->getX() + o->taille->getLargeur() >= joueur.pos->getX()));
@@ -91,7 +91,7 @@ bool Jeu::collisionSol(){
     if (joueur.pos->getY() + joueur.taille->getHauteur() >= terrain.getPlateforme()){
             joueur.pos->setY(terrain.getPlateforme() -  joueur.taille->getHauteur());
 
-        cout << "sol" << endl;
+       // cout << "sol" << endl;
         return true;
     }
     else return false;
@@ -101,9 +101,18 @@ bool Jeu::collisionSol(){
 
 void Jeu::actionAutomatique(bool saut) {
     obstacles.deplacementAuto();
+
 //    cout << "vie = " << joueur.getVie() << endl;
     if (!saut) joueur.retomber(terrain);
     if (collision(saut))
         cout << "collision" << endl;
+}
+
+
+void Jeu::restart(){
+    terrain = Terrain();
+    joueur = Joueur();
+    obstacles = ListeObstacles();
+    objet = Objet();
 }
 

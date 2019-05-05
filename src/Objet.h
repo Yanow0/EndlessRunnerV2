@@ -11,12 +11,12 @@ class Objet {
 public:
     Forme2D* taille;
     Pos2D* pos;
-    int* objet = new int;
+    int* typeObjet = new int;
 
     Objet();
     ~Objet();
-    int& getObjet();
-    void setObjet(int x);
+    int& getTypeObjet();
+    void setTypeObjet(int x);
     void vie(Joueur &j);
     void fantome(Joueur &j);
     void doubleSaut(Joueur &j);

@@ -34,6 +34,8 @@ class Jeu {
         //Destructeur de Jeu
         ~Jeu();
 
+        void restart();
+
         Terrain* getTerrain();
         Joueur* getJoueur();
         ListeObstacles* getObstacle();
