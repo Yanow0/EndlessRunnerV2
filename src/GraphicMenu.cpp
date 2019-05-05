@@ -38,6 +38,7 @@ GraphicMenu::GraphicMenu(Jeu jeu){
     tArrow = SDL_CreateTextureFromSurface(jeu.renderer, sArrow);
 
     arrow={200, 100, 35, 35};
+    arrow2={400, 150, 35, 35};
     currentMenu = 0;
     menuState=true;
     pos=0;
@@ -62,23 +63,29 @@ void GraphicMenu::afficherMenu(Jeu& jeu) {
     switch (pos) {
             case 0:
                 // PLAY AGAIN
-                arrow={200, 150, 50, 35};
+                arrow={180, 120, 35, 50};
+                arrow2={560, 120, 35, 50};
+                SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 255, SDL_ALPHA_OPAQUE);
                 SDL_RenderCopy(jeu.renderer, tArrow, NULL, &arrow);
- //               SDL_RenderCopyEx(jeu.renderer, tArrow, NULL, &arrow, 180.0, SDL_Point pt = NULL, SDL_RendererFlip fl = NULL);
+                SDL_RenderCopyEx(jeu.renderer, tArrow, NULL, &arrow2, 0, NULL, SDL_FLIP_HORIZONTAL);
                 break;
 
             case 1:
                 // MAIN MENU
-                arrow={200, 250, 50, 35};
+                arrow={180, 195, 35, 50};
+                arrow2={560, 195, 35, 50};
+                SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 255, SDL_ALPHA_OPAQUE);
                 SDL_RenderCopy(jeu.renderer, tArrow, NULL, &arrow);
-       //         SDL_RenderCopyEx(jeu.renderer, tArrow, NULL, &arrow, 180.0, SDL_Point pt = NULL, SDL_RendererFlip fl = NULL);
+                SDL_RenderCopyEx(jeu.renderer, tArrow, NULL, &arrow2, 0, NULL, SDL_FLIP_HORIZONTAL);
                 break;
 
             case 2:
                 // CREDITS
-                arrow={200, 350, 50, 35};
+                arrow={180, 270, 35, 50};
+                arrow2={560, 270, 35, 50};
+                SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 255, SDL_ALPHA_OPAQUE);
                 SDL_RenderCopy(jeu.renderer, tArrow, NULL, &arrow);
-          //      SDL_RenderCopyEx(jeu.renderer, tArrow, NULL, &arrow, 180.0, SDL_Point pt = NULL, SDL_RendererFlip fl = NULL);
+                SDL_RenderCopyEx(jeu.renderer, tArrow, NULL, &arrow2, 0, NULL, SDL_FLIP_HORIZONTAL);
                 break;
     }
 

@@ -20,6 +20,7 @@ class GraphicMenu
         SDL_Surface *sArrow;
         SDL_Texture *tArrow;
         SDL_Rect arrow;
+        SDL_Rect arrow2;
         bool menuState;
         int currentMenu;
         void handleMenu(Jeu& jeu);

@@ -107,8 +107,8 @@ void Graphics::loop() {
                             break;
 
                         case SDL_SCANCODE_RETURN:
-                            menu->handleMenu(jeu);
                             menu->menuState=false;
+                            menu->handleMenu(jeu);
                             break;
 
                         default:
