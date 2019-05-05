@@ -1,7 +1,13 @@
 //
 // Created by Yanis on 14/03/2019.
 //
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <unistd.h>
+#endif // WIN32
 #include <cstdlib>
+#include <pthread.h>
 #include <iostream>
 #include "Jeu.h"
 using namespace std;
@@ -18,7 +24,7 @@ Joueur* Jeu::getJoueur() {return &joueur;}
 ListeObstacles* Jeu::getObstacle() {return &obstacles;}
 Objet* Jeu::getObjet() {return &objet;}
 
-// l'obstacle en contact avec le c�t� gauche du joueur
+// l'obstacle en contact avec le cote gauche du joueur
 bool Jeu::contactGauche(Obstacle *o) {
     return (o->pos->getX() <= joueur.pos->getX()
         && (o->pos->getX() + o->taille->getLargeur() >= joueur.pos->getX()));
@@ -26,7 +32,7 @@ bool Jeu::contactGauche(Obstacle *o) {
 
 bool Jeu::contactDroite(Obstacle *o) {
     return (joueur.pos->getX() <= o->pos->getX()
-        && (joueur.pos->getX() + joueur.taille->getLargeur() >= o->pos->getX()));
+        && (joueur.pos->getX() + joueur.taille->getLargeur() - 0.8 >= o->pos->getX()));
 }
 
 bool Jeu::contactSuperieur(Obstacle *o) {
@@ -41,6 +47,24 @@ bool Jeu::contactInferieur(Obstacle *o) {
 
 
 bool Jeu::collision(bool saut) {
+//    for (int i=0; i<obstacles.nbObstacles(); i++) {
+//        Obstacle *o = obstacles.getObstacle(i);
+//
+//        if ((contactGauche(o) && (contactSuperieur(o)))
+//        || (contactDroite(o) && (contactSuperieur(o)))) {
+//            return true;
+//        }
+//
+//        else if (saut && ((contactGauche(o) && contactInferieur(o))
+//                        || (contactDroite(o) && contactInferieur(o)))) {
+//
+//            joueur.pos->setY(o->pos->getY()-joueur.taille->getHauteur());
+//            return false;
+//        }
+//    }
+//    return false;
+
+
     for (int i=0; i<obstacles.nbObstacles(); i++) {
         Obstacle *o = obstacles.getObstacle(i);
         if ((contactGauche(o) && (contactSuperieur(o) || contactInferieur(o)))
@@ -84,10 +108,22 @@ bool Jeu::collisionSol(){
 void Jeu::actionAutomatique(bool saut) {
     obstacles.deplacementAuto();
 
-//    cout << "vie = " << joueur.getVie() << endl;
     if (!saut) joueur.retomber(terrain);
-    if (collision(saut))
+    if (collision(saut)) {
         cout << "collision" << endl;
+        joueur.vieDown();
+        cout << "vie = " << joueur.getVie() << endl;
+
+        joueur = Joueur(joueur.getVie());
+        obstacles.vider();
+//        objet = Objet();
+
+        #ifdef _WIN32
+        Sleep(100);
+		#else
+		usleep(100000);
+        #endif // WIN32
+    }
 }
 
 

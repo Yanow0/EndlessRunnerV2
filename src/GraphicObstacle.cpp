@@ -1,7 +1,7 @@
 #include <iostream>
 #include "GraphicObstacle.h"
 
-
+using namespace std;
 
 GraphicObstacle::GraphicObstacle(Jeu& jeu) {
     obstacle=jeu.getObstacle();
@@ -82,7 +82,6 @@ GraphicObstacle::GraphicObstacle(Jeu& jeu) {
 GraphicObstacle::~GraphicObstacle(){}
 
 void GraphicObstacle::afficherObstacle(Jeu& jeu, int frame) {
-
 
     imageObstacle.clear();
     for (int k=0; k<obstacle->nbObstacles(); k++) {

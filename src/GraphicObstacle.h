@@ -8,7 +8,6 @@
 
 class GraphicObstacle {
 public:
-//    Obstacle obstacle;
     ListeObstacles* obstacle;
     vector<SDL_Rect> imageObstacle;
     SDL_Surface *sBullet;
