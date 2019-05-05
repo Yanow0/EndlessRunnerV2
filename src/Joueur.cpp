@@ -14,7 +14,7 @@ using namespace std;
 
 Joueur::Joueur() {
     taille = new Forme2D(2,2);
-    pos = new Pos2D(8,6);
+    pos = new Pos2D(8,4);
     vitesseSaut=0.5;
     gravite=0.025f;
     setAction(0);

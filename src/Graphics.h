@@ -5,12 +5,13 @@
 #ifndef ENDLESSRUNNERV2_GRAPHICS_H
 #define ENDLESSRUNNERV2_GRAPHICS_H
 
-#include "Fenetre.h"
 #include "GraphicJoueur.h"
 #include "GraphicTerrain.h"
 #include "GraphicObstacle.h"
 #include "GraphicObjet.h"
+#include "GraphicMenu.h"
 #include <SDL2/SDL.h>
+
 
 class Graphics {
 public:
@@ -18,6 +19,7 @@ public:
     GraphicTerrain* terrain;
     GraphicObstacle* obstacle;
     GraphicObjet* objet;
+    GraphicMenu* menu;
     Jeu jeu;
    // Fenetre fenetre;
     bool saut;
@@ -32,7 +34,7 @@ public:
 
     //Destructeur de Graphics
     ~Graphics();
-
+    void startGame();
     void doJeu();
     void afficherGraphics();
 

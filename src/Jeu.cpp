@@ -7,10 +7,7 @@
 using namespace std;
 
 Jeu::Jeu() {
-   terrain = Terrain();
-   joueur = Joueur();
-   obstacle = Obstacle();
-   objet = Objet();
+   restart();
 }
 
 Jeu::~Jeu(){
@@ -83,5 +80,13 @@ bool Jeu::collisionSol(){
 void Jeu::actionAutomatique(bool saut) {
     obstacle.deplacementAuto();
     if (!saut) joueur.retomber(terrain);
+}
+
+
+void Jeu::restart(){
+    terrain = Terrain();
+    joueur = Joueur();
+    obstacle = Obstacle();
+    objet = Objet();
 }
 

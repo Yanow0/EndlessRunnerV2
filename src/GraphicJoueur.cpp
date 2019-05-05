@@ -153,17 +153,18 @@ GraphicJoueur::GraphicJoueur(Jeu jeu) {
 
 GraphicJoueur::~GraphicJoueur(){}
 
-void GraphicJoueur::afficherJoueur(Jeu jeu, int frame) {
+void GraphicJoueur::afficherJoueur(Jeu& jeu, int frame) {
 
 
-    imageJoueur.x= joueur.pos->getX()*40;
-    imageJoueur.y= joueur.pos->getY()*40;
-    imageJoueur.w= joueur.taille->getLargeur()*40;
-    imageJoueur.h= joueur.taille->getHauteur()*40;
+    imageJoueur.x= jeu.getJoueur().pos->getX()*40;
+    imageJoueur.y= jeu.getJoueur().pos->getY()*40;
+    imageJoueur.w= jeu.getJoueur().taille->getLargeur()*40;
+    imageJoueur.h= jeu.getJoueur().taille->getHauteur()*40;
     //SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
     //SDL_RenderDrawRect(jeu.renderer, &imageJoueur);
 
     //SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[frame/6], &imageJoueur);
+
     SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[frame/6+joueur.getAction()*6], &imageJoueur);
 
 }

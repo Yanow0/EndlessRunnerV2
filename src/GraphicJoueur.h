@@ -5,8 +5,8 @@
 #ifndef ENDLESSRUNNERV2_GRAPHICJOUEUR_H
 #define ENDLESSRUNNERV2_GRAPHICJOUEUR_H
 
-#include "Fenetre.h"
 #include "Jeu.h"
+#include <SDL2/SDL_image.h>
 
 class GraphicJoueur {
 public:
@@ -24,7 +24,7 @@ public:
     //Destructeur de Jeu
     ~GraphicJoueur();
 
-    void afficherJoueur(Jeu jeu, int frame);
+    void afficherJoueur(Jeu& jeu, int frame);
 };
 
 
