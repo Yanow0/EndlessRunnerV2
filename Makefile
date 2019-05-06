@@ -2,11 +2,11 @@ CCX=g++ -g -Wall
 
 all: mainGraph mainTest
 
-mainGraph: mainGraph.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o JeuTxt.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
-	g++ -g -o ./bin/mainGraph mainGraph.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o JeuTxt.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
+mainGraph: mainGraph.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
+	g++ -g -o ./bin/mainGraph ./obj/mainGraph.o ./obj/Forme2D.o ./obj/GraphicJoueur.o ./obj/GraphicMenu.o ./obj/GraphicObjet.o ./obj/GraphicObstacle.o ./obj/Graphics.o ./obj/GraphicTerrain.o ./obj/Jeu.o ./obj/Joueur.o ./obj/ListeObjet.o ./obj/ListeObstacles.o ./obj/Objet.o ./obj/Obstacle.o ./obj/Pos2D.o ./obj/Terrain.o -lSDL2main -lSDL2 -lSDL2_image
 
-mainTest: mainTest.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o JeuTxt.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
-	g++ -g -Wall -o ./bin/mainTest mainTest.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o JeuTxt.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
+mainTest: mainTest.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
+	g++ -g -Wall -o ./bin/mainTest   ./obj/mainGraph.o ./obj/Forme2D.o ./obj/GraphicJoueur.o ./obj/GraphicMenu.o ./obj/GraphicObjet.o ./obj/GraphicObstacle.o ./obj/Graphics.o ./obj/GraphicTerrain.o ./obj/Jeu.o ./obj/Joueur.o ./obj/ListeObjet.o ./obj/ListeObstacles.o ./obj/Objet.o ./obj/Obstacle.o ./obj/Pos2D.o ./obj/Terrain.o -lSDL2main -lSDL2 -lSDL2_image
 
 mainGraph.o: mainGraph.cpp 
 	g++ -g -Wall -c mainGraph.cpp -o ./obj/mainGraph.o
@@ -37,9 +37,6 @@ GraphicTerrain.o: ./src/GraphicTerrain.cpp ./src/GraphicTerrain.h
 
 Jeu.o: ./src/Jeu.cpp ./src/Jeu.h
 	g++ -g -Wall -c ./src/Jeu.cpp -o ./obj/Jeu.o
-
-JeuTxt.o: ./src/JeuTxt.cpp ./src/JeuTxt.h
-	g++ -g -Wall -c ./src/JeuTxt.cpp -o ./obj/JeuTxt.o
 
 Joueur.o: ./src/Joueur.cpp ./src/Joueur.h
 	g++ -g -Wall -c ./src/Joueur.cpp -o ./obj/Joueur.o
