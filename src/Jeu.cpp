@@ -95,10 +95,10 @@ bool Jeu::collisionObjet(){
                 joueur.vieUp();
                 break;
             case 1:
-                joueur.fantome=true;
+                joueur.activerFantome();
                 break;
             case 2:
-                joueur.doubleSaut=true;
+                joueur.activerDoubleSaut();
                 break;
             }
             objets.supprimerElement(i);
