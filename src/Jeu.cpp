@@ -46,24 +46,7 @@ bool Jeu::contactInferieur(Obstacle *o) {
 }
 
 
-bool Jeu::collision(bool saut) {
-//    for (int i=0; i<obstacles.nbObstacles(); i++) {
-//        Obstacle *o = obstacles.getObstacle(i);
-//
-//        if ((contactGauche(o) && (contactSuperieur(o)))
-//        || (contactDroite(o) && (contactSuperieur(o)))) {
-//            return true;
-//        }
-//
-//        else if (saut && ((contactGauche(o) && contactInferieur(o))
-//                        || (contactDroite(o) && contactInferieur(o)))) {
-//
-//            joueur.pos->setY(o->pos->getY()-joueur.taille->getHauteur());
-//            return false;
-//        }
-//    }
-//    return false;
-
+bool Jeu::collision() {
 
     for (int i=0; i<obstacles.nbObstacles(); i++) {
         Obstacle *o = obstacles.getObstacle(i);
@@ -110,21 +93,27 @@ void Jeu::actionAutomatique(bool &saut) {
     objet.deplacementAuto();
 
     if (!saut) joueur.retomber(terrain);
-    if (collision(saut)) {
+    if (collision()) {
         cout << "collision" << endl;
         joueur.vieDown();
         cout << "vie = " << joueur.getVie() << endl;
 
         saut = false;
-        joueur = Joueur(joueur.getVie());
-        obstacles.vider();
-//        objet = Objet();
 
-        #ifdef _WIN32
-        Sleep(500);
-		#else
-		usleep(500000);
-        #endif // WIN32
+        if (joueur.getVie() > 0) {
+            joueur = Joueur(joueur.getVie());
+            obstacles.vider();
+//            objet = Objet();
+
+            #ifdef _WIN32
+            Sleep(500);
+            #else
+            usleep(500000);
+            #endif // WIN32
+        }
+        else {
+            system("pause");
+        }
     }
 }
 
