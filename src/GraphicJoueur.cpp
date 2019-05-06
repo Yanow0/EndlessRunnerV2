@@ -10,12 +10,16 @@ GraphicJoueur::GraphicJoueur(Jeu& jeu) {
     joueur=jeu.getJoueur();
     sSprite = IMG_Load("./data/lucario.png");
     sVie = IMG_Load("./data/coeur.png");
+    sFantome = IMG_Load("./data/icons.png");
+    sDoubleSaut = IMG_Load("./data/icons.png");
     if (!sSprite) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();
     }
 
     tVie = SDL_CreateTextureFromSurface(jeu.renderer,sVie);
+    tFantome = SDL_CreateTextureFromSurface(jeu.renderer,sFantome);
+    tDoubleSaut = SDL_CreateTextureFromSurface(jeu.renderer,sDoubleSaut);
     tSprite = SDL_CreateTextureFromSurface(jeu.renderer,sSprite);
      if (tSprite==NULL) {
         cout << "Error: cannot create sprite texture" <<endl;
@@ -151,6 +155,17 @@ GraphicJoueur::GraphicJoueur(Jeu& jeu) {
 		jSpriteClips[ 23 ].h =  48;
 
 
+    //SPRITE OBJET FANTOME
+    jSpriteFantome.x =  160;
+    jSpriteFantome.y =  96;
+    jSpriteFantome.w =  32;
+    jSpriteFantome.h =  32;
+
+    //SPRITE OBJET DOUBLE SAUT
+    jSpriteDoubleSaut.x =  64;
+    jSpriteDoubleSaut.y =  256;
+    jSpriteDoubleSaut.w =  32;
+    jSpriteDoubleSaut.h =  32;
 }
 
 GraphicJoueur::~GraphicJoueur(){}
@@ -184,3 +199,34 @@ void GraphicJoueur::afficherVie(Jeu &jeu) {
 
     }
 }
+
+void GraphicJoueur::afficherObjet(Jeu &jeu) {
+    imageObjet.clear();
+    int k=0;
+    if (joueur->getDoubleSaut()) {
+        SDL_Rect image;
+        image.x= (k+1)*20;
+        image.y= 2.5*20;
+        image.w= 1*20;
+        image.h= 1*20;
+        imageObjet.push_back(image);
+
+        SDL_RenderCopy(jeu.renderer, tDoubleSaut, &jSpriteDoubleSaut, &imageObjet.at(k));
+
+        k++;
+    }
+    if (joueur->getFantome()) {
+        SDL_Rect image;
+        image.x= (k+1)*20;
+        image.y= 2.5*20;
+        image.w= 1*20;
+        image.h= 1*20;
+        imageObjet.push_back(image);
+
+        SDL_RenderCopy(jeu.renderer, tFantome, &jSpriteFantome, &imageObjet.at(k));
+
+        k++;
+    }
+}
+
+

@@ -47,8 +47,8 @@ void ListeObjet::supprimerElement(const int &i)
 bool ListeObjet::positionValide(const Objet o)
 {
     return (listeVide()
-            || (o.pos->getX() > objets.back().pos->getX() + objets.back().taille->getLargeur() + 7)
-            || ((o.pos->getX() > objets.back().pos->getX() + objets.back().taille->getLargeur() + 2)
+            || (o.pos->getX() > objets.back().pos->getX() + objets.back().taille->getLargeur() + 18)
+            || ((o.pos->getX() > objets.back().pos->getX() + objets.back().taille->getLargeur() + 18)
                 && ((o.pos->getY() > objets.back().pos->getY() + objets.back().taille->getHauteur() + 6)
                     || (objets.back().pos->getY() > o.pos->getY() + o.taille->getHauteur() + 6))));
 }
@@ -63,7 +63,7 @@ void ListeObjet::creation()
 
 void ListeObjet::deplacementAuto()
 {
-    creation();
+    if (nbObjet()<2) creation();
     for (int i=0; i<nbObjet(); i++) {
         objets[i].deplacementAuto();
     }

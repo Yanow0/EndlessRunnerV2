@@ -57,6 +57,7 @@ void Graphics::doJeu (){
         menu->menuState=true;
         menu->currentMenu=2;
         jeu.restart();
+        cout << endl << "restart" << endl;
     }
     if (!menu->menuState) {
         jeu.actionAutomatique(saut);
@@ -88,6 +89,7 @@ void Graphics::afficherGraphics() {
         terrain->afficherTerrain(jeu);
         joueur->afficherJoueur(jeu, frame);
         joueur->afficherVie(jeu);
+        joueur->afficherObjet(jeu);
         obstacle->afficherObstacle(jeu, frameObstacle);
         objet->afficherObjet(jeu, frameObjets);
     }
