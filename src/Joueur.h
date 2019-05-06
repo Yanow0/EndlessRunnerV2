@@ -30,7 +30,7 @@ class Joueur {
     */
     Joueur();
 
-    //! Constructeur de Jeu avec 1 paramètre
+    //! Constructeur de Joueur avec 1 paramètre
         /*!
             Initialise les variables membre de Joueur et son nombre de vies en fonction du paramètre v
             \param v entier qui représente le nombre de vie initial
