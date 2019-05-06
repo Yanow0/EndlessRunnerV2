@@ -9,21 +9,21 @@ using namespace std;
 GraphicJoueur::GraphicJoueur(Jeu& jeu) {
     joueur=jeu.getJoueur();
     sSprite = IMG_Load("./data/lucario.png");
-    sVie = IMG_Load("./data/coeur.png");
-    sFantome = IMG_Load("./data/icons.png");
-    sDoubleSaut = IMG_Load("./data/icons.png");
     if (!sSprite) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();
     }
-
-    tVie = SDL_CreateTextureFromSurface(jeu.renderer,sVie);
-    tFantome = SDL_CreateTextureFromSurface(jeu.renderer,sFantome);
-    tDoubleSaut = SDL_CreateTextureFromSurface(jeu.renderer,sDoubleSaut);
     tSprite = SDL_CreateTextureFromSurface(jeu.renderer,sSprite);
      if (tSprite==NULL) {
         cout << "Error: cannot create sprite texture" <<endl;
     }
+
+    sVie = IMG_Load("./data/coeur.png");
+    sStar = IMG_Load("./data/star.png");
+    sDoubleSaut = IMG_Load("./data/icons.png");
+    tVie = SDL_CreateTextureFromSurface(jeu.renderer,sVie);
+    tStar = SDL_CreateTextureFromSurface(jeu.renderer,sStar);
+    tDoubleSaut = SDL_CreateTextureFromSurface(jeu.renderer,sDoubleSaut);
 
    // SPRITE QUI COURT
         jSpriteClips[ 0 ].x =  48;
@@ -154,13 +154,6 @@ GraphicJoueur::GraphicJoueur(Jeu& jeu) {
 		jSpriteClips[ 23 ].w =  48;
 		jSpriteClips[ 23 ].h =  48;
 
-
-    //SPRITE OBJET FANTOME
-    jSpriteFantome.x =  160;
-    jSpriteFantome.y =  96;
-    jSpriteFantome.w =  32;
-    jSpriteFantome.h =  32;
-
     //SPRITE OBJET DOUBLE SAUT
     jSpriteDoubleSaut.x =  64;
     jSpriteDoubleSaut.y =  256;
@@ -189,10 +182,10 @@ void GraphicJoueur::afficherVie(Jeu &jeu) {
     imageVie.clear();
     for (int k=0; k<joueur->getVie(); k++) {
         SDL_Rect image;
-        image.x= (k+1)*20;
-        image.y= 1*20;
-        image.w= 1*20;
-        image.h= 1*20;
+        image.x= (k+1)*30;
+        image.y= 20;
+        image.w= 30;
+        image.h= 30;
         imageVie.push_back(image);
 
         SDL_RenderCopy(jeu.renderer, tVie, NULL, &imageVie.at(k));
@@ -206,10 +199,10 @@ void GraphicJoueur::afficherObjet(Jeu &jeu) {
     int k=0;
     if (joueur->getDoubleSaut()) {
         SDL_Rect image;
-        image.x= (k+1)*20;
-        image.y= 2.5*20;
-        image.w= 1*20;
-        image.h= 1*20;
+        image.x= 20;
+        image.y= 60;
+        image.w= 30;
+        image.h= 30;
         imageObjet.push_back(image);
 
         SDL_RenderCopy(jeu.renderer, tDoubleSaut, &jSpriteDoubleSaut, &imageObjet.at(k));
@@ -218,13 +211,13 @@ void GraphicJoueur::afficherObjet(Jeu &jeu) {
     }
     if (joueur->getFantome()) {
         SDL_Rect image;
-        image.x= (k+1)*20;
-        image.y= 2.5*20;
-        image.w= 1*20;
-        image.h= 1*20;
+        image.x= 40;
+        image.y= 40;
+        image.w= 40;
+        image.h= 40;
         imageObjet.push_back(image);
 
-        SDL_RenderCopy(jeu.renderer, tFantome, &jSpriteFantome, &imageObjet.at(k));
+        SDL_RenderCopy(jeu.renderer, tStar, NULL, &imageObjet.at(k));
 
         k++;
     }
