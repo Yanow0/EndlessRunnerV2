@@ -3,10 +3,10 @@ CCX=g++ -g -Wall
 all: mainGraph mainTest
 
 mainGraph: mainGraph.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
-	g++ -g -o ./bin/mainGraph ./obj/mainGraph.o ./obj/Forme2D.o ./obj/GraphicJoueur.o ./obj/GraphicMenu.o ./obj/GraphicObjet.o ./obj/GraphicObstacle.o ./obj/Graphics.o ./obj/GraphicTerrain.o ./obj/Jeu.o ./obj/Joueur.o ./obj/ListeObjet.o ./obj/ListeObstacles.o ./obj/Objet.o ./obj/Obstacle.o ./obj/Pos2D.o ./obj/Terrain.o -lSDL2main -lSDL2 -lSDL2_image
+	g++ -g -o ./bin/mainGraph ./obj/mainGraph.o ./obj/Forme2D.o ./obj/GraphicJoueur.o ./obj/GraphicMenu.o ./obj/GraphicObjet.o ./obj/GraphicObstacle.o ./obj/Graphics.o ./obj/GraphicTerrain.o ./obj/Jeu.o ./obj/Joueur.o ./obj/ListeObjet.o ./obj/ListeObstacles.o ./obj/Objet.o ./obj/Obstacle.o ./obj/Pos2D.o ./obj/Terrain.o -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
 
 mainTest: mainTest.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
-	g++ -g -Wall -o ./bin/mainTest   ./obj/mainGraph.o ./obj/Forme2D.o ./obj/GraphicJoueur.o ./obj/GraphicMenu.o ./obj/GraphicObjet.o ./obj/GraphicObstacle.o ./obj/Graphics.o ./obj/GraphicTerrain.o ./obj/Jeu.o ./obj/Joueur.o ./obj/ListeObjet.o ./obj/ListeObstacles.o ./obj/Objet.o ./obj/Obstacle.o ./obj/Pos2D.o ./obj/Terrain.o -lSDL2main -lSDL2 -lSDL2_image
+	g++ -g -Wall -o ./bin/mainTest   ./obj/mainGraph.o ./obj/Forme2D.o ./obj/GraphicJoueur.o ./obj/GraphicMenu.o ./obj/GraphicObjet.o ./obj/GraphicObstacle.o ./obj/Graphics.o ./obj/GraphicTerrain.o ./obj/Jeu.o ./obj/Joueur.o ./obj/ListeObjet.o ./obj/ListeObstacles.o ./obj/Objet.o ./obj/Obstacle.o ./obj/Pos2D.o ./obj/Terrain.o -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
 
 mainGraph.o: mainGraph.cpp 
 	g++ -g -Wall -c mainGraph.cpp -o ./obj/mainGraph.o
