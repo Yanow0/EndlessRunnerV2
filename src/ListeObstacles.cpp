@@ -32,6 +32,10 @@ void ListeObstacles::supprimerEnTete() {
     obstacles.erase(obstacles.begin());
 }
 
+void ListeObstacles::supprimerElement(const int &i){
+    obstacles.erase(obstacles.begin()+i);
+}
+
 bool ListeObstacles::positionValide(const Obstacle o) {
     return (listeVide()
             || (o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 7)
