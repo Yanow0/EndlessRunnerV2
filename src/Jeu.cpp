@@ -47,7 +47,7 @@ bool Jeu::contactInferieur(const Obstacle *o) const{
 }
 
 
-bool Jeu::collision(bool saut) {
+bool Jeu::collision() {
     for (int i=0; i<obstacles.nbObstacles(); i++) {
         Obstacle *o = obstacles.getObstacle(i);
         if ((contactGauche(o) && (contactSuperieur(o) || contactInferieur(o)))

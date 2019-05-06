@@ -94,12 +94,11 @@ class Jeu {
         */
         bool contactInferieur(const Obstacle *o) const;
 
-        //! collision, fonction membre de Jeu avec 1 paramètre
+        //! collision, fonction membre de Jeu sans 1 paramètre
         /*!
             Retourne vrai si le joueur entre en collision avec un objet
-            \param saut booleen représentant l'état actuel du saut
         */
-        bool collision(const bool saut);
+        bool collision();
 
         //! actionClavier, procedure membre de Jeu avec 1 paramètre
         /*!
