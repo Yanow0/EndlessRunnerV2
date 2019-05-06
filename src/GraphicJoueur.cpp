@@ -53,7 +53,7 @@ GraphicJoueur::GraphicJoueur(Jeu& jeu) {
 
 
 
-// SPRITE BAISSÉ //
+// SPRITE BAISSï¿½ //
 		jSpriteClips[ 6 ].x =  98;
 		jSpriteClips[ 6 ].y =  100;
 		jSpriteClips[ 6 ].w =  48;
@@ -153,7 +153,7 @@ GraphicJoueur::GraphicJoueur(Jeu& jeu) {
 
 GraphicJoueur::~GraphicJoueur(){}
 
-void GraphicJoueur::afficherJoueur(Jeu jeu, int frame) {
+void GraphicJoueur::afficherJoueur(Jeu& jeu, int frame) {
 
 
     imageJoueur.x= joueur->pos->getX()*40;

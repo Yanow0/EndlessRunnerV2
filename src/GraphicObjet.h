@@ -1,7 +1,7 @@
-
 #ifndef GRAPHICOBJET_H_INCLUDED
 #define GRAPHICOBJET_H_INCLUDED
 
+#include <SDL2/SDL_image.h>
 #include "Jeu.h"
 
 class GraphicObjet{
@@ -18,8 +18,7 @@ public:
     //Destructeur de Jeu
     ~GraphicObjet();
 
-    void afficherObjet(Jeu jeu);
+    void afficherObjet(Jeu& jeu);
 };
 
 #endif // GRAPHICOBJET_H_INCLUDED
-

@@ -5,6 +5,7 @@
 #ifndef ENDLESSRUNNERV2_GRAPHICTERRAIN_H
 #define ENDLESSRUNNERV2_GRAPHICTERRAIN_H
 
+#include <SDL2/SDL_image.h>
 #include "Jeu.h"
 
 class GraphicTerrain {
@@ -18,7 +19,7 @@ public:
     //Destructeur de Terrain
     ~GraphicTerrain();
 
-    void afficherTerrain(Jeu jeu);
+    void afficherTerrain(Jeu& jeu);
 };
 
 

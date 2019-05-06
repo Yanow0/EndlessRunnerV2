@@ -23,23 +23,34 @@ Joueur::Joueur() {
     setAction(0);
 }
 
+Joueur::Joueur(const int &v) {
+    taille = new Forme2D(2,2);
+    pos = new Pos2D(8,7);
+    setVie(v);
+    fantome = false;
+    doubleSaut = false;
+    vitesseSaut=0.5;
+    gravite=0.025f;
+    setAction(0);
+}
+
 Joueur::~Joueur(){
 
 }
 
-int& Joueur::getAction() {
+int& Joueur::getAction() const{
     return *action;
 }
 
-void Joueur::setAction(int x){
+void Joueur::setAction(const int x){
     *action = x;
 };
 
-int& Joueur::getVie(){
+int& Joueur::getVie() {
     return vie;
 }
 
-void Joueur::setVie(int x){
+void Joueur::setVie(const int x){
     vie = x;
 }
 
@@ -47,7 +58,11 @@ void Joueur::vieUp(){
     vie++;
 }
 
-bool& Joueur::getDoubleSaut(){
+void Joueur::vieDown(){
+    if (vie >= 1) vie--;
+}
+
+bool Joueur::getDoubleSaut() const{
     return doubleSaut;
 }
 
@@ -57,6 +72,18 @@ void Joueur::activerDoubleSaut(){
 
 void Joueur::desactiverDoubleSaut(){
     doubleSaut = false;
+}
+
+bool Joueur::getFantome() const{
+    return fantome;
+}
+
+void Joueur::activerFantome(){
+    fantome = true;
+}
+
+void Joueur::desactiverFantome(){
+    fantome = false;
 }
 
 void Joueur::sauter(const Terrain &t) {

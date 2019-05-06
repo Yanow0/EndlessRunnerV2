@@ -15,15 +15,15 @@ public:
     ~Forme2D();
 
     //Initialize a Form2D object with the longueur and largeur values given
-    Forme2D(int hauteur, int largeur);
+    Forme2D(const int hauteur, const int largeur);
 
-    int getHauteur();
+    int getHauteur() const;
 
-    int getLargeur();
+    int getLargeur() const;
 
-    void setHauteur(int hauteur);
+    void setHauteur(const int hauteur);
 
-    void setLargeur(int largeur);
+    void setLargeur(const int largeur);
 
 private:
     int hauteur;

@@ -24,7 +24,7 @@ Obstacle* ListeObstacles::getObstacle(const int &i) {
     return &obstacles[i];
 }
 
-void ListeObstacles::ajouterObstacle(Obstacle o) {
+void ListeObstacles::ajouterObstacle(const Obstacle o) {
     obstacles.push_back(o);
 }
 
@@ -32,17 +32,12 @@ void ListeObstacles::supprimerEnTete() {
     obstacles.erase(obstacles.begin());
 }
 
-bool ListeObstacles::positionValide(Obstacle o) {
+bool ListeObstacles::positionValide(const Obstacle o) {
     return (listeVide()
-            || (o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 4));
-
-//    return (listeVide()
-//            || (o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 4
-//                && (o.pos->getY() > obstacles.back().pos->getY() + obstacles.back().taille->getHauteur() + 4
-//                    || obstacles.back().pos->getY() > o.pos->getY() + o.taille->getHauteur() + 4))
-//            || (o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 4
-//                && (o.pos->getY() > obstacles.back().pos->getY() + obstacles.back().taille->getHauteur() + 4
-//                    || obstacles.back().pos->getY() > o.pos->getY() + o.taille->getHauteur() + 4)));
+            || (o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 7)
+            || ((o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 2)
+                && ((o.pos->getY() > obstacles.back().pos->getY() + obstacles.back().taille->getHauteur() + 6)
+                    || (obstacles.back().pos->getY() > o.pos->getY() + o.taille->getHauteur() + 6))));
 }
 
 void ListeObstacles::creation() {
@@ -53,10 +48,8 @@ void ListeObstacles::creation() {
 }
 
 void ListeObstacles::deplacementAuto() {
-    int token = rand()%4 + 1;
-    if (token == 2) {
-        creation();
-    }
+
+    creation();
 
     for (int i=0; i<nbObstacles(); i++) {
         obstacles[i].deplacementAuto();
