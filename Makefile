@@ -3,10 +3,10 @@ CCX=g++ -g -Wall
 all: mainGraph mainTest
 
 mainGraph: mainGraph.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
-	g++ -g -o ./bin/mainGraph ./obj/mainGraph.o ./obj/Forme2D.o ./obj/GraphicJoueur.o ./obj/GraphicMenu.o ./obj/GraphicObjet.o ./obj/GraphicObstacle.o ./obj/Graphics.o ./obj/GraphicTerrain.o ./obj/Jeu.o ./obj/Joueur.o ./obj/ListeObjet.o ./obj/ListeObstacles.o ./obj/Objet.o ./obj/Obstacle.o ./obj/Pos2D.o ./obj/Terrain.o -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
+	g++ -g -o ./bin/mainGraph.exe ./obj/mainGraph.o ./obj/Forme2D.o ./obj/GraphicJoueur.o ./obj/GraphicMenu.o ./obj/GraphicObjet.o ./obj/GraphicObstacle.o ./obj/Graphics.o ./obj/GraphicTerrain.o ./obj/Jeu.o ./obj/Joueur.o ./obj/ListeObjet.o ./obj/ListeObstacles.o ./obj/Objet.o ./obj/Obstacle.o ./obj/Pos2D.o ./obj/Terrain.o -lSDL2main -lSDL2 -lSDL2_image
 
 mainTest: mainTest.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
-	g++ -g -Wall -o ./bin/mainTest   ./obj/mainGraph.o ./obj/Forme2D.o ./obj/GraphicJoueur.o ./obj/GraphicMenu.o ./obj/GraphicObjet.o ./obj/GraphicObstacle.o ./obj/Graphics.o ./obj/GraphicTerrain.o ./obj/Jeu.o ./obj/Joueur.o ./obj/ListeObjet.o ./obj/ListeObstacles.o ./obj/Objet.o ./obj/Obstacle.o ./obj/Pos2D.o ./obj/Terrain.o -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
+	g++ -g -Wall -o ./bin/mainTest.exe   ./obj/mainGraph.o ./obj/Forme2D.o ./obj/GraphicJoueur.o ./obj/GraphicMenu.o ./obj/GraphicObjet.o ./obj/GraphicObstacle.o ./obj/Graphics.o ./obj/GraphicTerrain.o ./obj/Jeu.o ./obj/Joueur.o ./obj/ListeObjet.o ./obj/ListeObstacles.o ./obj/Objet.o ./obj/Obstacle.o ./obj/Pos2D.o ./obj/Terrain.o  -lSDL2main -lSDL2 -lSDL2_image
 
 mainGraph.o: mainGraph.cpp 
 	g++ -g -Wall -c mainGraph.cpp -o ./obj/mainGraph.o
@@ -59,17 +59,9 @@ Pos2D.o: ./src/Pos2D.cpp ./src/Pos2D.h
 Terrain.o: ./src/Terrain.cpp ./src/Terrain.h
 	g++ -g -Wall -c ./src/Terrain.cpp -o ./obj/Terrain.o
 
-
-
-
-
-
 clean:
 	rm -r ./obj/*.o
 
-veryclean:
-	rm -r ./obj/*.o
-	rm -r ./bin/*
 
 
 

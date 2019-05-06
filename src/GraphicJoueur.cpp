@@ -182,5 +182,6 @@ void GraphicJoueur::afficherVie(Jeu &jeu) {
 
         SDL_RenderCopy(jeu.renderer, tVie, NULL, &imageVie.at(k));
 
+
     }
 }
