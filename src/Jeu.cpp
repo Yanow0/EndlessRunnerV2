@@ -110,9 +110,7 @@ void Jeu::actionAutomatique(bool &saut) {
             usleep(500000);
             #endif // WIN32
         }
-        else {
-            system("pause");
-        }
+
     }
 }
 
