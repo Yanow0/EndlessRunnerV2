@@ -5,7 +5,7 @@ using namespace std;
 GraphicObjet::GraphicObjet(Jeu& jeu) {
     objet=jeu.getObjet();
 
-    sSprite = IMG_Load("icons.png");
+    sSprite = IMG_Load("./data/icons.png");
     if (!sSprite) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();
