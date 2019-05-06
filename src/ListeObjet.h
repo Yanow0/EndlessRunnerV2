@@ -14,9 +14,9 @@ class ListeObjet
         int nbObjet();
         bool listeVide();
         Objet* getObjet(const int &i);
-        int getTypeObjet();
         void ajouterObjet(const Objet o);
         void supprimerEnTete();
+        void supprimerElement(const int &i);
 
         // tester si la position d'un nouvel objet est valide
         // (pour ensuite l'insérer dans la liste d'objet)

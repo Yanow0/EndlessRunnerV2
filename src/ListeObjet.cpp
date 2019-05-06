@@ -29,11 +29,6 @@ Objet* ListeObjet::getObjet(const int &i)
     return &objets[i];
 }
 
-int ListeObjet::getTypeObjet()
-{
-    return 1;
-}
-
 void ListeObjet::ajouterObjet(const Objet o)
 {
     objets.push_back(o);
@@ -42,6 +37,11 @@ void ListeObjet::ajouterObjet(const Objet o)
 void ListeObjet::supprimerEnTete()
 {
     objets.erase(objets.begin());
+}
+
+void ListeObjet::supprimerElement(const int &i)
+{
+    objets.erase(objets.begin()+i);
 }
 
 bool ListeObjet::positionValide(const Objet o)

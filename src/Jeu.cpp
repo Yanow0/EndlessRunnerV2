@@ -22,7 +22,6 @@ Jeu::~Jeu(){
 Terrain* Jeu::getTerrain() {return &terrain;}
 Joueur* Jeu::getJoueur() {return &joueur;}
 ListeObstacles* Jeu::getObstacle() {return &obstacles;}
-//Objet* Jeu::getObjet() {return &objet;}
 ListeObjet* Jeu::getObjet(){return &objets;}
 
 // l'obstacle en contact avec le cote gauche du joueur
@@ -52,12 +51,63 @@ bool Jeu::collision() {
         Obstacle *o = obstacles.getObstacle(i);
         if ((contactGauche(o) && (contactSuperieur(o) || contactInferieur(o)))
         || (contactDroite(o) && (contactSuperieur(o) || contactInferieur(o)))) {
+            if(joueur.fantome==1){
+                cout << "test" << endl;
+                obstacles.supprimerElement(i);
+                joueur.fantome=false;
+                return false;
+            }
             return true;
         }
     }
     return false;
 }
 
+bool Jeu::contactGaucheObjet(const Objet *o) const{
+    return (o->pos->getX() <= joueur.pos->getX()
+        && (o->pos->getX() + o->taille->getLargeur() >= joueur.pos->getX()));
+}
+
+bool Jeu::contactDroiteObjet(const Objet *o) const{
+    return (joueur.pos->getX() <= o->pos->getX()
+        && (joueur.pos->getX() + joueur.taille->getLargeur() - 0.8 >= o->pos->getX()));
+}
+
+bool Jeu::contactSuperieurObjet(const Objet *o) const{
+    return (o->pos->getY() <= joueur.pos->getY()
+        && (o->pos->getY() + o->taille->getHauteur() >= joueur.pos->getY() + 0.5));
+}
+
+
+bool Jeu::contactInferieurObjet(const Objet *o) const{
+    return (joueur.pos->getY() <= o->pos->getY()
+        && (joueur.pos->getY() + joueur.taille->getHauteur() >= o->pos->getY()));
+}
+
+
+bool Jeu::collisionObjet(){
+    for (int i=0; i<objets.nbObjet(); i++) {
+        Objet *o = objets.getObjet(i);
+        if ((contactGaucheObjet(o) && (contactSuperieurObjet(o) || contactInferieurObjet(o)))
+        || (contactDroiteObjet(o) && (contactSuperieurObjet(o) || contactInferieurObjet(o)))) {
+
+            switch(objets.getObjet(i)->getTypeObjet()){
+            case 0:
+                joueur.vieUp();
+                break;
+            case 1:
+                joueur.fantome=true;
+                break;
+            case 2:
+                joueur.doubleSaut=true;
+                break;
+            }
+            objets.supprimerElement(i);
+            return true;
+        }
+    }
+    return false;
+}
 
 void Jeu::actionClavier(const char &touche) {
 	switch(touche) {
@@ -91,9 +141,9 @@ bool Jeu::collisionSol() {
 void Jeu::actionAutomatique(bool &saut) {
     obstacles.deplacementAuto();
     objets.deplacementAuto();
-
     if (!saut) joueur.retomber(terrain);
-    if (collision()) {
+    //if (collision(saut) && joueur.fantome==0) {
+    if (collision() && joueur.fantome==0) {
         cout << "collision" << endl;
         joueur.vieDown();
         cout << "vie = " << joueur.getVie() << endl;
@@ -102,7 +152,7 @@ void Jeu::actionAutomatique(bool &saut) {
         if (joueur.getVie() > 0) {
             joueur = Joueur(joueur.getVie());
             obstacles.vider();
-//            objet = Objet();
+            objets.vider();
 
             #ifdef _WIN32
             Sleep(500);
@@ -110,9 +160,11 @@ void Jeu::actionAutomatique(bool &saut) {
             usleep(500000);
             #endif // WIN32
         }
-        else {
-            system("pause");
-        }
+
+    }
+
+    if (collisionObjet()) {
+        cout << "collision avec objet" << endl;
     }
 }
 

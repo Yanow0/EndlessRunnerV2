@@ -53,6 +53,11 @@ Graphics::~Graphics(){
 
 void Graphics::doJeu (){
     //cout << "in loop: " << jeu.getJoueur().pos->getY()<< endl;
+    if(jeu.getJoueur()->getVie()<=0) {
+        menu->menuState=true;
+        menu->currentMenu=2;
+        jeu.restart();
+    }
     if (!menu->menuState) {
         jeu.actionAutomatique(saut);
     }
