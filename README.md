@@ -8,7 +8,7 @@ Au démarrage du jeu, le joueur dispose de 3 vies. Il en perd une s'il rentre en
 Lorsqu'il attrape un objet, il gagne différents avantages selon le type de l'objet. Une potion magique lui apporte une vie supplémentaire. Une paire de chaussures attrapée active la possibilité de faire des doubles sauts. Et enfin une hache représente une arme avec laquelle le joueur peut détruire les obstacles rencontrés sur son chemin. Chacune de ces fonctionnalités est activée pendant une durée limitée.
 Si le personnage perd toutes ses vies, un menu s'affiche en invitant le joueur à recommencer une nouvelle partie ou retourner au menu principal.
 
-3. Le projet peut être compilé et exécuté en utilisant CodeBlocks ou dans un terminal avec la commande "make" puis "./endlessrunner"
+3. Le projet peut être compilé et exécuté en utilisant CodeBlocks ou dans un terminal avec la commande "make" puis "./bin/mainGraph" ou "./bin/mainTest"
 
 4. Cet archive contient :
 - un dossier "src" contenant 35 fichiers sources
