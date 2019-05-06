@@ -68,6 +68,7 @@ bool Joueur::getDoubleSaut() const{
 
 void Joueur::activerDoubleSaut(){
     doubleSaut = true;
+    desactiverFantome();
 }
 
 void Joueur::desactiverDoubleSaut(){
@@ -80,6 +81,7 @@ bool Joueur::getFantome() const{
 
 void Joueur::activerFantome(){
     fantome = true;
+    desactiverDoubleSaut();
 }
 
 void Joueur::desactiverFantome(){
