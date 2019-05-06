@@ -46,25 +46,7 @@ bool Jeu::contactInferieur(const Obstacle *o) const{
 }
 
 
-bool Jeu::collision(const bool saut) {
-//    for (int i=0; i<obstacles.nbObstacles(); i++) {
-//        Obstacle *o = obstacles.getObstacle(i);
-//
-//        if ((contactGauche(o) && (contactSuperieur(o)))
-//        || (contactDroite(o) && (contactSuperieur(o)))) {
-//            return true;
-//        }
-//
-//        else if (saut && ((contactGauche(o) && contactInferieur(o))
-//                        || (contactDroite(o) && contactInferieur(o)))) {
-//
-//            joueur.pos->setY(o->pos->getY()-joueur.taille->getHauteur());
-//            return false;
-//        }
-//    }
-//    return false;
-
-
+bool Jeu::collision() {
     for (int i=0; i<obstacles.nbObstacles(); i++) {
         Obstacle *o = obstacles.getObstacle(i);
         if ((contactGauche(o) && (contactSuperieur(o) || contactInferieur(o)))
@@ -103,7 +85,7 @@ bool Jeu::contactInferieurObjet(const Objet *o) const{
 }
 
 
-bool Jeu::collisionObjet(const bool saut){
+bool Jeu::collisionObjet(){
     for (int i=0; i<objets.nbObjet(); i++) {
         Objet *o = objets.getObjet(i);
         if ((contactGaucheObjet(o) && (contactSuperieurObjet(o) || contactInferieurObjet(o)))
@@ -160,24 +142,28 @@ void Jeu::actionAutomatique(bool &saut) {
     obstacles.deplacementAuto();
     objets.deplacementAuto();
     if (!saut) joueur.retomber(terrain);
-    if (collision(saut) && joueur.fantome==0) {
+    //if (collision(saut) && joueur.fantome==0) {
+    if (collision() && joueur.fantome==0) {
         cout << "collision" << endl;
         joueur.vieDown();
         cout << "vie = " << joueur.getVie() << endl;
 
         saut = false;
-        joueur = Joueur(joueur.getVie());
-        obstacles.vider();
-        objets.vider();
+        if (joueur.getVie() > 0) {
+            joueur = Joueur(joueur.getVie());
+            obstacles.vider();
+            objets.vider();
 
-        #ifdef _WIN32
-        Sleep(500);
-		#else
-		usleep(500000);
-        #endif // WIN32
+            #ifdef _WIN32
+            Sleep(500);
+            #else
+            usleep(500000);
+            #endif // WIN32
+        }
+
     }
 
-    if (collisionObjet(saut)) {
+    if (collisionObjet()) {
         cout << "collision avec objet" << endl;
     }
 }

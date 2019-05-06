@@ -8,7 +8,7 @@ using namespace std;
 
 GraphicJoueur::GraphicJoueur(Jeu& jeu) {
     joueur=jeu.getJoueur();
-    sSprite = IMG_Load("lucario.png");
+    sSprite = IMG_Load("./data/lucario.png");
     if (!sSprite) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();
