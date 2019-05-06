@@ -16,23 +16,34 @@ GraphicObjet::GraphicObjet(Jeu& jeu) {
         cout << "Error: cannot create sprite texture" <<endl;
     }
 
-    //SPRITE OBJET VIE
-    jSpriteClips[ 0 ].x =  128;
-    jSpriteClips[ 0 ].y =  288;
-    jSpriteClips[ 0 ].w =  32;
-    jSpriteClips[ 0 ].h =  32;
+    sHeart = IMG_Load("./data/coeur.png");
+    if (!sHeart) {
+        cout << "Error: cannot load sprite surface" <<endl;
+        IMG_GetError();
+    }
 
-    //SPRITE OBJET FANTOME
-    jSpriteClips[ 1 ].x =  160;
-    jSpriteClips[ 1 ].y =  96;
-    jSpriteClips[ 1 ].w =  32;
-    jSpriteClips[ 1 ].h =  32;
+    tHeart = SDL_CreateTextureFromSurface(jeu.renderer,sHeart);
+    if (tHeart==NULL) {
+        cout << "Error: cannot create sprite texture" <<endl;
+    }
+
+    sStar = IMG_Load("./data/star.png");
+    if (!sStar) {
+        cout << "Error: cannot load sprite surface" <<endl;
+        IMG_GetError();
+    }
+
+    tStar = SDL_CreateTextureFromSurface(jeu.renderer,sStar);
+    if (tStar==NULL) {
+        cout << "Error: cannot create sprite texture" <<endl;
+    }
 
     //SPRITE OBJET DOUBLE SAUT
-    jSpriteClips[ 2 ].x =  64;
-    jSpriteClips[ 2 ].y =  256;
-    jSpriteClips[ 2 ].w =  32;
-    jSpriteClips[ 2 ].h =  32;
+    jSpriteClips[ 0 ].x =  64;
+    jSpriteClips[ 0 ].y =  256;
+    jSpriteClips[ 0 ].w =  32;
+    jSpriteClips[ 0 ].h = 32;
+
 }
 
 GraphicObjet::~GraphicObjet(){}
@@ -49,7 +60,19 @@ void GraphicObjet::afficherObjet(Jeu& jeu, int frame) {
         //SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
         //SDL_RenderDrawRect(jeu.renderer, &imageObjet);
 
-        SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[objet->getObjet(k)->getTypeObjet()], &imageObjet.at(k));
+        switch(objet->getObjet(k)->getTypeObjet()) {
+            case 0 :
+                SDL_RenderCopy(jeu.renderer, tHeart, NULL, &imageObjet.at(k));
+                break;
+
+            case 1 :
+                SDL_RenderCopy(jeu.renderer, tStar, NULL, &imageObjet.at(k));
+                 break;
+
+            case 2 :
+                SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[0], &imageObjet.at(k));
+                break;
+        }
     }
 }
 

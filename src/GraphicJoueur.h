@@ -19,12 +19,11 @@ public:
     SDL_Texture *tSprite; //!< Pointeur de type SDL_Texture, représente la texture du sprite du joueur
     SDL_Surface *sVie; //!< Pointeur de type SDL_Surface, représente la surface du symbole du coeur
     SDL_Texture *tVie; //!< Pointeur de type SDL_Texture, représente la texture du symbole du coeur
-    SDL_Surface *sFantome; //!< Pointeur de type SDL_Surface, représente la surface du symbole pour l'objet "Fantôme"
-    SDL_Texture *tFantome; //!< Pointeur de type SDL_Texture, représente la texture du symbole pour l'objet "Fantôme"
+    SDL_Surface *sStar; //!< Pointeur de type SDL_Surface, représente la surface du symbole pour l'objet "Etoile"
+    SDL_Texture *tStar; //!< Pointeur de type SDL_Texture, représente la texture du symbole pour l'objet "Etoile"
     SDL_Surface *sDoubleSaut; //!< Pointeur de type SDL_Surface, représente la surface du symbole pour l'objet "Double Saut"
     SDL_Texture *tDoubleSaut; //!< Pointeur de type SDL_Texture, représente la texture du symbole pour l'objet "Double Saut"
     SDL_Rect jSpriteClips[ 24 ]; //!< Tableau de type SDL_Rect, contient les différents sprites pour animer le joueur
-    SDL_Rect jSpriteFantome; //!< Variable membre de type SDL_Rect, contient le symbole pour l'objet "Fantôme"
     SDL_Rect jSpriteDoubleSaut; //!< Variable membre de type SDL_Rect, contient le symbole pour l'objet "Double Saut"
 
     //Constructeur de Jeu

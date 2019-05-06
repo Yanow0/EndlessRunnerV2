@@ -24,10 +24,10 @@ class Joueur {
 
 
     //Constructeur Joueur
-    //! Constructeur de Jeu sans paramètre
-        /*!
-            Initialise les variables membre de Joueur
-        */
+    //! Constructeur de Joueur sans paramètre
+    /*!
+        Initialise les variables membre de Joueur
+    */
     Joueur();
 
     //! Constructeur de Jeu avec 1 paramètre
