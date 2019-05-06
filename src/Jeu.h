@@ -20,7 +20,6 @@ class Jeu {
         Joueur joueur; //!< Variable membre de type Joueur, représente le Joueur actuel
         ListeObstacles obstacles; //!< Variable membre de type ListeObstacles, représente la ListeObstacles actuelle
         Terrain terrain; //!< Variable membre de type Terrain, représente le Terrain actuel
-        //Objet objet; //!< Variable membre de type Objet, représente l'Objet actuel
         ListeObjet objets; //!< Variable membre de type ListeObjet, représente la liseObjets actuelle
 
     public:
@@ -72,34 +71,65 @@ class Jeu {
 
         //! contactGauche, fonction membre de Jeu sans paramètre
         /*!
-            Retourne vrai si le côte gauche du joueur entre en collision avec un objet
+            Retourne vrai si le côte gauche du joueur entre en collision avec un obstacle
         */
         bool contactGauche(const Obstacle *o) const;
 
+        //! contactGaucheObjet, fonction membre de Jeu sans paramètre
+        /*!
+            Retourne vrai si le côte gauche du joueur entre en collision avec un objet
+        */
+        bool contactGaucheObjet(const Objet *o) const;
+
         //! contactDroite, fonction membre de Jeu sans paramètre
         /*!
-            Retourne vrai si le côte droit du joueur entre en collision avec un objet
+            Retourne vrai si le côte droit du joueur entre en collision avec un obstacle
         */
         bool contactDroite(const Obstacle *o) const;
 
+        //! contactGaucheObjet, fonction membre de Jeu sans paramètre
+        /*!
+            Retourne vrai si le côte droit du joueur entre en collision avec un objet
+        */
+        bool contactDroiteObjet(const Objet *o) const;
+
         //! contactSuperieur, fonction membre de Jeu sans paramètre
         /*!
-            Retourne vrai si le côte superieur du joueur entre en collision avec un objet
+            Retourne vrai si le côte superieur du joueur entre en collision avec un obstacle
         */
         bool contactSuperieur(const Obstacle *o) const;
 
+        //! contactGaucheObjet, fonction membre de Jeu sans paramètre
+        /*!
+            Retourne vrai si le côte supérieur du joueur entre en collision avec un objet
+        */
+        bool contactSuperieurObjet(const Objet *o) const;
+
         //! contactInferieur, fonction membre de Jeu sans paramètre
+        /*!
+            Retourne vrai si le côte inferieur du joueur entre en collision avec un obstacle
+        */
+        bool contactInferieur(const Obstacle *o) const;
+
+        //! contactGaucheObjet, fonction membre de Jeu sans paramètre
         /*!
             Retourne vrai si le côte inferieur du joueur entre en collision avec un objet
         */
-        bool contactInferieur(const Obstacle *o) const;
+        bool contactInferieurObjet(const Objet *o) const;
+
+        //! collision, fonction membre de Jeu avec 1 paramètre
+        /*!
+            Retourne vrai si le joueur entre en collision avec un obstacle
+            \param saut booleen représentant l'état actuel du saut
+        */
+        bool collision(const bool saut);
 
         //! collision, fonction membre de Jeu avec 1 paramètre
         /*!
             Retourne vrai si le joueur entre en collision avec un objet
             \param saut booleen représentant l'état actuel du saut
         */
-        bool collision(const bool saut);
+        bool collisionObjet(const bool saut);
 
         //! actionClavier, procedure membre de Jeu avec 1 paramètre
         /*!

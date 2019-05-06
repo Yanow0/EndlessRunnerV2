@@ -21,6 +21,7 @@ public:
     Obstacle* getObstacle(const int &i);
     void ajouterObstacle(const Obstacle o);
     void supprimerEnTete();
+    void supprimerElement(const int &i);
 
     // tester si la position d'un nouvel obstacle est valide
     // (pour ensuite l'insérer dans la liste d'obstacles)
