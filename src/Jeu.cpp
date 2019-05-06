@@ -25,28 +25,28 @@ ListeObstacles* Jeu::getObstacle() {return &obstacles;}
 Objet* Jeu::getObjet() {return &objet;}
 
 // l'obstacle en contact avec le cote gauche du joueur
-bool Jeu::contactGauche(Obstacle *o) {
+bool Jeu::contactGauche(const Obstacle *o) const{
     return (o->pos->getX() <= joueur.pos->getX()
         && (o->pos->getX() + o->taille->getLargeur() >= joueur.pos->getX()));
 }
 
-bool Jeu::contactDroite(Obstacle *o) {
+bool Jeu::contactDroite(const Obstacle *o) const{
     return (joueur.pos->getX() <= o->pos->getX()
         && (joueur.pos->getX() + joueur.taille->getLargeur() - 0.8 >= o->pos->getX()));
 }
 
-bool Jeu::contactSuperieur(Obstacle *o) {
+bool Jeu::contactSuperieur(const Obstacle *o) const{
     return (o->pos->getY() <= joueur.pos->getY()
         && (o->pos->getY() + o->taille->getHauteur() >= joueur.pos->getY() + 0.5));
 }
 
-bool Jeu::contactInferieur(Obstacle *o) {
+bool Jeu::contactInferieur(const Obstacle *o) const{
     return (joueur.pos->getY() <= o->pos->getY()
         && (joueur.pos->getY() + joueur.taille->getHauteur() >= o->pos->getY()));
 }
 
 
-bool Jeu::collision(bool saut) {
+bool Jeu::collision(const bool saut) {
 //    for (int i=0; i<obstacles.nbObstacles(); i++) {
 //        Obstacle *o = obstacles.getObstacle(i);
 //
@@ -93,7 +93,7 @@ void Jeu::actionClavier(const char &touche) {
 	}
 }
 
-bool Jeu::collisionSol(){
+bool Jeu::collisionSol() {
     if (joueur.pos->getY() + joueur.taille->getHauteur() >= terrain.getPlateforme()){
             joueur.pos->setY(terrain.getPlateforme() -  joueur.taille->getHauteur());
 

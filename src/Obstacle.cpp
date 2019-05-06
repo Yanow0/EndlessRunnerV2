@@ -7,8 +7,8 @@
 
 
 Obstacle::Obstacle() {
-    taille = new Forme2D( 1 , rand()%2 + 1 );
-    pos = new Pos2D(20, rand()%(9-taille->getHauteur()) + 1 );
+    taille = new Forme2D( rand()%2 + 1 , rand()%2 + 1 );
+    pos = new Pos2D(20, rand()%3 + 5);
 }
 
 Obstacle::~Obstacle(){

@@ -17,11 +17,11 @@ Objet::Objet(){
 Objet::~Objet(){
 }
 
-int& Objet::getTypeObjet() {
+int& Objet::getTypeObjet() const{
     return *typeObjet;
 }
 
-void Objet::setTypeObjet(int x){
+void Objet::setTypeObjet(const int x){
     *typeObjet = x;
 }
 
@@ -30,10 +30,11 @@ void Objet::vie(Joueur &j){
 }
 
 void Objet::fantome(Joueur &j){
-    j.fantome = true;
+    j.activerFantome();
 }
 
 void Objet::doubleSaut(Joueur &j){
+    j.activerDoubleSaut();
 }
 
 void Objet::arme(Joueur &j){

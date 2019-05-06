@@ -43,7 +43,7 @@ GraphicObjet::GraphicObjet(Jeu& jeu) {
 
 GraphicObjet::~GraphicObjet(){}
 
-void GraphicObjet::afficherObjet(Jeu jeu) {
+void GraphicObjet::afficherObjet(Jeu& jeu) {
 
     imageObjet.x= objet->pos->getX()*40;
     imageObjet.y= objet->pos->getY()*40;

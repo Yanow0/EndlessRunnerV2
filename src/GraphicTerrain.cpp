@@ -18,7 +18,7 @@ GraphicTerrain::GraphicTerrain(Jeu& jeu) {
 
 GraphicTerrain::~GraphicTerrain(){}
 
-void GraphicTerrain::afficherTerrain(Jeu jeu) {
+void GraphicTerrain::afficherTerrain(Jeu& jeu) {
 
     SDL_RenderCopy(jeu.renderer, texture, NULL, NULL);
    // SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);

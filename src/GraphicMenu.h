@@ -7,7 +7,7 @@
 class GraphicMenu
 {
     public:
-        GraphicMenu(Jeu jeu);
+        GraphicMenu(Jeu& jeu);
         ~GraphicMenu();
 
         SDL_Color color;

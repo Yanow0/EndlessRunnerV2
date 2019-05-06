@@ -41,12 +41,12 @@ class Jeu {
         ListeObstacles* getObstacle();
         Objet* getObjet();
 
-        bool contactGauche(Obstacle *o);
-        bool contactDroite(Obstacle *o);
-        bool contactSuperieur(Obstacle *o);
-        bool contactInferieur(Obstacle *o);
+        bool contactGauche(const Obstacle *o) const;
+        bool contactDroite(const Obstacle *o) const;
+        bool contactSuperieur(const Obstacle *o) const;
+        bool contactInferieur(const Obstacle *o) const;
 
-        bool collision(bool saut);
+        bool collision(const bool saut);
 
         void actionClavier(const char &touche);
         void actionAutomatique(bool &saut);

@@ -19,7 +19,7 @@ public:
     //Destructeur de Jeu
     ~GraphicObjet();
 
-    void afficherObjet(Jeu jeu);
+    void afficherObjet(Jeu& jeu);
 };
 
 #endif // GRAPHICOBJET_H_INCLUDED

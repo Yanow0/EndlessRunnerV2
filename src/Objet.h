@@ -15,8 +15,8 @@ public:
 
     Objet();
     ~Objet();
-    int& getTypeObjet();
-    void setTypeObjet(int x);
+    int& getTypeObjet() const;
+    void setTypeObjet(const int x);
     void vie(Joueur &j);
     void fantome(Joueur &j);
     void doubleSaut(Joueur &j);

@@ -29,15 +29,18 @@ class Joueur {
 
     //Destructeur Joueur
     ~Joueur();
-    int& getAction();
-    void setAction(int x);
+    int& getAction() const;
+    void setAction(const int x);
     int& getVie();
-    void setVie(int x);
+    void setVie(const int x);
     void vieUp();
     void vieDown();
-    bool& getDoubleSaut();
+    bool getDoubleSaut() const;
     void activerDoubleSaut();
     void desactiverDoubleSaut();
+    bool getFantome() const;
+    void activerFantome();
+    void desactiverFantome();
     void doubleSauter(const Terrain &t);
     bool collisionSol(const Terrain &t);
     void baisser(const Terrain &t);

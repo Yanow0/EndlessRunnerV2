@@ -19,7 +19,7 @@ public:
     //Destructeur de Terrain
     ~GraphicTerrain();
 
-    void afficherTerrain(Jeu jeu);
+    void afficherTerrain(Jeu& jeu);
 };
 
 

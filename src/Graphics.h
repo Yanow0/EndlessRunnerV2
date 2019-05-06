@@ -35,7 +35,6 @@ public:
 
     //Destructeur de Graphics
     ~Graphics();
-    void startGame();
     void doJeu();
     void afficherGraphics();
 

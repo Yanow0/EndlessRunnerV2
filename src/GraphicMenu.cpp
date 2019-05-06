@@ -4,7 +4,7 @@
 #include <SDL2/SDL_image.h>
 using namespace std;
 
-GraphicMenu::GraphicMenu(Jeu jeu){
+GraphicMenu::GraphicMenu(Jeu& jeu){
 
     //TEXTURE MAIN MENU
     sMainMenu = IMG_Load("MainMenu.jpg");

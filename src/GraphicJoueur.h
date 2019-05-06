@@ -24,7 +24,7 @@ public:
     //Destructeur de Jeu
     ~GraphicJoueur();
 
-    void afficherJoueur(Jeu& jeu, int frame);
+    void afficherJoueur(Jeu& jeu, int frame) ;
 };
 
 
