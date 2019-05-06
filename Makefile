@@ -2,11 +2,17 @@ CCX=g++ -g -Wall
 
 all: mainGraph mainTest
 
-mainGraph: mainGraph.cpp Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o JeuTxt.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
-	g++ -g -Wall mainGraph.cpp -o ./bin/mainGraph
+mainGraph: mainGraph.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o JeuTxt.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
+	g++ -g -o ./bin/mainGraph mainGraph.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o JeuTxt.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
 
-mainTest: mainTest.cpp Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o JeuTxt.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
-	g++ -g -Wall mainTest.cpp -o ./bin/mainTest
+mainTest: mainTest.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o JeuTxt.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
+	g++ -g -Wall -o ./bin/mainTest mainTest.o Forme2D.o GraphicJoueur.o GraphicMenu.o GraphicObjet.o GraphicObstacle.o Graphics.o GraphicTerrain.o Jeu.o JeuTxt.o Joueur.o ListeObjet.o ListeObstacles.o Objet.o Obstacle.o Pos2D.o Terrain.o
+
+mainGraph.o: mainGraph.cpp 
+	g++ -g -Wall -c mainGraph.cpp -o ./obj/mainGraph.o
+
+mainTest.o: mainTest.cpp 
+	g++ -g -Wall -c mainTest.cpp -o ./obj/mainTest.o
 
 Forme2D.o: ./src/Forme2D.cpp ./src/Forme2D.h
 	g++ -g -Wall -c ./src/Forme2D.cpp -o ./obj/Forme2D.o
