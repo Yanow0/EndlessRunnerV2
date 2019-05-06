@@ -13,12 +13,19 @@ public:
     Joueur* joueur; //!< Pointeur de type Joueur
     SDL_Rect imageJoueur; //!< Variable membre de type SDL_Rect, représente la hitbox du joueur
     vector<SDL_Rect> imageVie; //!< Tableau Dynamique de type SDL_Rect, représente la hitbox du symbole du coeur
+    vector<SDL_Rect> imageObjet; //!< Tableau Dynamique de type SDL_Rect, représente la hitbox du symbole des objets
 
     SDL_Surface *sSprite; //!< Pointeur de type SDL_Surface, représente la surface du sprite du joueur
     SDL_Texture *tSprite; //!< Pointeur de type SDL_Texture, représente la texture du sprite du joueur
     SDL_Surface *sVie; //!< Pointeur de type SDL_Surface, représente la surface du symbole du coeur
     SDL_Texture *tVie; //!< Pointeur de type SDL_Texture, représente la texture du symbole du coeur
+    SDL_Surface *sFantome; //!< Pointeur de type SDL_Surface, représente la surface du symbole pour l'objet "Fantôme"
+    SDL_Texture *tFantome; //!< Pointeur de type SDL_Texture, représente la texture du symbole pour l'objet "Fantôme"
+    SDL_Surface *sDoubleSaut; //!< Pointeur de type SDL_Surface, représente la surface du symbole pour l'objet "Double Saut"
+    SDL_Texture *tDoubleSaut; //!< Pointeur de type SDL_Texture, représente la texture du symbole pour l'objet "Double Saut"
     SDL_Rect jSpriteClips[ 24 ]; //!< Tableau de type SDL_Rect, contient les différents sprites pour animer le joueur
+    SDL_Rect jSpriteFantome; //!< Variable membre de type SDL_Rect, contient le symbole pour l'objet "Fantôme"
+    SDL_Rect jSpriteDoubleSaut; //!< Variable membre de type SDL_Rect, contient le symbole pour l'objet "Double Saut"
 
     //Constructeur de Jeu
     //! Constructeur de GraphicJoueur avec 1 paramètre
@@ -40,6 +47,7 @@ public:
     */
     void afficherJoueur(Jeu& jeu, int frame) ;
     void afficherVie(Jeu& jeu) ;
+    void afficherObjet(Jeu& jeu) ;
 };
 
 

@@ -7,7 +7,6 @@
 #include <unistd.h>
 #endif // WIN32
 #include <cstdlib>
-//#include <pthread.h>
 #include <iostream>
 #include "Jeu.h"
 using namespace std;
