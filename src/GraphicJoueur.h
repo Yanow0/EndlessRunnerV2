@@ -46,7 +46,19 @@ public:
       \param frame entier représentant l'image actuelle.
     */
     void afficherJoueur(Jeu& jeu, int frame) ;
+
+    //! afficherVie, fonction membre de GraphicJoueur avec 1 paramètre
+    /*!
+        Affiche en haut à gauche du renderer le nombre de vies du joueur avec un nombre correspondant de symboles de coeur
+      \param jeu passage en référence du Jeu en cours.
+    */
     void afficherVie(Jeu& jeu) ;
+
+    //! afficherObjet, fonction membre de GraphicJoueur avec 1 paramètre
+    /*!
+        Affiche en haut à gauche du renderer les symboles des objets à disposition du joueur
+      \param jeu passage en référence du Jeu en cours.
+    */
     void afficherObjet(Jeu& jeu) ;
 };
 

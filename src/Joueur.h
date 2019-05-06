@@ -158,6 +158,12 @@ class Joueur {
             \param t Terrain représentant le terrain actuel
         */
     void retomber(const Terrain &t);
+
+     //! testRegression, procedure membre de Joueur sans paramètre
+        /*!
+            Lance un test de régression pour la classe Joueur
+        */
+    void testRegression();
 };
 
 

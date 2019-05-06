@@ -51,7 +51,7 @@ bool Jeu::collision() {
         if ((contactGauche(o) && (contactSuperieur(o) || contactInferieur(o)))
         || (contactDroite(o) && (contactSuperieur(o) || contactInferieur(o)))) {
             if(joueur.fantome==1){
-                cout << "test" << endl;
+//                cout << "test" << endl;
                 obstacles.supprimerElement(i);
                 joueur.fantome=false;
                 return false;
@@ -141,11 +141,10 @@ void Jeu::actionAutomatique(bool &saut) {
     obstacles.deplacementAuto();
     objets.deplacementAuto();
     if (!saut) joueur.retomber(terrain);
-    //if (collision(saut) && joueur.fantome==0) {
     if (collision() && joueur.fantome==0) {
-        cout << "collision" << endl;
+//        cout << "collision" << endl;
         joueur.vieDown();
-        cout << "vie = " << joueur.getVie() << endl;
+//        cout << "vie = " << joueur.getVie() << endl;
 
         saut = false;
         if (joueur.getVie() > 0) {
