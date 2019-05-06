@@ -12,7 +12,9 @@ Si le personnage perd toutes ses vies, un menu s'affiche en invitant le joueur �
 
 4. Cet archive contient :
 - un dossier "src" contenant 35 fichiers sources
+- un dossier "bin" contenant les exécutables
 - un dossier "data" contenant 13 fichiers images et son
+- un Makefile
 - la documention du code
 - le diagramme des classes ("diagrammeDesClasses.png")
 - la présentation orale ("presentation.pdf")
