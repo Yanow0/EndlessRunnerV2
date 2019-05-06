@@ -29,6 +29,11 @@ Objet* ListeObjet::getObjet(const int &i)
     return &objets[i];
 }
 
+int ListeObjet::getTypeObjet()
+{
+    return 1;
+}
+
 void ListeObjet::ajouterObjet(const Objet o)
 {
     objets.push_back(o);

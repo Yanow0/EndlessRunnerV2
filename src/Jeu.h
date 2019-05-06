@@ -6,6 +6,7 @@
 #include "Joueur.h"
 #include "Obstacle.h"
 #include "ListeObstacles.h"
+#include "ListeObjet.h"
 #include "Objet.h"
 #include <SDL2/SDL.h>
 
@@ -19,7 +20,8 @@ class Jeu {
         Joueur joueur; //!< Variable membre de type Joueur, représente le Joueur actuel
         ListeObstacles obstacles; //!< Variable membre de type ListeObstacles, représente la ListeObstacles actuelle
         Terrain terrain; //!< Variable membre de type Terrain, représente le Terrain actuel
-        Objet objet; //!< Variable membre de type Objet, représente l'Objet actuel
+        //Objet objet; //!< Variable membre de type Objet, représente l'Objet actuel
+        ListeObjet objets; //!< Variable membre de type ListeObjet, représente la liseObjets actuelle
 
     public:
         SDL_Window* window; //!< Pointeur de type SDL_Window
@@ -66,7 +68,7 @@ class Jeu {
         /*!
             Retourne la ListeObjets Objets du Jeu.
         */
-        Objet* getObjet();
+        ListeObjet* getObjet();
 
         //! contactGauche, fonction membre de Jeu sans paramètre
         /*!
