@@ -63,7 +63,7 @@ void ListeObjet::creation()
 
 void ListeObjet::deplacementAuto()
 {
-    if(nbObjet()<1) creation();
+    creation();
     for (int i=0; i<nbObjet(); i++) {
         objets[i].deplacementAuto();
     }
