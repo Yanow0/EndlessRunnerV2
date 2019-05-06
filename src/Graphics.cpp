@@ -87,6 +87,7 @@ void Graphics::afficherGraphics() {
     }else{
         terrain->afficherTerrain(jeu);
         joueur->afficherJoueur(jeu, frame);
+        joueur->afficherVie(jeu);
         obstacle->afficherObstacle(jeu, frameObstacle);
         objet->afficherObjet(jeu, frameObjets);
     }

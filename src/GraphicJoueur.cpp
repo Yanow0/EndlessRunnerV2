@@ -9,11 +9,13 @@ using namespace std;
 GraphicJoueur::GraphicJoueur(Jeu& jeu) {
     joueur=jeu.getJoueur();
     sSprite = IMG_Load("./data/lucario.png");
+    sVie = IMG_Load("./data/coeur.png");
     if (!sSprite) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();
     }
 
+    tVie = SDL_CreateTextureFromSurface(jeu.renderer,sVie);
     tSprite = SDL_CreateTextureFromSurface(jeu.renderer,sSprite);
      if (tSprite==NULL) {
         cout << "Error: cannot create sprite texture" <<endl;
@@ -166,4 +168,19 @@ void GraphicJoueur::afficherJoueur(Jeu& jeu, int frame) {
     //SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[frame/6], &imageJoueur);
     SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[frame/6+joueur->getAction()*6], &imageJoueur);
 
+}
+
+void GraphicJoueur::afficherVie(Jeu &jeu) {
+    imageVie.clear();
+    for (int k=0; k<joueur->getVie(); k++) {
+        SDL_Rect image;
+        image.x= (k+1)*20;
+        image.y= 1*20;
+        image.w= 1*20;
+        image.h= 1*20;
+        imageVie.push_back(image);
+
+        SDL_RenderCopy(jeu.renderer, tVie, NULL, &imageVie.at(k));
+
+    }
 }

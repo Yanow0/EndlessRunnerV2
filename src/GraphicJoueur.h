@@ -12,9 +12,12 @@ class GraphicJoueur {
 public:
     Joueur* joueur; //!< Pointeur de type Joueur
     SDL_Rect imageJoueur; //!< Variable membre de type SDL_Rect, représente la hitbox du joueur
+    vector<SDL_Rect> imageVie; //!< Tableau Dynamique de type SDL_Rect, représente la hitbox du symbole du coeur
 
     SDL_Surface *sSprite; //!< Pointeur de type SDL_Surface, représente la surface du sprite du joueur
     SDL_Texture *tSprite; //!< Pointeur de type SDL_Texture, représente la texture du sprite du joueur
+    SDL_Surface *sVie; //!< Pointeur de type SDL_Surface, représente la surface du symbole du coeur
+    SDL_Texture *tVie; //!< Pointeur de type SDL_Texture, représente la texture du symbole du coeur
     SDL_Rect jSpriteClips[ 24 ]; //!< Tableau de type SDL_Rect, contient les différents sprites pour animer le joueur
 
     //Constructeur de Jeu
@@ -36,6 +39,7 @@ public:
       \param frame entier représentant l'image actuelle.
     */
     void afficherJoueur(Jeu& jeu, int frame) ;
+    void afficherVie(Jeu& jeu) ;
 };
 
 

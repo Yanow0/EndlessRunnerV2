@@ -13,7 +13,7 @@ using namespace std;
 void afficherTxt(WinTxt & win, Jeu & jeu) {
 	Terrain* ter = jeu.getTerrain();
 	Joueur* joueur = jeu.getJoueur();
-	ListeObstacles* obstacle = jeu.getObstacle();
+//	ListeObstacles* obstacle = jeu.getObstacle();
 
 	win.clear();
 
