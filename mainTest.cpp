@@ -17,6 +17,7 @@ int main(int argc, char* argv[]){
     srand (time(NULL));
     Graphics jeuGr;
     jeuGr.jeu.getJoueur()->testRegression();
+    jeuGr.jeu.getTerrain()->testRegression();
 
     return 0;
 

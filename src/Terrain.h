@@ -56,6 +56,12 @@ public:
         \param x,y int, les positions x et y
     */
     bool positionValide(const int &x, const int &y) const;
+
+    //! testRegression, procedure membre de Joueur sans paramètre
+    /*!
+        Lance un test de régression pour la classe Joueur
+    */
+    void testRegression();
 };
 
 
