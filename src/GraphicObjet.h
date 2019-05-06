@@ -6,11 +6,12 @@
 
 class GraphicObjet{
 public:
-    Objet* objet;  //!< Pointeur de type Objet
-    SDL_Rect imageObjet; //!< Variable membre de type SDL_Rect, représente la hitbox d'un Objet
+    ListeObjet* objet;  //!< Pointeur de type ListeObjet
+    vector<SDL_Rect> imageObjet; //!< Tableau Dynamique de type SDL_Rect, contient les hitbox des obstacles.
+    //SDL_Rect imageObjet; //!< Variable membre de type SDL_Rect, représente la hitbox d'un Objet
     SDL_Surface *sSprite; //!< Pointeur de type SDL_Surface, représente la surface du sprite de l'objet
     SDL_Texture *tSprite; //!< Pointeur de type SDL_Texture, représente la texture du sprite de l'objet
-    SDL_Rect jSpriteClips[ 4 ]; //!< Tableau de type SDL_Rect, contient les différents sprites d'objet
+    SDL_Rect jSpriteClips[ 3 ]; //!< Tableau de type SDL_Rect, contient les différents sprites d'objet
 
     //Constructeur de Jeu
     //! Constructeur de GraphicObjet avec 1 paramètre
@@ -30,7 +31,7 @@ public:
       \param jeu passage en référence du Jeu en cours.
       \param frame entier représentant l'image actuelle.
     */
-    void afficherObjet(Jeu& jeu);
+    void afficherObjet(Jeu& jeu, int frame);
 };
 
 #endif // GRAPHICOBJET_H_INCLUDED

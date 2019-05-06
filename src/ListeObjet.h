@@ -14,6 +14,7 @@ class ListeObjet
         int nbObjet();
         bool listeVide();
         Objet* getObjet(const int &i);
+        int getTypeObjet();
         void ajouterObjet(const Objet o);
         void supprimerEnTete();
 

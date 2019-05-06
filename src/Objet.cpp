@@ -11,7 +11,7 @@ Objet::Objet(){
     srand(time(NULL));
     taille = new Forme2D(1,1);
     pos = new Pos2D(20,rand()%8 + 1);
-    setTypeObjet((rand() % 4));
+    setTypeObjet((rand() % 3));
 }
 
 Objet::~Objet(){
@@ -35,9 +35,6 @@ void Objet::fantome(Joueur &j){
 
 void Objet::doubleSaut(Joueur &j){
     j.activerDoubleSaut();
-}
-
-void Objet::arme(Joueur &j){
 }
 
 void Objet::deplacementAuto() {

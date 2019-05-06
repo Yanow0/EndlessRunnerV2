@@ -7,12 +7,12 @@
 #include <unistd.h>
 #endif // WIN32
 #include <cstdlib>
-#include <pthread.h>
+//#include <pthread.h>
 #include <iostream>
 #include "Jeu.h"
 using namespace std;
 
-Jeu::Jeu(): joueur(), obstacles(), terrain(), objet() {
+Jeu::Jeu(): joueur(), obstacles(), terrain(), objets() {
 }
 
 Jeu::~Jeu(){
@@ -22,7 +22,8 @@ Jeu::~Jeu(){
 Terrain* Jeu::getTerrain() {return &terrain;}
 Joueur* Jeu::getJoueur() {return &joueur;}
 ListeObstacles* Jeu::getObstacle() {return &obstacles;}
-Objet* Jeu::getObjet() {return &objet;}
+//Objet* Jeu::getObjet() {return &objet;}
+ListeObjet* Jeu::getObjet(){return &objets;}
 
 // l'obstacle en contact avec le cote gauche du joueur
 bool Jeu::contactGauche(const Obstacle *o) const{
@@ -107,7 +108,7 @@ bool Jeu::collisionSol() {
 
 void Jeu::actionAutomatique(bool &saut) {
     obstacles.deplacementAuto();
-    objet.deplacementAuto();
+    objets.deplacementAuto();
 
     if (!saut) joueur.retomber(terrain);
     if (collision(saut)) {
@@ -133,6 +134,6 @@ void Jeu::restart(){
     terrain = Terrain();
     joueur = Joueur();
     obstacles = ListeObstacles();
-    objet = Objet();
+    objets = ListeObjet();
 }
 
