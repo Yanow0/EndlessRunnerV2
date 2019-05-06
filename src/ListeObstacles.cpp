@@ -24,7 +24,7 @@ Obstacle* ListeObstacles::getObstacle(const int &i) {
     return &obstacles[i];
 }
 
-void ListeObstacles::ajouterObstacle(Obstacle o) {
+void ListeObstacles::ajouterObstacle(const Obstacle o) {
     obstacles.push_back(o);
 }
 
@@ -32,7 +32,7 @@ void ListeObstacles::supprimerEnTete() {
     obstacles.erase(obstacles.begin());
 }
 
-bool ListeObstacles::positionValide(Obstacle o) {
+bool ListeObstacles::positionValide(const Obstacle o) {
     return (listeVide()
             || (o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 7)
             || ((o.pos->getX() > obstacles.back().pos->getX() + obstacles.back().taille->getLargeur() + 2)

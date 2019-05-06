@@ -9,25 +9,55 @@
 class Forme2D {
 public:
     //Default constructor, if no values are given, put longueur=1 and largeur=1
+
+    //! Constructeur de Forme2D sans paramètre
+    /*!
+      Initialise les entiers hauteur et largeur de la Forme2D à 1
+    */
     Forme2D();
 
     //Destructor
     ~Forme2D();
 
     //Initialize a Form2D object with the longueur and largeur values given
-    Forme2D(int hauteur, int largeur);
 
-    int getHauteur();
+    //! Constructeur de Forme2D avec 2 paramètres
+    /*!
+        Initialise les variables membres hauteur et largeur avec les valeurs passés en paramètres.
+      \param hauteur un entier qui représente la hauteur de la Forme2D.
+      \param largeur un entier qui représente la largeur de la Forme2D.
+    */
+    Forme2D(const int hauteur, const int largeur);
 
-    int getLargeur();
+    //! Getter de hauteur de Forme2D
+    /*!
+        Retourne l'entier hauteur de la Forme2D.
+    */
+    int getHauteur() const;
 
-    void setHauteur(int hauteur);
+    //! Getter de largeur de Forme2D
+    /*!
+        Retourne l'entier largeur de la Forme2D.
+    */
+    int getLargeur() const;
 
-    void setLargeur(int largeur);
+    //! Setter de hauteur de Forme2D
+    /*!
+        Affecte la valeur passée en paramètre à la variable membre hauteur de la Forme2D.
+        \param hauteur un entier qui représente la hauteur de la Forme2D.
+    */
+    void setHauteur(const int hauteur);
+
+    //! Setter de largeur de Forme2D
+    /*!
+        Affecte la valeur passée en paramètre à la variable membre largeur de la Forme2D.
+        \param largeur un entier qui représente la hauteur de la Forme2D.
+    */
+    void setLargeur(const int largeur);
 
 private:
-    int hauteur;
-    int largeur;
+    int hauteur; //!< Variable membre, entier représentant la hauteur de la Forme2D.
+    int largeur; //!< Variable membre, entier représentant la largeur de la Forme2D.
 };
 
 

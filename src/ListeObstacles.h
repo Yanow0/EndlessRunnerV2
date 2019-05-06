@@ -19,12 +19,12 @@ public:
     int nbObstacles();
     bool listeVide();
     Obstacle* getObstacle(const int &i);
-    void ajouterObstacle(Obstacle o);
+    void ajouterObstacle(const Obstacle o);
     void supprimerEnTete();
 
     // tester si la position d'un nouvel obstacle est valide
     // (pour ensuite l'insérer dans la liste d'obstacles)
-    bool positionValide(Obstacle o);
+    bool positionValide(const Obstacle o);
 
     // création aléatoire d'un obstacle valide
     void creation();

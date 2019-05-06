@@ -33,25 +33,23 @@ GraphicObjet::GraphicObjet(Jeu& jeu) {
     jSpriteClips[ 2 ].y =  256;
     jSpriteClips[ 2 ].w =  32;
     jSpriteClips[ 2 ].h =  32;
-
-    //SPRITE OBJET ARME
-    jSpriteClips[ 3 ].x =  128;
-    jSpriteClips[ 3 ].y =  192;
-    jSpriteClips[ 3 ].w =  32;
-    jSpriteClips[ 3 ].h =  32;
 }
 
 GraphicObjet::~GraphicObjet(){}
 
-void GraphicObjet::afficherObjet(Jeu jeu) {
+void GraphicObjet::afficherObjet(Jeu& jeu, int frame) {
+    imageObjet.clear();
+    for (int k=0; k<objet->nbObjet(); k++) {
+        SDL_Rect image;
+        image.x= objet->getObjet(k)->pos->getX()*40;
+        image.y= objet->getObjet(k)->pos->getY()*40;
+        image.w= objet->getObjet(k)->taille->getLargeur()*40;
+        image.h= objet->getObjet(k)->taille->getHauteur()*40;
+        imageObjet.push_back(image);
+        //SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+        //SDL_RenderDrawRect(jeu.renderer, &imageObjet);
 
-    imageObjet.x= objet->pos->getX()*40;
-    imageObjet.y= objet->pos->getY()*40;
-    imageObjet.w= objet->taille->getLargeur()*40;
-    imageObjet.h= objet->taille->getHauteur()*40;
-    //SDL_SetRenderDrawColor(jeu.renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
-    //SDL_RenderDrawRect(jeu.renderer, &imageObjet);
-
-    SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[objet->getTypeObjet()], &imageObjet);
+        SDL_RenderCopy(jeu.renderer, tSprite, &jSpriteClips[objet->getObjet(k)->getTypeObjet()], &imageObjet.at(k));
+    }
 }
 

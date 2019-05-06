@@ -11,17 +11,17 @@ Objet::Objet(){
     srand(time(NULL));
     taille = new Forme2D(1,1);
     pos = new Pos2D(20,rand()%8 + 1);
-    setTypeObjet((rand() % 4));
+    setTypeObjet((rand() % 3));
 }
 
 Objet::~Objet(){
 }
 
-int& Objet::getTypeObjet() {
+int& Objet::getTypeObjet() const{
     return *typeObjet;
 }
 
-void Objet::setTypeObjet(int x){
+void Objet::setTypeObjet(const int x){
     *typeObjet = x;
 }
 
@@ -30,13 +30,11 @@ void Objet::vie(Joueur &j){
 }
 
 void Objet::fantome(Joueur &j){
-    j.fantome = true;
+    j.activerFantome();
 }
 
 void Objet::doubleSaut(Joueur &j){
-}
-
-void Objet::arme(Joueur &j){
+    j.activerDoubleSaut();
 }
 
 void Objet::deplacementAuto() {
