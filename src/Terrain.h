@@ -57,9 +57,9 @@ public:
     */
     bool positionValide(const int &x, const int &y) const;
 
-    //! testRegression, procedure membre de Joueur sans paramètre
+    //! testRegression, procedure membre de Terrain sans paramètre
     /*!
-        Lance un test de régression pour la classe Joueur
+        Lance un test de régression pour la classe Terrain
     */
     void testRegression();
 };

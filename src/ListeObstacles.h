@@ -57,37 +57,43 @@ public:
     */
     void supprimerEnTete();
 
-    //! supprimerELement, procedure membre de ListeObstacle
+    //! supprimerELement, procedure membre de ListeObstacles
     /*!
         supprime l'element à l'index i du tableau dynamique obstacles
         \param i entier, l'index de l'element a supprimer
     */
     void supprimerElement(const int &i);
 
-    //! positionValide, fonction membre de ListeObstacle
+    //! positionValide, fonction membre de ListeObstacles
     /*!
         Verifie si la position de l'obstacle est valide (pour ensuite pour l'inserer)
         \param o Obstacle, l'obstacle dont la postion doit etre verifiee
     */
     bool positionValide(const Obstacle o);
 
-    //! creation, procedure membre de ListeObstacle
+    //! creation, procedure membre de ListeObstacles
     /*!
         Créer un aléatoirement un obstacle valide
     */
     void creation();
 
-    //! deplacementAuto, procedure membre de ListeObstacle
+    //! deplacementAuto, procedure membre de ListeObstacles
     /*!
         Permet le deplacement de tous les obstacles dans la liste
     */
     void deplacementAuto();
 
-    //! vider, procedure membre de ListeObstacle
+    //! vider, procedure membre de ListeObstacles
     /*!
         Vide la liste de tous les objets
     */
     void vider();
+
+    //! testRegression, procedure membre de ListeObstacles sans paramètre
+    /*!
+        Lance un test de régression pour la classe ListeObstacles
+    */
+    void testRegression();
 };
 
 

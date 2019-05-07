@@ -18,6 +18,8 @@ int main(int argc, char* argv[]){
     Graphics jeuGr;
     jeuGr.jeu.getJoueur()->testRegression();
     jeuGr.jeu.getTerrain()->testRegression();
+    jeuGr.jeu.getObstacle()->testRegression();
+    jeuGr.jeu.getObjet()->testRegression();
 
     return 0;
 

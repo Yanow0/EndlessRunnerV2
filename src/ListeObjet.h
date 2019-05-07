@@ -85,6 +85,13 @@ class ListeObjet
             Vide la liste de tous les objets
         */
         void vider();
+
+        //! testRegression, procedure membre de ListeObjet sans paramètre
+        /*!
+            Lance un test de régression pour la classe ListeObjet
+        */
+        void testRegression();
+
     private:
         vector<Objet> objets; //!< Tableau Dynamique de type Obstacle, contient tous les obstacles du Jeu
 };
