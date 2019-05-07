@@ -27,7 +27,6 @@ public:
     bool relever; //!< Variable membre de type booleen, représente l'etat de relever
     int frame; //!< Variable membre de type entier, représente l'image actuelle
     int frameObstacle; //!< Variable membre de type entier, représente l'image actuelle pour les obstacles
-    int frameObjets; //!< Variable membre de type entier, représente l'image actuelle pour les objets
     bool debout; //!< Variable membre de type booleen, représente l'etat de debout
     bool doublesaut; //!< Variable membre de type booleen, représente l'etat de doublesaut
 
