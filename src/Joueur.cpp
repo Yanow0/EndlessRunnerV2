@@ -21,17 +21,7 @@ Joueur::Joueur() {
     vitesseSaut=0.5;
     gravite=0.025f;
     setAction(0);
-}
-
-Joueur::Joueur(const int &v) {
-    taille = new Forme2D(2,2);
-    pos = new Pos2D(8,7);
-    setVie(v);
-    fantome = false;
-    doubleSaut = false;
-    vitesseSaut=0.5;
-    gravite=0.025f;
-    setAction(0);
+    setScore(0);
 }
 
 Joueur::~Joueur(){
@@ -52,6 +42,13 @@ int& Joueur::getVie() {
 
 void Joueur::setVie(const int x){
     vie = x;
+}
+
+int& Joueur::getScore(){
+    return score;
+}
+void Joueur::setScore(const int x){
+    score = x;
 }
 
 void Joueur::vieUp(){
@@ -141,5 +138,15 @@ void Joueur::relever(const Terrain &t) {
     taille->setHauteur(2);
     pos->setY(pos->getY()-1);
    // cout<<"relever"<< action << endl;
+}
+
+void Joueur::secondeChance() {
+    taille = new Forme2D(2,2);
+    pos = new Pos2D(8,7);
+    fantome = false;
+    doubleSaut = false;
+    vitesseSaut=0.5;
+    gravite=0.025f;
+    setAction(0);
 }
 

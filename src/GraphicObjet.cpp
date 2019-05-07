@@ -48,7 +48,7 @@ GraphicObjet::GraphicObjet(Jeu& jeu) {
 
 GraphicObjet::~GraphicObjet(){}
 
-void GraphicObjet::afficherObjet(Jeu& jeu, int frame) {
+void GraphicObjet::afficherObjet(Jeu& jeu) {
     imageObjet.clear();
     for (int k=0; k<objet->nbObjet(); k++) {
         SDL_Rect image;

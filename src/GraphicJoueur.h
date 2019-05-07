@@ -7,6 +7,7 @@
 
 #include "Jeu.h"
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 
 class GraphicJoueur {
 public:
@@ -23,6 +24,12 @@ public:
     SDL_Texture *tStar; //!< Pointeur de type SDL_Texture, représente la texture du symbole pour l'objet "Etoile"
     SDL_Surface *sDoubleSaut; //!< Pointeur de type SDL_Surface, représente la surface du symbole pour l'objet "Double Saut"
     SDL_Texture *tDoubleSaut; //!< Pointeur de type SDL_Texture, représente la texture du symbole pour l'objet "Double Saut"
+    SDL_Surface *sScore; //!< Pointeur de type SDL_Surface, représente la surface du Score
+    SDL_Texture *tScore; //!< Pointeur de type SDL_Texture, représente la texture du Score
+    TTF_Font *scoreFont; //!< Pointeur de type TTF_Font, représente la police du Score
+    SDL_Rect score; //!< Variable membre de type SDL_Rect, représente la case du score
+    int texW;  //!< Variable membre de type entier, représente la largeur du score
+    int texH; //!< Variable membre de type entier, représente la hauteur du score
     SDL_Rect jSpriteClips[ 24 ]; //!< Tableau de type SDL_Rect, contient les différents sprites pour animer le joueur
     SDL_Rect jSpriteDoubleSaut; //!< Variable membre de type SDL_Rect, contient le symbole pour l'objet "Double Saut"
 
@@ -44,9 +51,10 @@ public:
       \param jeu passage en référence du Jeu en cours.
       \param frame entier représentant l'image actuelle.
     */
-    void afficherJoueur(Jeu& jeu, int frame) ;
-    void afficherVie(Jeu& jeu) ;
-    void afficherObjet(Jeu& jeu) ;
+    void afficherJoueur(Jeu& jeu, int frame);
+    void afficherVie(Jeu& jeu);
+    void afficherObjet(Jeu& jeu);
+    void afficherScore(Jeu &jeu);
 };
 
 

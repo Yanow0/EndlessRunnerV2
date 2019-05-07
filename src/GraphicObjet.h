@@ -38,7 +38,7 @@ public:
       \param jeu passage en référence du Jeu en cours.
       \param frame entier représentant l'image actuelle.
     */
-    void afficherObjet(Jeu& jeu, int frame);
+    void afficherObjet(Jeu& jeu);
 };
 
 #endif // GRAPHICOBJET_H_INCLUDED

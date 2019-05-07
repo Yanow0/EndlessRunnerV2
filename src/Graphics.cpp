@@ -17,6 +17,9 @@ Graphics::Graphics(): jeu(){
     if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG) <=0) {
         cout << "Erreur lors de l'initialisation de la SDL_Image : " << IMG_GetError() << endl;IMG_Quit();exit(1);
     }
+    if( TTF_Init() == -1 ) {
+            cout << "Erreur lors de l'initialisation de la SDL_ttf : " << TTF_GetError() << endl; TTF_Quit();exit(1);
+     }
     // Creation de la fenetre
     jeu.window = SDL_CreateWindow("EndlessRunner", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, jeu.getTerrain()->getDimX()*40, jeu.getTerrain()->getDimY()*40, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     if (jeu.window == NULL) {
@@ -33,7 +36,6 @@ Graphics::Graphics(): jeu(){
     obstacle=new GraphicObstacle(jeu);
     frame=0;
     frameObstacle=0;
-    frameObjets=0;
     objet=new GraphicObjet(jeu);
     saut=false;
     baisser=false;
@@ -47,6 +49,7 @@ Graphics::Graphics(): jeu(){
 Graphics::~Graphics(){
     SDL_DestroyRenderer(jeu.renderer);
     SDL_DestroyWindow(jeu.window);
+    TTF_Quit();
     IMG_Quit();
     SDL_Quit();
 }
@@ -90,8 +93,9 @@ void Graphics::afficherGraphics() {
         joueur->afficherJoueur(jeu, frame);
         joueur->afficherVie(jeu);
         joueur->afficherObjet(jeu);
+        joueur->afficherScore(jeu);
         obstacle->afficherObstacle(jeu, frameObstacle);
-        objet->afficherObjet(jeu, frameObjets);
+        objet->afficherObjet(jeu);
     }
 }
 
@@ -195,15 +199,12 @@ void Graphics::loop() {
     SDL_RenderPresent(jeu.renderer);
     frame++;
     frameObstacle++;
-    frameObjets++;
     if (frameObstacle/12 >= 12 ){
         frameObstacle=0;
     }
     if (frame/6 >= 6 ){
         frame=0;
-    }
-    if (frameObjets/4 >=4 ){
-        frameObjets=0;
+        jeu.getJoueur()->setScore(jeu.getJoueur()->getScore()+1);
     }
 
     }

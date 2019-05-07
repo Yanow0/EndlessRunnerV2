@@ -4,6 +4,7 @@
 
 #include "GraphicJoueur.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 GraphicJoueur::GraphicJoueur(Jeu& jeu) {
@@ -17,6 +18,13 @@ GraphicJoueur::GraphicJoueur(Jeu& jeu) {
      if (tSprite==NULL) {
         cout << "Error: cannot create sprite texture" <<endl;
     }
+
+    scoreFont = TTF_OpenFont( "./data/SuperMario256.ttf", 20 );
+    if( scoreFont == NULL ) {
+            cout <<"Failed to load score font SDL_ttf Error: %s\n" << TTF_GetError() <<endl;
+
+     }
+
 
     sVie = IMG_Load("./data/coeur.png");
     sStar = IMG_Load("./data/star.png");
@@ -161,7 +169,9 @@ GraphicJoueur::GraphicJoueur(Jeu& jeu) {
     jSpriteDoubleSaut.h =  32;
 }
 
-GraphicJoueur::~GraphicJoueur(){}
+GraphicJoueur::~GraphicJoueur(){
+    TTF_CloseFont( scoreFont );
+}
 
 void GraphicJoueur::afficherJoueur(Jeu& jeu, int frame) {
 
@@ -194,15 +204,27 @@ void GraphicJoueur::afficherVie(Jeu &jeu) {
     }
 }
 
+void GraphicJoueur::afficherScore(Jeu &jeu) {
+        string s1 = "Score : ";
+        string s2 = to_string(joueur->getScore());
+        string s = s1 + s2;
+        sScore = TTF_RenderText_Solid( scoreFont, s.c_str(), { 255, 255, 255 } );
+        tScore = SDL_CreateTextureFromSurface( jeu.renderer, sScore );
+
+        SDL_QueryTexture(tScore, NULL, NULL, &texW, &texH);
+        score = { 650, 20, texW, texH };
+        SDL_RenderCopy(jeu.renderer, tScore, NULL, &score);
+}
+
 void GraphicJoueur::afficherObjet(Jeu &jeu) {
     imageObjet.clear();
     int k=0;
     if (joueur->getDoubleSaut()) {
         SDL_Rect image;
-        image.x= 20;
-        image.y= 60;
-        image.w= 30;
-        image.h= 30;
+        image.x= 30;
+        image.y= 55;
+        image.w= 40;
+        image.h= 40;
         imageObjet.push_back(image);
 
         SDL_RenderCopy(jeu.renderer, tDoubleSaut, &jSpriteDoubleSaut, &imageObjet.at(k));
@@ -211,8 +233,8 @@ void GraphicJoueur::afficherObjet(Jeu &jeu) {
     }
     if (joueur->getFantome()) {
         SDL_Rect image;
-        image.x= 40;
-        image.y= 40;
+        image.x= 30;
+        image.y= 55;
         image.w= 40;
         image.h= 40;
         imageObjet.push_back(image);

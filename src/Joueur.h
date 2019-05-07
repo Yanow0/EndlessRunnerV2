@@ -11,15 +11,18 @@
 #include "Terrain.h"
 
 class Joueur {
+    private:
+        int vie; //!< Variable membre de type entier, représente le nombre de vies
+        int score; //!< Variable membre de type entier, représente le score
+        bool fantome; //!< Variable membre de type booleen, représente l'etat de fantome
+        bool doubleSaut; //!< Variable membre de type booleen, représente l'etat de doubleSaut
+        int* action = new int; //!< Pointeur de type int, représent l'action actuelle
+
     public:
         Forme2D* taille; //!< Pointeur de type Forme2D
         Pos2D* pos; //!< Pointeur de type Pos2D
-        int vie; //!< Variable membre de type entier, représente le nombre de vies
-        bool fantome; //!< Variable membre de type booleen, représente l'etat de fantome
-        bool doubleSaut; //!< Variable membre de type booleen, représente l'etat de doubleSaut
         float vitesseSaut; //!< Variable membre de type float, représente la vitesse de saut
         float gravite; //!< Variable membre de type float, représente la force de gravite
-        int* action = new int; //!< Pointeur de type int, représent l'action actuelle
 
 
 
@@ -65,6 +68,19 @@ class Joueur {
         \param x un entier qui représente les vies du Joueur.
     */
     void setVie(const int x);
+
+    //! Getter de score du joueur
+        /*!
+            Retourne l'entier score du Joueur.
+        */
+    int& getScore();
+
+    //! Setter de score du Joueur
+    /*!
+        Affecte la valeur passée en paramètre à la variable membre score du Joueur.
+        \param x un entier qui représente le score du Joueur.
+    */
+    void setScore(const int x);
 
     //! vieUp, procedure membre de Joueur sans paramètre
         /*!
@@ -158,6 +174,8 @@ class Joueur {
             \param t Terrain représentant le terrain actuel
         */
     void retomber(const Terrain &t);
+
+    void secondeChance();
 };
 
 
