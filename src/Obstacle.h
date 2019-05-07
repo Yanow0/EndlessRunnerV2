@@ -12,12 +12,22 @@
 class Obstacle {
 
     public:
-        Forme2D* taille;
-        Pos2D* pos;
+        Forme2D* taille; //!< Pointeur de type Forme2D
+        Pos2D* pos; //!< Pointeur de type Pos2D
 
+    //! Constructeur de Obstacle sans paramètre
+    /*!
+        Initialise les variables membre de Obstacle
+    */
     Obstacle();
+
+    //Destructeur de Obstacle
     ~Obstacle();
 
+    //! deplacementAuto, procedure de Obstacle
+    /*!
+        permet le deplacement des obstacles dans l'espace
+    */
     void deplacementAuto();
 };
 

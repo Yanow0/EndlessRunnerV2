@@ -12,32 +12,32 @@
 class GraphicJoueur {
 public:
     Joueur* joueur; //!< Pointeur de type Joueur
-    SDL_Rect imageJoueur; //!< Variable membre de type SDL_Rect, représente la hitbox du joueur
-    vector<SDL_Rect> imageVie; //!< Tableau Dynamique de type SDL_Rect, représente la hitbox du symbole du coeur
-    vector<SDL_Rect> imageObjet; //!< Tableau Dynamique de type SDL_Rect, représente la hitbox du symbole des objets
+    SDL_Rect imageJoueur; //!< Variable membre de type SDL_Rect, reprï¿½sente la hitbox du joueur
+    vector<SDL_Rect> imageVie; //!< Tableau Dynamique de type SDL_Rect, reprï¿½sente la hitbox du symbole du coeur
+    vector<SDL_Rect> imageObjet; //!< Tableau Dynamique de type SDL_Rect, reprï¿½sente la hitbox du symbole des objets
 
-    SDL_Surface *sSprite; //!< Pointeur de type SDL_Surface, représente la surface du sprite du joueur
-    SDL_Texture *tSprite; //!< Pointeur de type SDL_Texture, représente la texture du sprite du joueur
-    SDL_Surface *sVie; //!< Pointeur de type SDL_Surface, représente la surface du symbole du coeur
-    SDL_Texture *tVie; //!< Pointeur de type SDL_Texture, représente la texture du symbole du coeur
-    SDL_Surface *sStar; //!< Pointeur de type SDL_Surface, représente la surface du symbole pour l'objet "Etoile"
-    SDL_Texture *tStar; //!< Pointeur de type SDL_Texture, représente la texture du symbole pour l'objet "Etoile"
-    SDL_Surface *sDoubleSaut; //!< Pointeur de type SDL_Surface, représente la surface du symbole pour l'objet "Double Saut"
-    SDL_Texture *tDoubleSaut; //!< Pointeur de type SDL_Texture, représente la texture du symbole pour l'objet "Double Saut"
-    SDL_Surface *sScore; //!< Pointeur de type SDL_Surface, représente la surface du Score
-    SDL_Texture *tScore; //!< Pointeur de type SDL_Texture, représente la texture du Score
-    TTF_Font *scoreFont; //!< Pointeur de type TTF_Font, représente la police du Score
-    SDL_Rect score; //!< Variable membre de type SDL_Rect, représente la case du score
-    int texW;  //!< Variable membre de type entier, représente la largeur du score
-    int texH; //!< Variable membre de type entier, représente la hauteur du score
-    SDL_Rect jSpriteClips[ 24 ]; //!< Tableau de type SDL_Rect, contient les différents sprites pour animer le joueur
+    SDL_Surface *sSprite; //!< Pointeur de type SDL_Surface, reprï¿½sente la surface du sprite du joueur
+    SDL_Texture *tSprite; //!< Pointeur de type SDL_Texture, reprï¿½sente la texture du sprite du joueur
+    SDL_Surface *sVie; //!< Pointeur de type SDL_Surface, reprï¿½sente la surface du symbole du coeur
+    SDL_Texture *tVie; //!< Pointeur de type SDL_Texture, reprï¿½sente la texture du symbole du coeur
+    SDL_Surface *sStar; //!< Pointeur de type SDL_Surface, reprï¿½sente la surface du symbole pour l'objet "Etoile"
+    SDL_Texture *tStar; //!< Pointeur de type SDL_Texture, reprï¿½sente la texture du symbole pour l'objet "Etoile"
+    SDL_Surface *sDoubleSaut; //!< Pointeur de type SDL_Surface, reprï¿½sente la surface du symbole pour l'objet "Double Saut"
+    SDL_Texture *tDoubleSaut; //!< Pointeur de type SDL_Texture, reprï¿½sente la texture du symbole pour l'objet "Double Saut"
+    SDL_Surface *sScore; //!< Pointeur de type SDL_Surface, reprï¿½sente la surface du Score
+    SDL_Texture *tScore; //!< Pointeur de type SDL_Texture, reprï¿½sente la texture du Score
+    TTF_Font *scoreFont; //!< Pointeur de type TTF_Font, reprï¿½sente la police du Score
+    SDL_Rect score; //!< Variable membre de type SDL_Rect, reprï¿½sente la case du score
+    int texW;  //!< Variable membre de type entier, reprï¿½sente la largeur du score
+    int texH; //!< Variable membre de type entier, reprï¿½sente la hauteur du score
+    SDL_Rect jSpriteClips[ 24 ]; //!< Tableau de type SDL_Rect, contient les diffï¿½rents sprites pour animer le joueur
     SDL_Rect jSpriteDoubleSaut; //!< Variable membre de type SDL_Rect, contient le symbole pour l'objet "Double Saut"
 
     //Constructeur de Jeu
-    //! Constructeur de GraphicJoueur avec 1 paramètre
+    //! Constructeur de GraphicJoueur avec 1 paramï¿½tre
     /*!
-        Initialise les variables membres de GraphicJoueur, créer la texture du joueur.
-      \param jeu passage en référence du Jeu en cours.
+        Initialise les variables membres de GraphicJoueur, crï¿½er la texture du joueur.
+      \param jeu passage en rï¿½fï¿½rence du Jeu en cours.
 
     */
     GraphicJoueur(Jeu& jeu);
@@ -45,16 +45,28 @@ public:
     //Destructeur de Jeu
     ~GraphicJoueur();
 
-    //! afficherJoueur, fonction membre de GraphicJoueur avec 2 paramètres
+    //! afficherJoueur, fonction membre de GraphicJoueur avec 2 paramï¿½tres
     /*!
         Affiche le joueur sur le renderer en fonction de sa position, sa forme et de la frame actuelle
-      \param jeu passage en référence du Jeu en cours.
-      \param frame entier représentant l'image actuelle.
+      \param jeu passage en rï¿½fï¿½rence du Jeu en cours.
+      \param frame entier reprï¿½sentant l'image actuelle.
     */
-    void afficherJoueur(Jeu& jeu, int frame);
-    void afficherVie(Jeu& jeu);
-    void afficherObjet(Jeu& jeu);
-    void afficherScore(Jeu &jeu);
+    void afficherJoueur(Jeu& jeu, int frame) ;
+
+    //! afficherVie, fonction membre de GraphicJoueur avec 1 paramï¿½tre
+    /*!
+        Affiche en haut ï¿½ gauche du renderer le nombre de vies du joueur avec un nombre correspondant de symboles de coeur
+      \param jeu passage en rï¿½fï¿½rence du Jeu en cours.
+    */
+    void afficherVie(Jeu& jeu) ;
+
+    //! afficherObjet, fonction membre de GraphicJoueur avec 1 paramï¿½tre
+    /*!
+        Affiche en haut ï¿½ gauche du renderer les symboles des objets ï¿½ disposition du joueur
+      \param jeu passage en rï¿½fï¿½rence du Jeu en cours.
+    */
+    void afficherObjet(Jeu& jeu) ;
+    void afficherScore(Jeu& jeu) ;
 };
 
 

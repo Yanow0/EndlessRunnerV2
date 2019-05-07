@@ -26,42 +26,67 @@ public:
     ~ListeObstacles();
 
     //! nbObstacles, fonction membre de ListeObstacles sans paramètre
-        /*!
-            Retourne le nombre d'obstacles dans le tableau dynamique obstacles
-        */
+    /*!
+        Retourne le nombre d'obstacles dans le tableau dynamique obstacles
+    */
     int nbObstacles();
 
     //! listeVide, fonction membre de ListeObstacles sans paramètre
-        /*!
-            Retourne true si le tableau dynamique obstacles est vide, false sinon
-        */
+    /*!
+        Retourne true si le tableau dynamique obstacles est vide, false sinon
+    */
     bool listeVide();
 
     //! Getter de action du joueur
-        /*!
-            Retourne l'Obstacle à la position i du tableau dynamique.
-            \param i entier, position de l'obstacle dans le tableau dynamique
-        */
+    /*!
+        Retourne l'Obstacle à la position i du tableau dynamique.
+        \param i entier, position de l'obstacle dans le tableau dynamique
+    */
     Obstacle* getObstacle(const int &i);
 
     //! nbObstacles, procedure membre de ListeObstacles sans paramètre
-        /*!
-            Retourne le nombre d'obstacles dans le tableau dynamique obstacles
-        */
+    /*!
+        Ajoute l'obstacle dans le tableau dynamique obstacles
+        \param o, l'obstacle a ajouter
+    */
     void ajouterObstacle(const Obstacle o);
+
+    //! supprimerEnTete, procedure membre de ListeObstacles
+    /*!
+        Supprime le premier element du tableau dynamique obstacles
+    */
     void supprimerEnTete();
+
+    //! supprimerELement, procedure membre de ListeObstacle
+    /*!
+        supprime l'element à l'index i du tableau dynamique obstacles
+        \param i entier, l'index de l'element a supprimer
+    */
     void supprimerElement(const int &i);
 
-    // tester si la position d'un nouvel obstacle est valide
-    // (pour ensuite l'insérer dans la liste d'obstacles)
+    //! positionValide, fonction membre de ListeObstacle
+    /*!
+        Verifie si la position de l'obstacle est valide (pour ensuite pour l'inserer)
+        \param o Obstacle, l'obstacle dont la postion doit etre verifiee
+    */
     bool positionValide(const Obstacle o);
 
-    // création aléatoire d'un obstacle valide
+    //! creation, procedure membre de ListeObstacle
+    /*!
+        Créer un aléatoirement un obstacle valide
+    */
     void creation();
 
-    // deplacement de tous les obstacles dans la liste
+    //! deplacementAuto, procedure membre de ListeObstacle
+    /*!
+        Permet le deplacement de tous les obstacles dans la liste
+    */
     void deplacementAuto();
 
+    //! vider, procedure membre de ListeObstacle
+    /*!
+        Vide la liste de tous les objets
+    */
     void vider();
 };
 

@@ -145,7 +145,7 @@ void Jeu::actionAutomatique(bool &saut) {
     if (collision() && joueur.getFantome()==0) {
         cout << "collision" << endl;
         joueur.vieDown();
-        cout << "vie = " << joueur.getVie() << endl;
+//        cout << "vie = " << joueur.getVie() << endl;
 
         saut = false;
         if (joueur.getVie() > 0) {

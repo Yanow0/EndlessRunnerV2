@@ -12,31 +12,31 @@
 
 class Joueur {
     private:
-        int vie; //!< Variable membre de type entier, représente le nombre de vies
-        int score; //!< Variable membre de type entier, représente le score
-        bool fantome; //!< Variable membre de type booleen, représente l'etat de fantome
-        bool doubleSaut; //!< Variable membre de type booleen, représente l'etat de doubleSaut
-        int* action = new int; //!< Pointeur de type int, représent l'action actuelle
+        int vie; //!< Variable membre de type entier, reprï¿½sente le nombre de vies
+        int score; //!< Variable membre de type entier, reprï¿½sente le score
+        bool fantome; //!< Variable membre de type booleen, reprï¿½sente l'etat de fantome
+        bool doubleSaut; //!< Variable membre de type booleen, reprï¿½sente l'etat de doubleSaut
+        int* action = new int; //!< Pointeur de type int, reprï¿½sent l'action actuelle
 
     public:
         Forme2D* taille; //!< Pointeur de type Forme2D
         Pos2D* pos; //!< Pointeur de type Pos2D
-        float vitesseSaut; //!< Variable membre de type float, représente la vitesse de saut
-        float gravite; //!< Variable membre de type float, représente la force de gravite
+        float vitesseSaut; //!< Variable membre de type float, reprï¿½sente la vitesse de saut
+        float gravite; //!< Variable membre de type float, reprï¿½sente la force de gravite
 
 
 
     //Constructeur Joueur
-    //! Constructeur de Jeu sans paramètre
-        /*!
-            Initialise les variables membre de Joueur
-        */
+    //! Constructeur de Joueur sans paramï¿½tre
+    /*!
+        Initialise les variables membre de Joueur
+    */
     Joueur();
 
-    //! Constructeur de Jeu avec 1 paramètre
+    //! Constructeur de Joueur avec 1 paramï¿½tre
         /*!
-            Initialise les variables membre de Joueur et son nombre de vies en fonction du paramètre v
-            \param v entier qui représente le nombre de vie initial
+            Initialise les variables membre de Joueur et son nombre de vies en fonction du paramï¿½tre v
+            \param v entier qui reprï¿½sente le nombre de vie initial
         */
     Joueur(const int &v);   // v: nouveau nombre de vies
 
@@ -51,8 +51,8 @@ class Joueur {
 
     //! Setter de action du Joueur
     /*!
-        Affecte la valeur passée en paramètre à la variable membre action du Joueur.
-        \param action un entier qui représente l'action du Joueur.
+        Affecte la valeur passï¿½e en paramï¿½tre ï¿½ la variable membre action du Joueur.
+        \param action un entier qui reprï¿½sente l'action du Joueur.
     */
     void setAction(const int x);
 
@@ -64,8 +64,8 @@ class Joueur {
 
     //! Setter de vie du Joueur
     /*!
-        Affecte la valeur passée en paramètre à la variable membre vie du Joueur.
-        \param x un entier qui représente les vies du Joueur.
+        Affecte la valeur passï¿½e en paramï¿½tre ï¿½ la variable membre vie du Joueur.
+        \param x un entier qui reprï¿½sente les vies du Joueur.
     */
     void setVie(const int x);
 
@@ -77,20 +77,20 @@ class Joueur {
 
     //! Setter de score du Joueur
     /*!
-        Affecte la valeur passée en paramètre à la variable membre score du Joueur.
-        \param x un entier qui représente le score du Joueur.
+        Affecte la valeur passï¿½e en paramï¿½tre ï¿½ la variable membre score du Joueur.
+        \param x un entier qui reprï¿½sente le score du Joueur.
     */
     void setScore(const int x);
 
-    //! vieUp, procedure membre de Joueur sans paramètre
+    //! vieUp, procedure membre de Joueur sans paramï¿½tre
         /*!
-            Incrémente de 1 la variable membre vie.
+            Incrï¿½mente de 1 la variable membre vie.
         */
     void vieUp();
 
-    //! vieDown, procedure membre de Joueur sans paramètre
+    //! vieDown, procedure membre de Joueur sans paramï¿½tre
         /*!
-            Decrémente de 1 la variable membre vie.
+            Decrï¿½mente de 1 la variable membre vie.
         */
     void vieDown();
 
@@ -100,15 +100,15 @@ class Joueur {
         */
     bool getDoubleSaut() const;
 
-    //! activerDoubleSaut, procedure membre de Joueur sans paramètre
+    //! activerDoubleSaut, procedure membre de Joueur sans paramï¿½tre
         /*!
-            Passe la variable membre doubleSaut à true;
+            Passe la variable membre doubleSaut ï¿½ true;
         */
     void activerDoubleSaut();
 
-    //! desactiverDoubleSaut, procedure membre de Joueur sans paramètre
+    //! desactiverDoubleSaut, procedure membre de Joueur sans paramï¿½tre
         /*!
-            Passe la variable membre doubleSaut à false
+            Passe la variable membre doubleSaut ï¿½ false
         */
     void desactiverDoubleSaut();
 
@@ -118,64 +118,69 @@ class Joueur {
         */
     bool getFantome() const;
 
-    //! activerFantome, procedure membre de Joueur sans paramètre
+    //! activerFantome, procedure membre de Joueur sans paramï¿½tre
         /*!
-            Passe la variable membre fantome à true;
+            Passe la variable membre fantome ï¿½ true;
         */
     void activerFantome();
 
-    //! desactiverFantome, procedure membre de Joueur sans paramètre
+    //! desactiverFantome, procedure membre de Joueur sans paramï¿½tre
         /*!
-            Passe la variable membre fantome à false;
+            Passe la variable membre fantome ï¿½ false;
         */
     void desactiverFantome();
 
-    //! doubleSauter, procedure membre de Joueur avec 1 paramètre
+    //! doubleSauter, procedure membre de Joueur avec 1 paramï¿½tre
         /*!
-            Reinitialise la vitesse du saut à 0.5
-            \param t Terrain représentant le terrain actuel
+            Reinitialise la vitesse du saut ï¿½ 0.5
+            \param t Terrain reprï¿½sentant le terrain actuel
         */
     void doubleSauter(const Terrain &t);
    // bool collisionSol(const Terrain &t);
 
-   //! baisser, procedure membre de Joueur avec 1 paramètre
+   //! baisser, procedure membre de Joueur avec 1 paramï¿½tre
         /*!
-            Passe la variable membre action à 1,
+            Passe la variable membre action ï¿½ 1,
             Change la taille du joueur
-            \param t Terrain représentant le terrain actuel
+            \param t Terrain reprï¿½sentant le terrain actuel
         */
     void baisser(const Terrain &t);
 
-    //! relever, procedure membre de Joueur avec 1 paramètre
+    //! relever, procedure membre de Joueur avec 1 paramï¿½tre
         /*!
-            Passe la variable membre action à 0,
+            Passe la variable membre action ï¿½ 0,
             Change la taille du joueur
-            \param t Terrain représentant le terrain actuel
+            \param t Terrain reprï¿½sentant le terrain actuel
         */
     void relever(const Terrain &t);
 
-    //! sauter, procedure membre de Joueur avec 1 paramètre
+    //! sauter, procedure membre de Joueur avec 1 paramï¿½tre
         /*!
             Change la position et l'action du Joueur en fonction de vitesseSaut
-            \param t Terrain représentant le terrain actuel
+            \param t Terrain reprï¿½sentant le terrain actuel
         */
     void sauter(const Terrain &t);
 
-    //! descendre, procedure membre de Joueur avec 1 paramètre
+    //! descendre, procedure membre de Joueur avec 1 paramï¿½tre
         /*!
             Change la position du joueur pour le faire descendre d'un cran
-            \param t Terrain représentant le terrain actuel
+            \param t Terrain reprï¿½sentant le terrain actuel
         */
     void descendre(const Terrain &t);
 
-     //! retomber, procedure membre de Joueur avec 1 paramètre
+     //! retomber, procedure membre de Joueur avec 1 paramï¿½tre
         /*!
             Appelle descendre si le joueur ne touche pas le sol
-            \param t Terrain représentant le terrain actuel
+            \param t Terrain reprï¿½sentant le terrain actuel
         */
     void retomber(const Terrain &t);
 
     void secondeChance();
+     //! testRegression, procedure membre de Joueur sans paramï¿½tre
+        /*!
+            Lance un test de rï¿½gression pour la classe Joueur
+        */
+    void testRegression();
 };
 
 
