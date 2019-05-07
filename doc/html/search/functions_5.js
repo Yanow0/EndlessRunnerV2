@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['getaction',['getAction',['../classJoueur.html#a71c07a51eaca56dd5d365ddb48fab5f8',1,'Joueur']]],
+  ['getdimx',['getDimX',['../classTerrain.html#accb6cc4ab37641b10d6d0cc3c2d9b0cb',1,'Terrain']]],
+  ['getdimy',['getDimY',['../classTerrain.html#a60bc76d822c15ca30576bd747d156b48',1,'Terrain']]],
+  ['getdoublesaut',['getDoubleSaut',['../classJoueur.html#a854fae0574f84fa3df548301dd7776fa',1,'Joueur']]],
+  ['getetoile',['getEtoile',['../classJoueur.html#a6b3b101eb706defeb2b67d716eecf4d5',1,'Joueur']]],
+  ['gethauteur',['getHauteur',['../classForme2D.html#ae4af4fab1f2eeb5f50f90210df9fb187',1,'Forme2D']]],
+  ['getjoueur',['getJoueur',['../classJeu.html#a401d6ac435efb09756153738156ed482',1,'Jeu']]],
+  ['getlargeur',['getLargeur',['../classForme2D.html#a6e0db0346cf554c1c559c701b09eac32',1,'Forme2D']]],
+  ['getobjet',['getObjet',['../classJeu.html#acfc63be3244df55b8eff43036de7280e',1,'Jeu::getObjet()'],['../classListeObjet.html#a903134b84e4163285395d727f8717566',1,'ListeObjet::getObjet()']]],
+  ['getobstacle',['getObstacle',['../classJeu.html#a744469c008aba841625166f88aad7d2c',1,'Jeu::getObstacle()'],['../classListeObstacles.html#afa0389fcee7b6c9c9be93080c0f5d04a',1,'ListeObstacles::getObstacle()']]],
+  ['getplateforme',['getPlateforme',['../classTerrain.html#ab9d99ddd6ea5a781359fa1347970a6cf',1,'Terrain']]],
+  ['getscore',['getScore',['../classJoueur.html#aa92f778f986e150c708e4cfcbcdc8994',1,'Joueur']]],
+  ['getterrain',['getTerrain',['../classJeu.html#a4b733faa07e563ec5aac9f52e18ebc51',1,'Jeu']]],
+  ['gettypeobjet',['getTypeObjet',['../classObjet.html#a8bd03b8ec8f1c86a3b4b0c329254b005',1,'Objet']]],
+  ['getvie',['getVie',['../classJoueur.html#ab272a17d9e5b530e87fc725e4e2009c8',1,'Joueur']]],
+  ['getx',['getX',['../classPos2D.html#a9e9fa75d5f594bc08a7c915fce3ad758',1,'Pos2D']]],
+  ['getxy',['getXY',['../classTerrain.html#aa865cdb6bfb3f76812d9040996ec6f7e',1,'Terrain']]],
+  ['gety',['getY',['../classPos2D.html#ab4bbfc036eacdb5851ba9adae8e85373',1,'Pos2D']]],
+  ['graphicjoueur',['GraphicJoueur',['../classGraphicJoueur.html#acb3a9ec937268505e633052431a86b88',1,'GraphicJoueur']]],
+  ['graphicobjet',['GraphicObjet',['../classGraphicObjet.html#af7ccf46c190d4fa05718f13b17a19f76',1,'GraphicObjet']]],
+  ['graphicobstacle',['GraphicObstacle',['../classGraphicObstacle.html#a3439f0e7ec000ad442d532301a94efe0',1,'GraphicObstacle']]],
+  ['graphics',['Graphics',['../classGraphics.html#af2e8fe67fd31ec263c843a6e28b29d3c',1,'Graphics']]],
+  ['graphicterrain',['GraphicTerrain',['../classGraphicTerrain.html#ac83f786e91e9f92195ec3b52490c7112',1,'GraphicTerrain']]]
+];

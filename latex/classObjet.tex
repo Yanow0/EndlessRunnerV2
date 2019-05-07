@@ -1,0 +1,137 @@
+\hypertarget{classObjet}{}\section{Objet Class Reference}
+\label{classObjet}\index{Objet@{Objet}}
+
+
+Collaboration diagram for Objet\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classObjet_aefdd826d50085897e4894ffef4597d04}{Objet} ()
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classObjet}{Objet} sans paramètre. \end{DoxyCompactList}\item 
+int \& \hyperlink{classObjet_a8bd03b8ec8f1c86a3b4b0c329254b005}{get\+Type\+Objet} () const
+\begin{DoxyCompactList}\small\item\em get\+Type\+Objet, fonction membre de \hyperlink{classObjet}{Objet} \end{DoxyCompactList}\item 
+void \hyperlink{classObjet_a37d3c400769b937a5b94400ed525261c}{set\+Type\+Objet} (const int x)
+\begin{DoxyCompactList}\small\item\em set\+Type\+Objet, procedure membre de \hyperlink{classObjet}{Objet} \end{DoxyCompactList}\item 
+void \hyperlink{classObjet_ab57d0b80660e890c49ab2ee3d432ddd0}{vie} (\hyperlink{classJoueur}{Joueur} \&j)
+\begin{DoxyCompactList}\small\item\em vie, procedure membre de \hyperlink{classObjet}{Objet} \end{DoxyCompactList}\item 
+void \hyperlink{classObjet_a415b21db64be3a6a2beba90dd004f53e}{fantome} (\hyperlink{classJoueur}{Joueur} \&j)
+\begin{DoxyCompactList}\small\item\em fantome, procedure membre de \hyperlink{classObjet}{Objet} \end{DoxyCompactList}\item 
+void \hyperlink{classObjet_ae84f467978a06fbbfa76ca03df5f4de1}{double\+Saut} (\hyperlink{classJoueur}{Joueur} \&j)
+\begin{DoxyCompactList}\small\item\em double\+Saut, procedure membre de \hyperlink{classObjet}{Objet} \end{DoxyCompactList}\item 
+void \hyperlink{classObjet_ade303da947e75bed01617875c899c79c}{deplacement\+Auto} ()
+\begin{DoxyCompactList}\small\item\em deplacement\+Auto, procedure de \hyperlink{classObjet}{Objet} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classObjet_a766885c507bea39ae32b3f19d030c450}\label{classObjet_a766885c507bea39ae32b3f19d030c450}} 
+\hyperlink{classForme2D}{Forme2D} $\ast$ \hyperlink{classObjet_a766885c507bea39ae32b3f19d030c450}{taille}
+\begin{DoxyCompactList}\small\item\em Pointeur de type \hyperlink{classForme2D}{Forme2D}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObjet_ac795539135d03fb4fc9e08cddff579da}\label{classObjet_ac795539135d03fb4fc9e08cddff579da}} 
+\hyperlink{classPos2D}{Pos2D} $\ast$ \hyperlink{classObjet_ac795539135d03fb4fc9e08cddff579da}{pos}
+\begin{DoxyCompactList}\small\item\em Pointeur de type \hyperlink{classPos2D}{Pos2D}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObjet_a9e347f9207adafd5c507b43513f49907}\label{classObjet_a9e347f9207adafd5c507b43513f49907}} 
+int $\ast$ \hyperlink{classObjet_a9e347f9207adafd5c507b43513f49907}{type\+Objet} = new int
+\begin{DoxyCompactList}\small\item\em Pointeur de type int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classObjet_aefdd826d50085897e4894ffef4597d04}\label{classObjet_aefdd826d50085897e4894ffef4597d04}} 
+\index{Objet@{Objet}!Objet@{Objet}}
+\index{Objet@{Objet}!Objet@{Objet}}
+\subsubsection{\texorpdfstring{Objet()}{Objet()}}
+{\footnotesize\ttfamily Objet\+::\+Objet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \hyperlink{classObjet}{Objet} sans paramètre. 
+
+Initialise les variables membre de \hyperlink{classObjet}{Objet} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classObjet_ade303da947e75bed01617875c899c79c}\label{classObjet_ade303da947e75bed01617875c899c79c}} 
+\index{Objet@{Objet}!deplacement\+Auto@{deplacement\+Auto}}
+\index{deplacement\+Auto@{deplacement\+Auto}!Objet@{Objet}}
+\subsubsection{\texorpdfstring{deplacement\+Auto()}{deplacementAuto()}}
+{\footnotesize\ttfamily void Objet\+::deplacement\+Auto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+deplacement\+Auto, procedure de \hyperlink{classObjet}{Objet} 
+
+permet le deplacement des objets dans l\textquotesingle{}espace \mbox{\Hypertarget{classObjet_ae84f467978a06fbbfa76ca03df5f4de1}\label{classObjet_ae84f467978a06fbbfa76ca03df5f4de1}} 
+\index{Objet@{Objet}!double\+Saut@{double\+Saut}}
+\index{double\+Saut@{double\+Saut}!Objet@{Objet}}
+\subsubsection{\texorpdfstring{double\+Saut()}{doubleSaut()}}
+{\footnotesize\ttfamily void Objet\+::double\+Saut (\begin{DoxyParamCaption}\item[{\hyperlink{classJoueur}{Joueur} \&}]{j }\end{DoxyParamCaption})}
+
+
+
+double\+Saut, procedure membre de \hyperlink{classObjet}{Objet} 
+
+appelle la fonction activer\+Double\+Saut() de \hyperlink{classJoueur}{Joueur} pour passer à true la variable double\+Saut 
+\begin{DoxyParams}{Parameters}
+{\em j} & \hyperlink{classJoueur}{Joueur}, le joueur donc la variable double\+Saut sera mise à true \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObjet_a415b21db64be3a6a2beba90dd004f53e}\label{classObjet_a415b21db64be3a6a2beba90dd004f53e}} 
+\index{Objet@{Objet}!fantome@{fantome}}
+\index{fantome@{fantome}!Objet@{Objet}}
+\subsubsection{\texorpdfstring{fantome()}{fantome()}}
+{\footnotesize\ttfamily void Objet\+::fantome (\begin{DoxyParamCaption}\item[{\hyperlink{classJoueur}{Joueur} \&}]{j }\end{DoxyParamCaption})}
+
+
+
+fantome, procedure membre de \hyperlink{classObjet}{Objet} 
+
+appelle la fonction activer\+Fantome() de \hyperlink{classJoueur}{Joueur} pour passer à true la variable fantome 
+\begin{DoxyParams}{Parameters}
+{\em j} & \hyperlink{classJoueur}{Joueur}, le joueur donc la variable fantome sera mise à true \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObjet_a8bd03b8ec8f1c86a3b4b0c329254b005}\label{classObjet_a8bd03b8ec8f1c86a3b4b0c329254b005}} 
+\index{Objet@{Objet}!get\+Type\+Objet@{get\+Type\+Objet}}
+\index{get\+Type\+Objet@{get\+Type\+Objet}!Objet@{Objet}}
+\subsubsection{\texorpdfstring{get\+Type\+Objet()}{getTypeObjet()}}
+{\footnotesize\ttfamily int \& Objet\+::get\+Type\+Objet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Type\+Objet, fonction membre de \hyperlink{classObjet}{Objet} 
+
+retourne la valeur de la variable membre type\+Objet \mbox{\Hypertarget{classObjet_a37d3c400769b937a5b94400ed525261c}\label{classObjet_a37d3c400769b937a5b94400ed525261c}} 
+\index{Objet@{Objet}!set\+Type\+Objet@{set\+Type\+Objet}}
+\index{set\+Type\+Objet@{set\+Type\+Objet}!Objet@{Objet}}
+\subsubsection{\texorpdfstring{set\+Type\+Objet()}{setTypeObjet()}}
+{\footnotesize\ttfamily void Objet\+::set\+Type\+Objet (\begin{DoxyParamCaption}\item[{const int}]{x }\end{DoxyParamCaption})}
+
+
+
+set\+Type\+Objet, procedure membre de \hyperlink{classObjet}{Objet} 
+
+permet de mettre la variable membre type\+Objet à la valeur x 
+\begin{DoxyParams}{Parameters}
+{\em x} & int, la valeur que va prendre type\+Objet \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObjet_ab57d0b80660e890c49ab2ee3d432ddd0}\label{classObjet_ab57d0b80660e890c49ab2ee3d432ddd0}} 
+\index{Objet@{Objet}!vie@{vie}}
+\index{vie@{vie}!Objet@{Objet}}
+\subsubsection{\texorpdfstring{vie()}{vie()}}
+{\footnotesize\ttfamily void Objet\+::vie (\begin{DoxyParamCaption}\item[{\hyperlink{classJoueur}{Joueur} \&}]{j }\end{DoxyParamCaption})}
+
+
+
+vie, procedure membre de \hyperlink{classObjet}{Objet} 
+
+appelle la fonction vie\+Up() de la classe \hyperlink{classJoueur}{Joueur} pour augmenter la vie de 1 
+\begin{DoxyParams}{Parameters}
+{\em j} & \hyperlink{classJoueur}{Joueur}, le joueur dont la vie va etre augmentee \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Objet.\+h\item 
+src/Objet.\+cpp\end{DoxyCompactItemize}

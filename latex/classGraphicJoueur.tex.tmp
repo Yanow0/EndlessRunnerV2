@@ -1,0 +1,157 @@
+\hypertarget{classGraphicJoueur}{}\section{Graphic\+Joueur Class Reference}
+\label{classGraphicJoueur}\index{Graphic\+Joueur@{Graphic\+Joueur}}
+
+
+Collaboration diagram for Graphic\+Joueur\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGraphicJoueur_acb3a9ec937268505e633052431a86b88}{Graphic\+Joueur} (\hyperlink{classJeu}{Jeu} \&jeu)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classGraphicJoueur}{Graphic\+Joueur} avec 1 param�tre. \end{DoxyCompactList}\item 
+void \hyperlink{classGraphicJoueur_af4c979ca3d42c798fa157e939654f90d}{afficher\+Joueur} (\hyperlink{classJeu}{Jeu} \&jeu, int frame)
+\begin{DoxyCompactList}\small\item\em afficher\+Joueur, fonction membre de \hyperlink{classGraphicJoueur}{Graphic\+Joueur} avec 2 param�tres \end{DoxyCompactList}\item 
+void \hyperlink{classGraphicJoueur_a7391ac54f2ce195bbd3d848f389ef25a}{afficher\+Vie} (\hyperlink{classJeu}{Jeu} \&jeu)
+\begin{DoxyCompactList}\small\item\em afficher\+Vie, fonction membre de \hyperlink{classGraphicJoueur}{Graphic\+Joueur} avec 1 param�tre \end{DoxyCompactList}\item 
+void \hyperlink{classGraphicJoueur_a10a1253db3367d7209fdf2420356430f}{afficher\+Objet} (\hyperlink{classJeu}{Jeu} \&jeu)
+\begin{DoxyCompactList}\small\item\em afficher\+Objet, fonction membre de \hyperlink{classGraphicJoueur}{Graphic\+Joueur} avec 1 param�tre \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_ac457253b37ea5f81dd912bb75b09ad5c}\label{classGraphicJoueur_ac457253b37ea5f81dd912bb75b09ad5c}} 
+void {\bfseries afficher\+Score} (\hyperlink{classJeu}{Jeu} \&jeu)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGraphicJoueur_a221920ba7dea3952c2328561d0a2b4c4}\label{classGraphicJoueur_a221920ba7dea3952c2328561d0a2b4c4}} 
+\hyperlink{classJoueur}{Joueur} $\ast$ \hyperlink{classGraphicJoueur_a221920ba7dea3952c2328561d0a2b4c4}{joueur}
+\begin{DoxyCompactList}\small\item\em Pointeur de type \hyperlink{classJoueur}{Joueur}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a1796ff46fdeedc08e33441b5bdb3478f}\label{classGraphicJoueur_a1796ff46fdeedc08e33441b5bdb3478f}} 
+S\+D\+L\+\_\+\+Rect \hyperlink{classGraphicJoueur_a1796ff46fdeedc08e33441b5bdb3478f}{image\+Joueur}
+\begin{DoxyCompactList}\small\item\em Variable membre de type S\+D\+L\+\_\+\+Rect, repr�sente la hitbox du joueur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a5e8c7e5e5d2a8bb1526ec10ae56f3dd4}\label{classGraphicJoueur_a5e8c7e5e5d2a8bb1526ec10ae56f3dd4}} 
+vector$<$ S\+D\+L\+\_\+\+Rect $>$ \hyperlink{classGraphicJoueur_a5e8c7e5e5d2a8bb1526ec10ae56f3dd4}{image\+Vie}
+\begin{DoxyCompactList}\small\item\em Tableau Dynamique de type S\+D\+L\+\_\+\+Rect, repr�sente la hitbox du symbole du coeur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_abf83165a6566e8370da0a892f8357ba8}\label{classGraphicJoueur_abf83165a6566e8370da0a892f8357ba8}} 
+vector$<$ S\+D\+L\+\_\+\+Rect $>$ \hyperlink{classGraphicJoueur_abf83165a6566e8370da0a892f8357ba8}{image\+Objet}
+\begin{DoxyCompactList}\small\item\em Tableau Dynamique de type S\+D\+L\+\_\+\+Rect, repr�sente la hitbox du symbole des objets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_ab0538942dbf766eb314fef7f0ef535e9}\label{classGraphicJoueur_ab0538942dbf766eb314fef7f0ef535e9}} 
+S\+D\+L\+\_\+\+Surface $\ast$ \hyperlink{classGraphicJoueur_ab0538942dbf766eb314fef7f0ef535e9}{s\+Sprite}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Surface, repr�sente la surface du sprite du joueur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_aaeaaae4b5a131bd860d28b921cf0c548}\label{classGraphicJoueur_aaeaaae4b5a131bd860d28b921cf0c548}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{classGraphicJoueur_aaeaaae4b5a131bd860d28b921cf0c548}{t\+Sprite}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Texture, repr�sente la texture du sprite du joueur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a74c8320b59faeb86ade4085d167f8138}\label{classGraphicJoueur_a74c8320b59faeb86ade4085d167f8138}} 
+S\+D\+L\+\_\+\+Surface $\ast$ \hyperlink{classGraphicJoueur_a74c8320b59faeb86ade4085d167f8138}{s\+Vie}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Surface, repr�sente la surface du symbole du coeur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_ae58b46ce244173ffa8dae1eed2f996d1}\label{classGraphicJoueur_ae58b46ce244173ffa8dae1eed2f996d1}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{classGraphicJoueur_ae58b46ce244173ffa8dae1eed2f996d1}{t\+Vie}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Texture, repr�sente la texture du symbole du coeur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a7199fba676909d5112b4ceeff34cf57f}\label{classGraphicJoueur_a7199fba676909d5112b4ceeff34cf57f}} 
+S\+D\+L\+\_\+\+Surface $\ast$ \hyperlink{classGraphicJoueur_a7199fba676909d5112b4ceeff34cf57f}{s\+Star}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Surface, repr�sente la surface du symbole pour l\textquotesingle{}objet \char`\"{}\+Etoile\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a310c9901d885cf2ed266dfa5747ce663}\label{classGraphicJoueur_a310c9901d885cf2ed266dfa5747ce663}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{classGraphicJoueur_a310c9901d885cf2ed266dfa5747ce663}{t\+Star}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Texture, repr�sente la texture du symbole pour l\textquotesingle{}objet \char`\"{}\+Etoile\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a6a417ae5aea95594d83f099d30ce4719}\label{classGraphicJoueur_a6a417ae5aea95594d83f099d30ce4719}} 
+S\+D\+L\+\_\+\+Surface $\ast$ \hyperlink{classGraphicJoueur_a6a417ae5aea95594d83f099d30ce4719}{s\+Double\+Saut}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Surface, repr�sente la surface du symbole pour l\textquotesingle{}objet \char`\"{}\+Double Saut\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a22dd0018bc6474d15f3d87b62839c62a}\label{classGraphicJoueur_a22dd0018bc6474d15f3d87b62839c62a}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{classGraphicJoueur_a22dd0018bc6474d15f3d87b62839c62a}{t\+Double\+Saut}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Texture, repr�sente la texture du symbole pour l\textquotesingle{}objet \char`\"{}\+Double Saut\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a16763cb643e4097d0b9852e4b4581772}\label{classGraphicJoueur_a16763cb643e4097d0b9852e4b4581772}} 
+S\+D\+L\+\_\+\+Surface $\ast$ \hyperlink{classGraphicJoueur_a16763cb643e4097d0b9852e4b4581772}{s\+Score}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Surface, repr�sente la surface du Score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a2cfe3478bed1940f6705c1c0ee5118ed}\label{classGraphicJoueur_a2cfe3478bed1940f6705c1c0ee5118ed}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{classGraphicJoueur_a2cfe3478bed1940f6705c1c0ee5118ed}{t\+Score}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Texture, repr�sente la texture du Score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a79abe5e18a6ed40e5993a61f050bcf45}\label{classGraphicJoueur_a79abe5e18a6ed40e5993a61f050bcf45}} 
+T\+T\+F\+\_\+\+Font $\ast$ \hyperlink{classGraphicJoueur_a79abe5e18a6ed40e5993a61f050bcf45}{score\+Font}
+\begin{DoxyCompactList}\small\item\em Pointeur de type T\+T\+F\+\_\+\+Font, repr�sente la police du Score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_aa015f338cf85a28dfe598e3106d29030}\label{classGraphicJoueur_aa015f338cf85a28dfe598e3106d29030}} 
+S\+D\+L\+\_\+\+Rect \hyperlink{classGraphicJoueur_aa015f338cf85a28dfe598e3106d29030}{score}
+\begin{DoxyCompactList}\small\item\em Variable membre de type S\+D\+L\+\_\+\+Rect, repr�sente la case du score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_ae932c7060f070fbc247fc93e973dc397}\label{classGraphicJoueur_ae932c7060f070fbc247fc93e973dc397}} 
+int \hyperlink{classGraphicJoueur_ae932c7060f070fbc247fc93e973dc397}{texW}
+\begin{DoxyCompactList}\small\item\em Variable membre de type entier, repr�sente la largeur du score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_aa22bdde7e7ffb22921c5d27aaf662868}\label{classGraphicJoueur_aa22bdde7e7ffb22921c5d27aaf662868}} 
+int \hyperlink{classGraphicJoueur_aa22bdde7e7ffb22921c5d27aaf662868}{texH}
+\begin{DoxyCompactList}\small\item\em Variable membre de type entier, repr�sente la hauteur du score. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_a4b7ea4e4f7a9f882e907a1869139fb6a}\label{classGraphicJoueur_a4b7ea4e4f7a9f882e907a1869139fb6a}} 
+S\+D\+L\+\_\+\+Rect \hyperlink{classGraphicJoueur_a4b7ea4e4f7a9f882e907a1869139fb6a}{j\+Sprite\+Clips} \mbox{[}24\mbox{]}
+\begin{DoxyCompactList}\small\item\em Tableau de type S\+D\+L\+\_\+\+Rect, contient les diff�rents sprites pour animer le joueur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicJoueur_aa0adad9707981093619d12484790706d}\label{classGraphicJoueur_aa0adad9707981093619d12484790706d}} 
+S\+D\+L\+\_\+\+Rect \hyperlink{classGraphicJoueur_aa0adad9707981093619d12484790706d}{j\+Sprite\+Double\+Saut}
+\begin{DoxyCompactList}\small\item\em Variable membre de type S\+D\+L\+\_\+\+Rect, contient le symbole pour l\textquotesingle{}objet \char`\"{}\+Double Saut\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGraphicJoueur_acb3a9ec937268505e633052431a86b88}\label{classGraphicJoueur_acb3a9ec937268505e633052431a86b88}} 
+\index{Graphic\+Joueur@{Graphic\+Joueur}!Graphic\+Joueur@{Graphic\+Joueur}}
+\index{Graphic\+Joueur@{Graphic\+Joueur}!Graphic\+Joueur@{Graphic\+Joueur}}
+\subsubsection{\texorpdfstring{Graphic\+Joueur()}{GraphicJoueur()}}
+{\footnotesize\ttfamily Graphic\+Joueur\+::\+Graphic\+Joueur (\begin{DoxyParamCaption}\item[{\hyperlink{classJeu}{Jeu} \&}]{jeu }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \hyperlink{classGraphicJoueur}{Graphic\+Joueur} avec 1 param�tre. 
+
+Initialise les variables membres de \hyperlink{classGraphicJoueur}{Graphic\+Joueur}, cr�er la texture du joueur. 
+\begin{DoxyParams}{Parameters}
+{\em jeu} & passage en r�f�rence du \hyperlink{classJeu}{Jeu} en cours. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGraphicJoueur_af4c979ca3d42c798fa157e939654f90d}\label{classGraphicJoueur_af4c979ca3d42c798fa157e939654f90d}} 
+\index{Graphic\+Joueur@{Graphic\+Joueur}!afficher\+Joueur@{afficher\+Joueur}}
+\index{afficher\+Joueur@{afficher\+Joueur}!Graphic\+Joueur@{Graphic\+Joueur}}
+\subsubsection{\texorpdfstring{afficher\+Joueur()}{afficherJoueur()}}
+{\footnotesize\ttfamily void Graphic\+Joueur\+::afficher\+Joueur (\begin{DoxyParamCaption}\item[{\hyperlink{classJeu}{Jeu} \&}]{jeu,  }\item[{int}]{frame }\end{DoxyParamCaption})}
+
+
+
+afficher\+Joueur, fonction membre de \hyperlink{classGraphicJoueur}{Graphic\+Joueur} avec 2 param�tres 
+
+Affiche le joueur sur le renderer en fonction de sa position, sa forme et de la frame actuelle 
+\begin{DoxyParams}{Parameters}
+{\em jeu} & passage en r�f�rence du \hyperlink{classJeu}{Jeu} en cours. \\
+\hline
+{\em frame} & entier repr�sentant l\textquotesingle{}image actuelle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGraphicJoueur_a10a1253db3367d7209fdf2420356430f}\label{classGraphicJoueur_a10a1253db3367d7209fdf2420356430f}} 
+\index{Graphic\+Joueur@{Graphic\+Joueur}!afficher\+Objet@{afficher\+Objet}}
+\index{afficher\+Objet@{afficher\+Objet}!Graphic\+Joueur@{Graphic\+Joueur}}
+\subsubsection{\texorpdfstring{afficher\+Objet()}{afficherObjet()}}
+{\footnotesize\ttfamily void Graphic\+Joueur\+::afficher\+Objet (\begin{DoxyParamCaption}\item[{\hyperlink{classJeu}{Jeu} \&}]{jeu }\end{DoxyParamCaption})}
+
+
+
+afficher\+Objet, fonction membre de \hyperlink{classGraphicJoueur}{Graphic\+Joueur} avec 1 param�tre 
+
+Affiche en haut � gauche du renderer les symboles des objets � disposition du joueur 
+\begin{DoxyParams}{Parameters}
+{\em jeu} & passage en r�f�rence du \hyperlink{classJeu}{Jeu} en cours. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGraphicJoueur_a7391ac54f2ce195bbd3d848f389ef25a}\label{classGraphicJoueur_a7391ac54f2ce195bbd3d848f389ef25a}} 
+\index{Graphic\+Joueur@{Graphic\+Joueur}!afficher\+Vie@{afficher\+Vie}}
+\index{afficher\+Vie@{afficher\+Vie}!Graphic\+Joueur@{Graphic\+Joueur}}
+\subsubsection{\texorpdfstring{afficher\+Vie()}{afficherVie()}}
+{\footnotesize\ttfamily void Graphic\+Joueur\+::afficher\+Vie (\begin{DoxyParamCaption}\item[{\hyperlink{classJeu}{Jeu} \&}]{jeu }\end{DoxyParamCaption})}
+
+
+
+afficher\+Vie, fonction membre de \hyperlink{classGraphicJoueur}{Graphic\+Joueur} avec 1 param�tre 
+
+Affiche en haut � gauche du renderer le nombre de vies du joueur avec un nombre correspondant de symboles de coeur 
+\begin{DoxyParams}{Parameters}
+{\em jeu} & passage en r�f�rence du \hyperlink{classJeu}{Jeu} en cours. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Graphic\+Joueur.\+h\item 
+src/Graphic\+Joueur.\+cpp\end{DoxyCompactItemize}

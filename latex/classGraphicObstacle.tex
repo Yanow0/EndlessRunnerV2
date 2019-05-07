@@ -1,0 +1,75 @@
+\hypertarget{classGraphicObstacle}{}\section{Graphic\+Obstacle Class Reference}
+\label{classGraphicObstacle}\index{Graphic\+Obstacle@{Graphic\+Obstacle}}
+
+
+Collaboration diagram for Graphic\+Obstacle\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGraphicObstacle_a3439f0e7ec000ad442d532301a94efe0}{Graphic\+Obstacle} (\hyperlink{classJeu}{Jeu} \&jeu)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{classGraphicObstacle}{Graphic\+Obstacle} avec 1 paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{classGraphicObstacle_ac709f869d877c092ced68cfecba58951}{afficher\+Obstacle} (\hyperlink{classJeu}{Jeu} \&jeu, int frame)
+\begin{DoxyCompactList}\small\item\em afficher\+Obstacle, fonction membre de \hyperlink{classGraphicObstacle}{Graphic\+Obstacle} avec 2 paramètres \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGraphicObstacle_ab1ba8a9186a61415139ca98ca91247f1}\label{classGraphicObstacle_ab1ba8a9186a61415139ca98ca91247f1}} 
+\hyperlink{classListeObstacles}{Liste\+Obstacles} $\ast$ \hyperlink{classGraphicObstacle_ab1ba8a9186a61415139ca98ca91247f1}{obstacle}
+\begin{DoxyCompactList}\small\item\em Pointeur de type \hyperlink{classListeObstacles}{Liste\+Obstacles}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicObstacle_aec504db18f991df9a5cf57a75aeb345f}\label{classGraphicObstacle_aec504db18f991df9a5cf57a75aeb345f}} 
+vector$<$ S\+D\+L\+\_\+\+Rect $>$ \hyperlink{classGraphicObstacle_aec504db18f991df9a5cf57a75aeb345f}{image\+Obstacle}
+\begin{DoxyCompactList}\small\item\em Tableau Dynamique de type S\+D\+L\+\_\+\+Rect, contient les hitbox des obstacles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicObstacle_a0324907561b67437f04c9187cc4e439d}\label{classGraphicObstacle_a0324907561b67437f04c9187cc4e439d}} 
+S\+D\+L\+\_\+\+Surface $\ast$ \hyperlink{classGraphicObstacle_a0324907561b67437f04c9187cc4e439d}{s\+Bullet}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Surface, représente la surface du sprite de l\textquotesingle{}obstacle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicObstacle_a21aaf4c3503670d378c594842595bd9a}\label{classGraphicObstacle_a21aaf4c3503670d378c594842595bd9a}} 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{classGraphicObstacle_a21aaf4c3503670d378c594842595bd9a}{t\+Bullet}
+\begin{DoxyCompactList}\small\item\em Pointeur de type S\+D\+L\+\_\+\+Texture, représente la texture du sprite du joueur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraphicObstacle_a0964c35c3b3f6d4937a8d7f7b807d9e6}\label{classGraphicObstacle_a0964c35c3b3f6d4937a8d7f7b807d9e6}} 
+S\+D\+L\+\_\+\+Rect \hyperlink{classGraphicObstacle_a0964c35c3b3f6d4937a8d7f7b807d9e6}{j\+Sprite\+Clips} \mbox{[}12\mbox{]}
+\begin{DoxyCompactList}\small\item\em Tableau de type S\+D\+L\+\_\+\+Rect, contient les différents sprites pour animer l\textquotesingle{}obstacle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGraphicObstacle_a3439f0e7ec000ad442d532301a94efe0}\label{classGraphicObstacle_a3439f0e7ec000ad442d532301a94efe0}} 
+\index{Graphic\+Obstacle@{Graphic\+Obstacle}!Graphic\+Obstacle@{Graphic\+Obstacle}}
+\index{Graphic\+Obstacle@{Graphic\+Obstacle}!Graphic\+Obstacle@{Graphic\+Obstacle}}
+\subsubsection{\texorpdfstring{Graphic\+Obstacle()}{GraphicObstacle()}}
+{\footnotesize\ttfamily Graphic\+Obstacle\+::\+Graphic\+Obstacle (\begin{DoxyParamCaption}\item[{\hyperlink{classJeu}{Jeu} \&}]{jeu }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \hyperlink{classGraphicObstacle}{Graphic\+Obstacle} avec 1 paramètre. 
+
+Initialise les variables membres de \hyperlink{classGraphicObstacle}{Graphic\+Obstacle}, créer la texture des obstacles. 
+\begin{DoxyParams}{Parameters}
+{\em jeu} & passage en référence du \hyperlink{classJeu}{Jeu} en cours. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGraphicObstacle_ac709f869d877c092ced68cfecba58951}\label{classGraphicObstacle_ac709f869d877c092ced68cfecba58951}} 
+\index{Graphic\+Obstacle@{Graphic\+Obstacle}!afficher\+Obstacle@{afficher\+Obstacle}}
+\index{afficher\+Obstacle@{afficher\+Obstacle}!Graphic\+Obstacle@{Graphic\+Obstacle}}
+\subsubsection{\texorpdfstring{afficher\+Obstacle()}{afficherObstacle()}}
+{\footnotesize\ttfamily void Graphic\+Obstacle\+::afficher\+Obstacle (\begin{DoxyParamCaption}\item[{\hyperlink{classJeu}{Jeu} \&}]{jeu,  }\item[{int}]{frame }\end{DoxyParamCaption})}
+
+
+
+afficher\+Obstacle, fonction membre de \hyperlink{classGraphicObstacle}{Graphic\+Obstacle} avec 2 paramètres 
+
+Affiche les obstacles sur le renderer en fonction de leur position, leur forme et de la frame actuelle 
+\begin{DoxyParams}{Parameters}
+{\em jeu} & passage en référence du \hyperlink{classJeu}{Jeu} en cours. \\
+\hline
+{\em frame} & entier représentant l\textquotesingle{}image actuelle. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Graphic\+Obstacle.\+h\item 
+src/Graphic\+Obstacle.\+cpp\end{DoxyCompactItemize}
