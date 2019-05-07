@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <assert.h>
 #include "ListeObjet.h"
 
 using namespace std;
@@ -74,4 +75,32 @@ void ListeObjet::deplacementAuto()
 void ListeObjet::vider()
 {
     objets.clear();
+}
+
+
+void ListeObjet::testRegression() {
+    cout << endl;
+    cout << "======== TEST de regression pour LISTEOBJET ========" << endl << endl;
+
+    ListeObjet liste;
+    assert (liste.listeVide()==false);
+    cout << "fonction listeVide ok" << endl;
+
+    Objet o;
+    liste.ajouterObjet(o);
+    assert (liste.nbObjet()==2);
+    cout << "ajouterObjet ok" << endl;
+    cout << "nbObjet dans la liste ok" << endl;
+
+    liste.supprimerEnTete();
+    assert (liste.nbObjet()==1);
+    assert (liste.getObjet(0)->pos->getY()==o.pos->getY());
+    assert (liste.getObjet(0)->taille->getLargeur()==o.taille->getLargeur());
+    cout << "getObjet ok" << endl;
+    cout << "supprimerEnTete ok" << endl;
+
+    liste.vider();
+    assert (liste.listeVide()==true);
+    cout << "fonction vider ok" << endl << endl;
+    cout << "==> LISTEOBJET : OK" << endl << endl;
 }

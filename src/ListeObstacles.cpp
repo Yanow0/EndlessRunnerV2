@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <assert.h>
 #include "ListeObstacles.h"
 
 using namespace std;
@@ -64,4 +65,32 @@ void ListeObstacles::deplacementAuto() {
 
 void ListeObstacles::vider() {
     obstacles.clear();
+}
+
+
+void ListeObstacles::testRegression() {
+    cout << endl;
+    cout << "======== TEST de regression pour LISTEOBSTACLES ========" << endl << endl;
+
+    ListeObstacles liste;
+    assert (liste.listeVide()==false);
+    cout << "fonction listeVide ok" << endl;
+
+    Obstacle o;
+    liste.ajouterObstacle(o);
+    assert (liste.nbObstacles()==2);
+    cout << "ajouterObstacle ok" << endl;
+    cout << "nbObstacles dans la liste ok" << endl;
+
+    liste.supprimerEnTete();
+    assert (liste.nbObstacles()==1);
+    assert (liste.getObstacle(0)->pos->getY()==o.pos->getY());
+    assert (liste.getObstacle(0)->taille->getLargeur()==o.taille->getLargeur());
+    cout << "getObstacle ok" << endl;
+    cout << "supprimerEnTete ok" << endl;
+
+    liste.vider();
+    assert (liste.listeVide()==true);
+    cout << "fonction vider ok" << endl << endl;
+    cout << "==> LISTEOBSTACLES : OK" << endl << endl;
 }
