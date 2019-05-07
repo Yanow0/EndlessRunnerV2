@@ -17,7 +17,7 @@ Joueur::Joueur() {
     taille = new Forme2D(2,2);
     pos = new Pos2D(8,7);
     setVie(3);
-    fantome = false;
+    etoile = false;
     doubleSaut = false;
     vitesseSaut=0.5;
     gravite=0.025f;
@@ -66,22 +66,24 @@ bool Joueur::getDoubleSaut() const{
 
 void Joueur::activerDoubleSaut(){
     doubleSaut = true;
+    desactiverEtoile();
 }
 
 void Joueur::desactiverDoubleSaut(){
     doubleSaut = false;
 }
 
-bool Joueur::getFantome() const{
-    return fantome;
+bool Joueur::getEtoile() const{
+    return etoile;
 }
 
-void Joueur::activerFantome(){
-    fantome = true;
+void Joueur::activerEtoile(){
+    etoile = true;
+    desactiverDoubleSaut();
 }
 
-void Joueur::desactiverFantome(){
-    fantome = false;
+void Joueur::desactiverEtoile(){
+    etoile = false;
 }
 
 void Joueur::sauter(const Terrain &t) {
@@ -134,7 +136,7 @@ void Joueur::testRegression() {
     cout << "pos y initiale joueur ok" << endl;
     assert (getVie()==3);
     cout << "vie initiale joueur ok" << endl;
-    assert (getFantome()==false);
+    assert (getEtoile()==false);
     cout << "fantome initial joueur ok" << endl;
     assert (getDoubleSaut()==false);
     cout << "double saut initial joueur ok" << endl;
@@ -154,8 +156,8 @@ void Joueur::testRegression() {
     setVie(1);
     assert (getVie()==1);
     cout << "vie apres set joueur ok" << endl;
-    activerFantome();
-    assert (getFantome()==true);
+    activerEtoile();
+    assert (getEtoile()==true);
     cout << "fantome apres activer joueur ok" << endl;
     activerDoubleSaut();
     assert (getDoubleSaut()==true);
@@ -175,7 +177,7 @@ void Joueur::testRegression() {
 void Joueur::secondeChance() {
     taille = new Forme2D(2,2);
     pos = new Pos2D(8,7);
-    fantome = false;
+    etoile = false;
     doubleSaut = false;
     vitesseSaut=0.5;
     gravite=0.025f;

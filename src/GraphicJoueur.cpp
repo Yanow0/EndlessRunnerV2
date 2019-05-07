@@ -231,7 +231,7 @@ void GraphicJoueur::afficherObjet(Jeu &jeu) {
 
         k++;
     }
-    if (joueur->getFantome()) {
+    if (joueur->getEtoile()) {
         SDL_Rect image;
         image.x= 30;
         image.y= 55;

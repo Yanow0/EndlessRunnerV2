@@ -20,6 +20,8 @@ Graphics::Graphics(): jeu(){
     if( TTF_Init() == -1 ) {
             cout << "Erreur lors de l'initialisation de la SDL_ttf : " << TTF_GetError() << endl; TTF_Quit();exit(1);
      }
+
+    menumusic = Mix_LoadMUS( "./data/menumusic.wav" );
     // Creation de la fenetre
     jeu.window = SDL_CreateWindow("EndlessRunner", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, jeu.getTerrain()->getDimX()*40, jeu.getTerrain()->getDimY()*40, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     if (jeu.window == NULL) {
@@ -42,6 +44,8 @@ Graphics::Graphics(): jeu(){
     relever=false;
     debout=true;
     doublesaut=false;
+
+    Mix_PlayMusic( menumusic, -1 );
 }
 
 
@@ -49,6 +53,7 @@ Graphics::Graphics(): jeu(){
 Graphics::~Graphics(){
     SDL_DestroyRenderer(jeu.renderer);
     SDL_DestroyWindow(jeu.window);
+    Mix_Quit();
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();

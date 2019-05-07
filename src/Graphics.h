@@ -30,6 +30,8 @@ public:
     bool debout; //!< Variable membre de type booleen, représente l'etat de debout
     bool doublesaut; //!< Variable membre de type booleen, représente l'etat de doublesaut
 
+    Mix_Music *menumusic;
+
     //Constructeur de Graphics
     //! Constructeur de GraphicJoueur sans paramètre
     /*!

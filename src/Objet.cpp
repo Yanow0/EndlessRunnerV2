@@ -30,7 +30,7 @@ void Objet::vie(Joueur &j){
 }
 
 void Objet::fantome(Joueur &j){
-    j.activerFantome();
+    j.activerEtoile();
 }
 
 void Objet::doubleSaut(Joueur &j){

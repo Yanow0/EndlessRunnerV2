@@ -14,7 +14,7 @@ class Joueur {
     private:
         int vie; //!< Variable membre de type entier, repr�sente le nombre de vies
         int score; //!< Variable membre de type entier, repr�sente le score
-        bool fantome; //!< Variable membre de type booleen, repr�sente l'etat de fantome
+        bool etoile; //!< Variable membre de type booleen, repr�sente l'etat de etoile
         bool doubleSaut; //!< Variable membre de type booleen, repr�sente l'etat de doubleSaut
         int* action = new int; //!< Pointeur de type int, repr�sent l'action actuelle
 
@@ -23,8 +23,6 @@ class Joueur {
         Pos2D* pos; //!< Pointeur de type Pos2D
         float vitesseSaut; //!< Variable membre de type float, repr�sente la vitesse de saut
         float gravite; //!< Variable membre de type float, repr�sente la force de gravite
-
-
 
     //Constructeur Joueur
     //! Constructeur de Joueur sans param�tre
@@ -112,23 +110,23 @@ class Joueur {
         */
     void desactiverDoubleSaut();
 
-    //! Getter de fantome du joueur
+    //! Getter de etoile du joueur
         /*!
-            Retourne le booleen fantome du Joueur.
+            Retourne le booleen etoile du Joueur.
         */
-    bool getFantome() const;
+    bool getEtoile() const;
 
-    //! activerFantome, procedure membre de Joueur sans param�tre
+    //! activerEtoile, procedure membre de Joueur sans param�tre
         /*!
-            Passe la variable membre fantome � true;
+            Passe la variable membre etoile � true;
         */
-    void activerFantome();
+    void activerEtoile();
 
     //! desactiverFantome, procedure membre de Joueur sans param�tre
         /*!
-            Passe la variable membre fantome � false;
+            Passe la variable membre etoile � false;
         */
-    void desactiverFantome();
+    void desactiverEtoile();
 
     //! doubleSauter, procedure membre de Joueur avec 1 param�tre
         /*!

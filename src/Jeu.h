@@ -9,6 +9,7 @@
 #include "ListeObjet.h"
 #include "Objet.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_mixer.h>
 
 #ifndef ENDLESSRUNNER_JEU_H
 #define ENDLESSRUNNER_JEU_H
@@ -25,8 +26,13 @@ class Jeu {
     public:
         SDL_Window* window; //!< Pointeur de type SDL_Window
         SDL_Renderer* renderer; //!< Pointeur de type SDL_Renderer
-        //int window_width;
-        //int window_height;
+
+        Mix_Chunk *hitObject;
+        Mix_Chunk *hitObstacle;
+        Mix_Chunk *jump;
+        Mix_Chunk *wasted;
+        Mix_Chunk *invincibility;
+
         bool exit; //!< Variable membre de type booleen, défini si le jeu est quitté ou non
 
         //Constructeur de Jeu

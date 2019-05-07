@@ -12,6 +12,18 @@
 using namespace std;
 
 Jeu::Jeu(): joueur(), obstacles(), terrain(), objets() {
+
+    if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2,4096 ) < 0 ) {
+            cout << "Erreur lors de l'initialisation de la SDL_mixer : " << Mix_GetError() << endl;
+    }
+    hitObject = Mix_LoadWAV( "./data/hitobject.wav" );
+    hitObstacle = Mix_LoadWAV( "./data/hitobstacle.wav" );
+    jump = Mix_LoadWAV( "./data/jump.wav" );
+    wasted = Mix_LoadWAV( "./data/wasted.wav" );
+    invincibility  = Mix_LoadWAV( "./data/invincibility.wav" );
+    if ((hitObject == NULL ) || (hitObstacle == NULL ) || (jump == NULL ) || (wasted == NULL ) || (invincibility == NULL ) ) {
+        cout << "Erreur lors de la création des effets sonores" << Mix_GetError() << endl;
+    }
 }
 
 Jeu::~Jeu(){
@@ -50,12 +62,14 @@ bool Jeu::collision() {
         Obstacle *o = obstacles.getObstacle(i);
         if ((contactGauche(o) && (contactSuperieur(o) || contactInferieur(o)))
         || (contactDroite(o) && (contactSuperieur(o) || contactInferieur(o)))) {
-            if(joueur.getFantome()==1){
+            if(joueur.getEtoile()==1){
                 cout << "test" << endl;
                 obstacles.supprimerElement(i);
-                joueur.desactiverFantome();
+                joueur.desactiverEtoile();
                 return false;
             }
+            Mix_HaltChannel(-1);
+            Mix_PlayChannel( -1, hitObstacle, 0 );
             return true;
         }
     }
@@ -95,13 +109,16 @@ bool Jeu::collisionObjet(){
                 joueur.vieUp();
                 break;
             case 1:
-                joueur.activerFantome();
+                joueur.activerEtoile();
+                Mix_PlayChannel( -1, invincibility, 0 );
                 break;
             case 2:
                 joueur.activerDoubleSaut();
                 break;
             }
             objets.supprimerElement(i);
+            Mix_HaltChannel(-1);
+            Mix_PlayChannel( -1, hitObject, 0 );
             return true;
         }
     }
@@ -112,6 +129,7 @@ void Jeu::actionClavier(const char &touche) {
 	switch(touche) {
 		case 'h' :
 				joueur.sauter(terrain);
+				Mix_PlayChannel( -1, jump, 0 );
 				break;
         case 'c' :
                 joueur.baisser(terrain);
@@ -142,7 +160,7 @@ void Jeu::actionAutomatique(bool &saut) {
     objets.deplacementAuto();
     if (!saut) joueur.retomber(terrain);
     //if (collision(saut) && joueur.fantome==0) {
-    if (collision() && joueur.getFantome()==0) {
+    if (collision() && joueur.getEtoile()==0) {
         cout << "collision" << endl;
         joueur.vieDown();
 //        cout << "vie = " << joueur.getVie() << endl;
@@ -158,6 +176,9 @@ void Jeu::actionAutomatique(bool &saut) {
             #else
             usleep(500000);
             #endif // WIN32
+        } else if(joueur.getVie() == 0) {
+            Mix_HaltChannel(-1);
+            Mix_PlayChannel( -1, wasted, 0 );
         }
 
     }
