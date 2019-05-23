@@ -5,7 +5,7 @@ using namespace std;
 GraphicObjet::GraphicObjet(Jeu& jeu) {
     objet=jeu.getObjet();
 
-    sSprite = IMG_Load("./data/icons.png");
+    sSprite = IMG_Load("../data/icons.png");
     if (!sSprite) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();
@@ -16,7 +16,7 @@ GraphicObjet::GraphicObjet(Jeu& jeu) {
         cout << "Error: cannot create sprite texture" <<endl;
     }
 
-    sHeart = IMG_Load("./data/coeur.png");
+    sHeart = IMG_Load("../data/coeur.png");
     if (!sHeart) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();
@@ -27,7 +27,7 @@ GraphicObjet::GraphicObjet(Jeu& jeu) {
         cout << "Error: cannot create sprite texture" <<endl;
     }
 
-    sStar = IMG_Load("./data/star.png");
+    sStar = IMG_Load("../data/star.png");
     if (!sStar) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();

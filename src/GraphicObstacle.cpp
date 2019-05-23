@@ -6,7 +6,7 @@ using namespace std;
 GraphicObstacle::GraphicObstacle(Jeu& jeu) {
     obstacle=jeu.getObstacle();
 
-    sBullet = IMG_Load("./data/bullet.png");
+    sBullet = IMG_Load("../data/bullet.png");
     if (!sBullet) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();

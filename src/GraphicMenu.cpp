@@ -7,7 +7,7 @@ using namespace std;
 GraphicMenu::GraphicMenu(Jeu& jeu){
 
     //TEXTURE MAIN MENU
-    sMainMenu = IMG_Load("./data/MainMenu.jpg");
+    sMainMenu = IMG_Load("../data/MainMenu.jpg");
     if (!sMainMenu) {
         cout << "Error: cannot load main menu surface" <<endl;
         IMG_GetError();
@@ -15,7 +15,7 @@ GraphicMenu::GraphicMenu(Jeu& jeu){
     tMainMenu = SDL_CreateTextureFromSurface(jeu.renderer, sMainMenu);
 
     //TEXTURE PAUSE MENU
-    sPauseMenu = IMG_Load("./data/PauseMenu.jpg");
+    sPauseMenu = IMG_Load("../data/PauseMenu.jpg");
     if (!sPauseMenu) {
         cout << "Error: cannot load pause menu surface" <<endl;
         IMG_GetError();
@@ -23,7 +23,7 @@ GraphicMenu::GraphicMenu(Jeu& jeu){
     tPauseMenu = SDL_CreateTextureFromSurface(jeu.renderer, sPauseMenu);
 
     //TEXTURE END GAME MENU
-    sEndGameMenu = IMG_Load("./data/EndGameMenu.jpg");
+    sEndGameMenu = IMG_Load("../data/EndGameMenu.jpg");
     if (!sEndGameMenu) {
         cout << "Error: cannot load pause menu surface" <<endl;
         IMG_GetError();
@@ -31,7 +31,7 @@ GraphicMenu::GraphicMenu(Jeu& jeu){
     tEndGameMenu = SDL_CreateTextureFromSurface(jeu.renderer, sEndGameMenu);
 
     //TEXTURE END GAME MENU
-    sControls = IMG_Load("./data/Controls.jpg");
+    sControls = IMG_Load("../data/Controls.jpg");
     if (!sControls) {
         cout << "Error: cannot load pause menu surface" <<endl;
         IMG_GetError();
@@ -39,7 +39,7 @@ GraphicMenu::GraphicMenu(Jeu& jeu){
     tControls = SDL_CreateTextureFromSurface(jeu.renderer, sControls);
 
     //TEXTURE END GAME MENU
-    sCredits = IMG_Load("./data/Credits.jpg");
+    sCredits = IMG_Load("../data/Credits.jpg");
     if (!sCredits) {
         cout << "Error: cannot load pause menu surface" <<endl;
         IMG_GetError();
@@ -47,7 +47,7 @@ GraphicMenu::GraphicMenu(Jeu& jeu){
     tCredits = SDL_CreateTextureFromSurface(jeu.renderer, sCredits);
 
     //TEXTURE ARROW MENU
-    sArrow = IMG_Load("./data/arrow.png");
+    sArrow = IMG_Load("../data/arrow.png");
     if (!sArrow) {
         cout << "Error: cannot load pause menu surface" <<endl;
         IMG_GetError();

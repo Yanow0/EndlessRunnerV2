@@ -9,7 +9,7 @@ using namespace std;
 
 GraphicJoueur::GraphicJoueur(Jeu& jeu) {
     joueur=jeu.getJoueur();
-    sSprite = IMG_Load("./data/lucario.png");
+    sSprite = IMG_Load("../data/lucario.png");
     if (!sSprite) {
         cout << "Error: cannot load sprite surface" <<endl;
         IMG_GetError();
@@ -19,16 +19,16 @@ GraphicJoueur::GraphicJoueur(Jeu& jeu) {
         cout << "Error: cannot create sprite texture" <<endl;
     }
 
-    scoreFont = TTF_OpenFont( "./data/SuperMario256.ttf", 20 );
+    scoreFont = TTF_OpenFont( "../data/SuperMario256.ttf", 20 );
     if( scoreFont == NULL ) {
             cout <<"Failed to load score font SDL_ttf Error: %s\n" << TTF_GetError() <<endl;
 
      }
 
 
-    sVie = IMG_Load("./data/coeur.png");
-    sStar = IMG_Load("./data/star.png");
-    sDoubleSaut = IMG_Load("./data/icons.png");
+    sVie = IMG_Load("../data/coeur.png");
+    sStar = IMG_Load("../data/star.png");
+    sDoubleSaut = IMG_Load("../data/icons.png");
     tVie = SDL_CreateTextureFromSurface(jeu.renderer,sVie);
     tStar = SDL_CreateTextureFromSurface(jeu.renderer,sStar);
     tDoubleSaut = SDL_CreateTextureFromSurface(jeu.renderer,sDoubleSaut);

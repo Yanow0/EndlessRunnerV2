@@ -8,7 +8,7 @@ using namespace std;
 
 GraphicTerrain::GraphicTerrain(Jeu& jeu) {
 //    terrain=jeu.getTerrain();
-    background = IMG_Load("./data/background.jpg");
+    background = IMG_Load("../data/background.jpg");
     if (background==NULL) {
         cout << "Error: cannot load background" <<endl;
     }
